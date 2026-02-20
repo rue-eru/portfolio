@@ -1,4 +1,12 @@
 {
     "metadata-title": "L",
-    "metadata-description": "L's Frontend & Translation Portfolio"
+    "metadata-description": "L's Frontend & Translation Portfolio",
+    "frontpage-title": "Мои сайты размывают границы между языками и культурами",
+    "nav-bar": {
+        "projects": "Проекты",
+        "tech": "Stack Инструменты",
+        "about": "О разработчике",
+        "contacts": "Контакты"
+    }
+
 }

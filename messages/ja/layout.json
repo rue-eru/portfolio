@@ -1,4 +1,12 @@
 {
     "metadata-title": "L",
-    "metadata-description": "L's Frontend & Translation Portfolio"
+    "metadata-description": "L's Frontend & Translation Portfolio",
+    "frontpage-title": "多言語対応と国際化に特化しています",
+    "nav-bar": {
+        "projects": "プロジェクト",
+        "tech": "技術スタック",
+        "about": "開発者について",
+        "contacts": "お問い合わせ"
+    }
+
 }

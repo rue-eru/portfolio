@@ -1,4 +1,11 @@
 {
     "metadata-title": "L",
-    "metadata-description": "L's Frontend & Translation Portfolio"
+    "metadata-description": "L's Frontend & Translation Portfolio",
+    "nav-bar": {
+        "projects": "Projects",
+        "tech": "Tech Stack",
+        "about": "About Me",
+        "contacts": "Contacts"
+    },
+    "frontpage-title": "Building cultures with code and language"
 }

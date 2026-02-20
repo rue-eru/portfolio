@@ -1,5 +1,5 @@
-import LangSwitch from "./components/LangSwitch";
-import { styles } from "./utils/styles";
+import LangSwitch from "../components/LangSwitch";
+import { styles } from "../utils/styles";
 
 export default function Home() {
   return (
@@ -13,8 +13,11 @@ export default function Home() {
           </div>
 
           <hr className={styles.divider}></hr>
-          <h2 className="text-6xl mt-10">Building cultures with code and language</h2>
-          <LangSwitch />
+          <h2 className="text-6xl mt-10 hidden">Building cultures with code and language</h2>
+          <div className="flex justify-start gap-5 w-60 mt-5">
+            <h2 className="text-6xl">start</h2>
+            <LangSwitch />
+          </div>
         </div>
       </main>
     </div>
