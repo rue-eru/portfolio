@@ -144,12 +144,12 @@ export default function LangSwitch () {
                                 >
                                     <button
                                         onClick={() => handleLangSelect(lang.code)}
-                                        className="w-full flex items-center gap-3 px-4 py-2 hover:scale-140 hover:animate-pulse"
+                                        className="w-full flex items-center gap-3 px-4 py-2 hover:scale-140 "
                                     >
                                         <Image
                                             src={`/images/${lang.code}.png`}
                                             alt="international-globe"
-                                            className="object-contain h-10 w-10 cursor-pointer"
+                                            className="object-contain h-10 w-10 cursor-pointer hover:border-2 hover:border-set-white rounded-full hover:animate-pulse"
                                             width={100}
                                             height={100}
                                         />

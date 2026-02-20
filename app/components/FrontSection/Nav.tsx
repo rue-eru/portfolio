@@ -1,5 +1,7 @@
 
 import { useTranslations } from "next-intl"
+import StaggerSlide from "../animations/StaggerSlide";
+import SlideIn from "../animations/SlideIn";
 
 export default function Nav () {
     const t = useTranslations('layout.nav-bar')
@@ -7,13 +9,28 @@ export default function Nav () {
 
 
     return (
+
         <div className={`p-2 flex items-center text-2xl bg-transparent fixed left-0 right-0 top-0 text-set-white
         `}>
-            <a className="flex-1 cursor-pointer">
-                <p >L</p>
-            </a>
+
+            <SlideIn 
+                className="flex-1 cursor-pointer"
+                duration={0.5}
+                distance={-20}
+                direction="bottom"
+            >
+                <a>
+                    <p >L</p>
+                </a>
+            </SlideIn>
             
-            <div className="flex-1 flex justify-around">
+            <StaggerSlide
+                direction="bottom" 
+                delay={0.3}
+                duration={2} 
+                distance={-20}
+                className="flex-1 flex justify-around"
+            >
                 {sections.map((name) => (
                     <a 
                         key={name}
@@ -23,7 +40,8 @@ export default function Nav () {
                         <span>{t(name)}</span>
                     </a>
                 ))}
-            </div>
+            </StaggerSlide>
+
         </div>
     )
 }

@@ -10,7 +10,7 @@
 @theme inline {
   --color-set-black: var(--main-black);
   --color-set-white: var(--main-white);
-  --color-accent: var(--accent-color);
+  --color-set-accent: var(--accent-color);
   --font-dongle: var(--font-dongle);
 
   --font-sans: var(--font-geist-sans);
