@@ -17,6 +17,11 @@
   --font-mono: var(--font-geist-mono);
 }
 
+body {
+  background-color: var(--color-set-white);
+  color: var(--color-set-black)
+}
+
 .front-page {
   background-color: var(--color-set-black);
   color: var(--color-set-white);

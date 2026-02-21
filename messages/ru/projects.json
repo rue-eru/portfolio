@@ -1,0 +1,13 @@
+{
+    "main-tech": "Основные инструменты: ",
+    "lads-battles": {
+        "title": "Love and Deepspace Battles",
+        "description": "Сайт для сбора персонажей в Love and Deepspace (LADS) с детальной информацией о навыках, оружии, геймплее и т.д. Создан, чтобы помочь разобраться с боевыми механиками на нескольких языках."
+    },
+    "weather-app": {
+        "title": "Сайт с погодой",
+        "description": "A fully responsive weather application that visualizes real-time weather through dynamic, animated scenes and supports several languages. The app adjusts visuals by location, and time of day.",
+        "tech": "React 19, Tailwind CSS 4, TypeScript, i18n"
+
+    }
+}

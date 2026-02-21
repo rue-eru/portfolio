@@ -1,3 +1,4 @@
+'use client'
 
 import { useTranslations } from "next-intl"
 import StaggerSlide from "../animations/StaggerSlide";
@@ -20,7 +21,7 @@ export default function Nav () {
                 direction="bottom"
             >
                 <a>
-                    <p >L</p>
+                    <p className="text-4xl pl-5">L</p>
                 </a>
             </SlideIn>
             

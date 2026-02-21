@@ -25,3 +25,30 @@ export interface LetterByLetterProps {
     staggerDelay?: number;
     distance?: number
 }
+
+export interface Project {
+  id: string;
+  title: string;
+  description: string;
+  tech: string;
+  links: {
+    github?: string;
+    demo?: string;
+    [key: string]: string | undefined;
+  };
+  image: string;
+}
+
+export interface ProjectCardProps {
+  project: {
+    id: string;
+    title: string;
+    description: string;
+    tech: string;
+    links: Record<string, string>;
+    image: string;
+  };
+  index: number;
+  isHovered: boolean;
+  onHover: (index: number | null) => void;
+}

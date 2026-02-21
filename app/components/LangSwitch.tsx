@@ -96,7 +96,7 @@ export default function LangSwitch () {
                         className="transition-opacity duration-300" 
                     >
                         <Image
-                            src={`/images/arrow-new.png`}
+                            src={`/images/icons/arrow-new.png`}
                             alt="arrow"
                             className="object-contain h-10 w-10  "
                             width={100}
@@ -113,7 +113,7 @@ export default function LangSwitch () {
                         onClick={() => setIsOpen(!isOpen)}
                     >
                         <Image
-                            src={`${isHovered ? `/images/globe-hover.png` : `/images/globe.png` }`}
+                            src={`${isHovered ? `/images/icons/globe-hover.png` : `/images/icons/globe.png` }`}
                             alt="international-globe"
                             className="object-contain h-10 w-10 cursor-pointer"
                             width={100}
@@ -147,7 +147,7 @@ export default function LangSwitch () {
                                         className="w-full flex items-center gap-3 px-4 py-2 hover:scale-140 "
                                     >
                                         <Image
-                                            src={`/images/${lang.code}.png`}
+                                            src={`/images/icons/${lang.code}.png`}
                                             alt="international-globe"
                                             className="object-contain h-10 w-10 cursor-pointer hover:border-2 hover:border-set-white rounded-full hover:animate-pulse"
                                             width={100}

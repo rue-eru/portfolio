@@ -1,0 +1,14 @@
+{
+    "main-tech": "Main Tech: ",
+    "main-pr": "My most recent projects",
+    "legacy-pr": "",
+    "lads-battles": {
+        "title": "Love and Deepspace Battles",
+        "description": "A fan-made guide website for Love and Deepspace (LADS) battle mechanics, providing detailed companion guides with weapon information, skills, and gameplay strategies. Built to help players understand character mechanics in multiple languages."
+    },
+    "weather-app": {
+        "title": "Weather App with animations",
+        "description": "A fully responsive weather application that visualizes dynamic, animated scenes and supports several languages. The animated background adjusts to local time. Forecasts are available in °C/°F. Additional features include: 'Ultraviolet', 'Humidity', 'Feels Like', and 'Wind Direction and Speed'."
+
+    }
+}

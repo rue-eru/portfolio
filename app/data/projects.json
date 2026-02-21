@@ -1,0 +1,26 @@
+{
+  "projects": [
+    {
+      "id": "lads-battles",
+      "title": "projects.lads-battles.title",
+      "description": "projects.lads-battles.description",
+      "tech": "Next.js 16, React 19, Tailwind CSS 4, TypeScript 5, Next-intl 4",
+      "links": {
+        "github": "https://github.com/rue-eru/lads-battles",
+        "demo": "https://lads-battles.vercel.app/"
+      },
+      "image": "/images/projects/lads-battles.gif"
+    },
+    {
+      "id": "weather-app",
+      "title": "projects.weather-app.title",
+      "description": "projects.weather-app.description",
+      "tech": "React 19, Tailwind CSS 4, TypeScript, i18n",
+      "links": {
+        "github": "https://github.com/rue-eru/weather-app",
+        "demo": "https://weather-app-multilingual.vercel.app/"
+      },
+      "image": "/images/projects/weather-app.gif"
+    }
+  ]
+}

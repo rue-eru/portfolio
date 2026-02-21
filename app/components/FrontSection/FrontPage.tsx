@@ -79,7 +79,7 @@ export default function FrontPage () {
                 className="absolute bottom-20 right-10"          
             >
                 <Image 
-                    src={`/images/down-arrow.png`}
+                    src={`/images/icons/down-arrow.png`}
                     alt="slide down arrow"
                     className="w-20 h-20 animate-pulse object-contain"
                     width={100}
