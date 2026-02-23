@@ -37,7 +37,7 @@
                     "github": "https://github.com/rue-eru/FCC-HTML-CSS-1-survey-form-project",
                     "demo": "https://rue-eru.github.io/FCC-HTML-CSS-1-survey-form-project/"
                   },
-                  "image": "/images/projects/html-css/survey-form.png"
+                  "image": "/images/projects/html-css/survey-form.gif"
                 },
                 {
                   "id": "tribute-page",
@@ -153,12 +153,12 @@
                 {
                   "id": "js-certificate",
                   "title": "projects.js.certificate.title",
-                  "description": "projects.js.js-certificate.description",
+                  "description": "projects.js.certificate.description",
                   "tech": "JavaScript, CSS, HTML",
                   "links": {
                     "fcc": "https://www.freecodecamp.org/certification/fcc058fd235-9bca-44b6-b085-10ee4a9bdda6/javascript-algorithms-and-data-structures-v8"
                   },
-                  "image": "/images/certificates/JavaScript-Algorithms-and-Data-Structures.png"
+                  "image": "/images/certificates/javascript-algorithms-and-data-structures.png"
                 }
             ],
             "libraries": [

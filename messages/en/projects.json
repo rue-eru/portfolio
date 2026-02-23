@@ -16,27 +16,27 @@
         "description": "Simple projects made for FreeCodeCamp's Responsive Web Design Course in 2024",
         "survey-form": {
             "title": "Survey Form",
-            "description" : "This project was built to fulfill the 15 user stories from FreeCodeCamp's 'Build a Survey Form' challenge"
+            "description" : "My very first webpage! Built to fulfill the 'Build a Survey Form' challenge. I practiced using different input types, buttons, and form properties while learning about HTML structure and 'id' attributes."
         },
         "tribute-page": {
             "title": "Tribute Page",
-            "description" : "This project fulfills all 9 user stories from FreeCodeCamp's 'Build a Tribute Page' challenge"
+            "description" : "The second project focused on building a tribute page. I practiced working with images and understanding how 'id' attributes help with styling and navigation."
         },
         "technical-documentation": {
             "title": "Technical Documentation Page",
-            "description" : "This project fulfills all 13 user stories from FreeCodeCamp's 'Build a Technical Documentation Page' challenge"
+            "description" : "For the third project, I built a technical documentation page. The main focus was on creating a responsive navigation bar and organizing content with semantic sections."
         },
         "product-landing": {
             "title": "Product Landing Page",
-            "description" : "This project fulfills all 16 user stories from FreeCodeCamp's 'Build a Product Landing Page' challenge:"
+            "description" : "The fourth project required building a product landing page. I practiced making layouts responsive using media queries and flexbox, while working with pre-defined requirements."
         },
         "personal-portfolio-webpage": {
             "title": "Personal Portfolio Webpage",
-            "description" : "This project fulfills all 11 user stories from FreeCodeCamp's 'Build a Personal Portfolio' challenge"
+            "description" : "The final project brought everything together - building a personal portfolio. I used navigation bars, external links, media queries, and viewport height properties to create a complete, responsive site."
         },
         "certificate": {
             "title": "Responsive Web Design Certificate",
-            "description": "A Certificate I got after taking the cource and completing all 5 required projects to pass"
+            "description": "Certificate earned after completing all 5 required projects, demonstrating foundational knowledge of HTML and CSS for web development."
         }
     },
     "js": {
@@ -47,7 +47,7 @@
             "description": "Built to detect whether a given string reads the same forwards and backwards, ignoring punctuation, case, and spacing"
         },
         "roman-numeral-converter": {
-            "title": "Roman Numeral Converter ",
+            "title": "Roman Numeral Converter",
             "description": "Converts Arabic numbers (1-3999) into Roman numerals with proper subtraction notation (IV, IX, XL, XC, CD, CM)."
         },
         "telephone-number-validator": {
@@ -60,11 +60,11 @@
         },
         "RPG-creature-search-app": {
             "title": "RPG Creature Search App ",
-            "description": "Fetches creature (Pokemon) data from freeCodeCamp's RPG Creature API based on name or ID and displays stats, types, and attributes."
+            "description": "Fetches Pokémon data from freeCodeCamp's RPG Creature API based on name or ID and displays stats, types, and attributes."
         },
         "certificate": {
             "title": "JS Algorithms & Data Structures Certificate",
-            "description": "A Certificate I got after taking the cource and completing all 5 required projects to pass"
+            "description": "Certificate earned after completing all 5 projects, demonstrating proficiency in JavaScript fundamentals and problem-solving."
         }
     },
     "libraries": {
@@ -72,26 +72,27 @@
         "description": "Simple projects made for FreeCodeCamp's Front-End Libraries Course in the first half of 2025",
         "random-quote-machine": {
             "title": "Random Quote Machine",
-            "description": "a Random Quote Machine that fetches a random quote from the API and displays it on the page while changing background as well"
+            "description": "Fetches a random quote from the API and displays it on the page while changing background as well"
         },
         "markdown-previewer": {
             "title": "Markdown Previewer",
-            "description": "a Markdown Previewer that allows users to write Markdown in an editor and see the rendered HTML output in real-time"
+            "description": "Allows users to write Markdown in an editor and see the rendered HTML output in real-time"
         },
         "drum-machine": {
             "title": "Drum Machine",
-            "description": "a Drum Machine that allows users to play two sets of Kits by nine notes each, turn the machine on and off, and change the volume. Additional features: power on/off toggle, volume control, and two switchable sound banks."
+            "description": "Allows users to play two sets of Kits by nine notes each, turn the machine on and off, and change the volume. Additional features: power on/off toggle, volume control, and two switchable sound banks."
         },
         "js-calculator": {
             "title": "JavaScript Calculator",
-            "description": "a JavaScript Calculator that allows users to do simple arithmetic calculations"
+            "description": "Allows users to do simple arithmetic calculations"
         },
         "25-5": {
             "title": "Pomodoro Clock Project",
             "description": "a 25 + 5 Clock (also known as a Pomodoro Timer) that allows users to: set custom work and break intervals, start, pause, and reset the timer, and receive visual and audio alerts when the timer ends"
         },
         "certificate": {
-            "title": "Front End Development Libraries Certificate"
+            "title": "Front End Development Libraries Certificate",
+            "description": "Certificate earned after completing all 5 projects using frontend libraries. The projects required any frontend libraried to be used in achiving passing scores, preferably the ones taught on the FCC's course lessons (Bootstrap, iQuery, SASS, Redux, React). Personally, I used React 18 for all the projects."
         }
     }
 }

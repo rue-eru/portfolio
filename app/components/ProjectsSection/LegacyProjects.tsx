@@ -5,12 +5,18 @@ import { useTranslations } from 'next-intl';
 import { useState } from 'react';
 import ProjectCard from './ProjectCard';
 import Image from 'next/image';
+import { styles } from '@/app/utils/styles';
 
 export default function LegacyProjects () {
     const legacyProjects = projectsData.projects.legacy;
-    const [openCourse, setOpenCourse] = useState<string | null>(null);    
+    type CourseKey = keyof typeof legacyProjects;
+    const [openCourse, setOpenCourse] = useState<CourseKey | null>(null);    
     const [isDescriptionHover, setDescriptionHover] = useState<number | null>(null);
     const t = useTranslations('projects');
+    const activeProjects = openCourse
+      ? legacyProjects[openCourse]
+      : null;
+    const entries = Object. entries(legacyProjects) as [CourseKey, typeof legacyProjects[CourseKey]][];
 
     return(
         <div className="text-center mt-20 space-y-4 relative">
@@ -18,9 +24,9 @@ export default function LegacyProjects () {
             {t('legacy-intro')}
           </p>
 
-          <div className="flex justify-center gap-4 flex-wrap md:flex-nowrap text-set-white w-full border-2 border-amber-500">
+          <div className="flex justify-center gap-4 flex-wrap md:flex-nowrap text-set-white w-ful">
             
-            {Object.entries(legacyProjects).map(([courseName, courseProjects]) => (
+            {entries.map(([courseName]) => (
               <div key={courseName}>
                 <button
                   className="bg-gray-600 cursor-pointer inline-flex justify-center items-center gap-2 p-2 rounded transition-all"
@@ -32,32 +38,33 @@ export default function LegacyProjects () {
                     width={40}
                     height={40}
                     className='object-contain'
+                    loading='lazy'
                   />
                   <span className='text-xl'>{t(`${courseName}.title`)}</span>
                 </button>
-            
-                {openCourse === courseName && (
-                  <div className='mt-10 text-set-black'>
-                    <p>{t(`${courseName}.description`)}</p>
-                    <div
-                      className='grid md:grid-cols-2 grid-cols-1 gap-10'
-                    >
-                      {courseProjects.map((project, index) => (
-                        <ProjectCard
-                          key={project.id}
-                          project={project}
-                          index={index}
-                          isHovered={isDescriptionHover === index}
-                          onHover={setDescriptionHover}
-                        />
-                      ))}
-                    </div>
-                  </div>
-                )}
               </div>
             ))}
-            
           </div>
+
+          {activeProjects && (
+            <>
+              <p className='text-2xl'>{t(`${openCourse}.description`)}</p>
+                <div className={styles.projectFlex}>
+                  <div  className={styles.projectGrid}>
+                    {activeProjects.map((project, index) => (
+                      <ProjectCard
+                        key={project.id}
+                        project={project}
+                        index={index}
+                        isHovered={isDescriptionHover === index}
+                        onHover={setDescriptionHover}
+                      />
+                    ))}
+                  </div>
+                </div>
+            </>
+
+          )}
         </div>
     )
 }

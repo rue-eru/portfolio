@@ -18,7 +18,7 @@ export default function ProjectsPage() {
     return(
         <div 
             id={id}
-            className="main-page h-screen lg:w-[60%] sm:w-[95%] w-full mx-auto border-4 border-red-600"
+            className="main-page h-fit lg:w-[60%] sm:w-[95%] w-full mx-auto my-12"
         >
             <SlideIn
                 direction="top"
@@ -26,8 +26,8 @@ export default function ProjectsPage() {
                 <h3 className={styles.h3}>{tPr('main-pr')}</h3>
             </SlideIn>
 
-            <div className="flex justify-center mt-30">
-                <div className="grid md:grid-cols-2 grid-cols-1 gap-10">
+            <div className={`${styles.projectFlex} mt-30`}>
+                <div className={styles.projectGrid}>
                     {projects.map((project, index) => (
                         <ProjectCard 
                             key={project.id}
