@@ -1,7 +1,7 @@
 {
     "main-tech": "Main Tech: ",
     "main-pr": "My most recent projects",
-    "legacy-pr": "",
+    "legacy-intro": "Curious about my learning journey? Check out my early projects!",
     "lads-battles": {
         "title": "Love and Deepspace Battles",
         "description": "A fan-made guide website for Love and Deepspace (LADS) battle mechanics, providing detailed companion guides with weapon information, skills, and gameplay strategies. Built to help players understand character mechanics in multiple languages."
@@ -10,5 +10,88 @@
         "title": "Weather App with animations",
         "description": "A fully responsive weather application that visualizes dynamic, animated scenes and supports several languages. The animated background adjusts to local time. Forecasts are available in °C/°F. Additional features include: 'Ultraviolet', 'Humidity', 'Feels Like', and 'Wind Direction and Speed'."
 
+    },
+    "html-css": {
+        "title": "Responsive Web Design",
+        "description": "Simple projects made for FreeCodeCamp's Responsive Web Design Course in 2024",
+        "survey-form": {
+            "title": "Survey Form",
+            "description" : "This project was built to fulfill the 15 user stories from FreeCodeCamp's 'Build a Survey Form' challenge"
+        },
+        "tribute-page": {
+            "title": "Tribute Page",
+            "description" : "This project fulfills all 9 user stories from FreeCodeCamp's 'Build a Tribute Page' challenge"
+        },
+        "technical-documentation": {
+            "title": "Technical Documentation Page",
+            "description" : "This project fulfills all 13 user stories from FreeCodeCamp's 'Build a Technical Documentation Page' challenge"
+        },
+        "product-landing": {
+            "title": "Product Landing Page",
+            "description" : "This project fulfills all 16 user stories from FreeCodeCamp's 'Build a Product Landing Page' challenge:"
+        },
+        "personal-portfolio-webpage": {
+            "title": "Personal Portfolio Webpage",
+            "description" : "This project fulfills all 11 user stories from FreeCodeCamp's 'Build a Personal Portfolio' challenge"
+        },
+        "certificate": {
+            "title": "Responsive Web Design Certificate",
+            "description": "A Certificate I got after taking the cource and completing all 5 required projects to pass"
+        }
+    },
+    "js": {
+        "title": "JavaScript Algorithms and Data",
+        "description": "Simple projects made for FreeCodeCamp's JavaScript Algorithms and Data Structures Course in 2024",
+        "palindrome-checker": {
+            "title": "Palindrome Checker",
+            "description": "Built to detect whether a given string reads the same forwards and backwards, ignoring punctuation, case, and spacing"
+        },
+        "roman-numeral-converter": {
+            "title": "Roman Numeral Converter ",
+            "description": "Converts Arabic numbers (1-3999) into Roman numerals with proper subtraction notation (IV, IX, XL, XC, CD, CM)."
+        },
+        "telephone-number-validator": {
+            "title": "Telephone Number Validator",
+            "description": "Validates US phone numbers in various formats, with optional country code (must be 1) and proper area code requirements"
+        },
+        "cash-register": {
+            "title": "Cash Register",
+            "description": "Calculates change due based on purchase price, cash provided, and current cash-in-drawer (CID), handling three possible statuses: OPEN, CLOSED, and INSUFFICIENT_FUNDS."
+        },
+        "RPG-creature-search-app": {
+            "title": "RPG Creature Search App ",
+            "description": "Fetches creature (Pokemon) data from freeCodeCamp's RPG Creature API based on name or ID and displays stats, types, and attributes."
+        },
+        "certificate": {
+            "title": "JS Algorithms & Data Structures Certificate",
+            "description": "A Certificate I got after taking the cource and completing all 5 required projects to pass"
+        }
+    },
+    "libraries": {
+        "title": "Front-End Libraries",
+        "description": "Simple projects made for FreeCodeCamp's Front-End Libraries Course in the first half of 2025",
+        "random-quote-machine": {
+            "title": "Random Quote Machine",
+            "description": "a Random Quote Machine that fetches a random quote from the API and displays it on the page while changing background as well"
+        },
+        "markdown-previewer": {
+            "title": "Markdown Previewer",
+            "description": "a Markdown Previewer that allows users to write Markdown in an editor and see the rendered HTML output in real-time"
+        },
+        "drum-machine": {
+            "title": "Drum Machine",
+            "description": "a Drum Machine that allows users to play two sets of Kits by nine notes each, turn the machine on and off, and change the volume. Additional features: power on/off toggle, volume control, and two switchable sound banks."
+        },
+        "js-calculator": {
+            "title": "JavaScript Calculator",
+            "description": "a JavaScript Calculator that allows users to do simple arithmetic calculations"
+        },
+        "25-5": {
+            "title": "Pomodoro Clock Project",
+            "description": "a 25 + 5 Clock (also known as a Pomodoro Timer) that allows users to: set custom work and break intervals, start, pause, and reset the timer, and receive visual and audio alerts when the timer ends"
+        },
+        "certificate": {
+            "title": "Front End Development Libraries Certificate"
+        }
     }
 }

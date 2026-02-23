@@ -1,26 +1,233 @@
 {
-  "projects": [
-    {
-      "id": "lads-battles",
-      "title": "projects.lads-battles.title",
-      "description": "projects.lads-battles.description",
-      "tech": "Next.js 16, React 19, Tailwind CSS 4, TypeScript 5, Next-intl 4",
-      "links": {
-        "github": "https://github.com/rue-eru/lads-battles",
-        "demo": "https://lads-battles.vercel.app/"
-      },
-      "image": "/images/projects/lads-battles.gif"
-    },
-    {
-      "id": "weather-app",
-      "title": "projects.weather-app.title",
-      "description": "projects.weather-app.description",
-      "tech": "React 19, Tailwind CSS 4, TypeScript, i18n",
-      "links": {
-        "github": "https://github.com/rue-eru/weather-app",
-        "demo": "https://weather-app-multilingual.vercel.app/"
-      },
-      "image": "/images/projects/weather-app.gif"
+    "projects":{
+        "featured": [
+          {
+            "id": "lads-battles",
+            "title": "projects.lads-battles.title",
+            "description": "projects.lads-battles.description",
+            "tech": "Next.js 16, React 19, Tailwind CSS 4, TypeScript 5, Next-intl 4",
+            "links": {
+              "github": "https://github.com/rue-eru/lads-battles",
+              "demo": "https://lads-battles.vercel.app/"
+            },
+            "image": "/images/projects/lads-battles.gif",
+            "featured": true
+          },
+          {
+            "id": "weather-app",
+            "title": "projects.weather-app.title",
+            "description": "projects.weather-app.description",
+            "tech": "React 19, Tailwind CSS 4, TypeScript, i18n",
+            "links": {
+              "github": "https://github.com/rue-eru/weather-app",
+              "demo": "https://weather-app-multilingual.vercel.app/"
+            },
+            "image": "/images/projects/weather-app.gif",
+            "featured": true
+          }
+        ],
+        "legacy": {
+            "html-css": [
+                {
+                  "id": "survey-form",
+                  "title": "projects.html-css.survey-form.title",
+                  "description": "projects.html-css.survey-form.description",
+                  "tech": "HTML, CSS",
+                  "links": {
+                    "github": "https://github.com/rue-eru/FCC-HTML-CSS-1-survey-form-project",
+                    "demo": "https://rue-eru.github.io/FCC-HTML-CSS-1-survey-form-project/"
+                  },
+                  "image": "/images/projects/html-css/survey-form.png"
+                },
+                {
+                  "id": "tribute-page",
+                  "title": "projects.html-css.tribute-page.title",
+                  "description": "projects.html-css.tribute-page.description",
+                  "tech": "HTML, CSS",
+                  "links": {
+                    "github": "https://github.com/rue-eru/FCC-HTML-CSS-2-tribute-page-project",
+                    "demo": "https://rue-eru.github.io/FCC-HTML-CSS-2-tribute-page-project/"
+                  },
+                  "image": "/images/projects/html-css/tribute-page.gif"
+                },
+                {
+                  "id": "technical-documentation",
+                  "title": "projects.html-css.technical-documentation.title",
+                  "description": "projects.html-css.technical-documentation.description",
+                  "tech": "HTML, CSS",
+                  "links": {
+                    "github": "https://github.com/rue-eru/FCC-HTML-CSS-3-technical-documentation-page",
+                    "demo": "https://rue-eru.github.io/FCC-HTML-CSS-3-technical-documentation-page/"
+                  },
+                  "image": "/images/projects/html-css/technical-documentation.gif"
+                },
+                {
+                  "id": "product-landing",
+                  "title": "projects.html-css.product-landing.title",
+                  "description": "projects.html-css.product-landing.description",
+                  "tech": "HTML, CSS",
+                  "links": {
+                    "github": "https://github.com/rue-eru/FCC-HTML-CSS-4-product-landing-page",
+                    "demo": "https://rue-eru.github.io/FCC-HTML-CSS-4-product-landing-page/"
+                  },
+                  "image": "/images/projects/html-css/product-landing.gif"
+                },
+                {
+                  "id": "personal-portfolio-webpage",
+                  "title": "projects.html-css.personal-portfolio-webpage.title",
+                  "description": "projects.html-css.personal-portfolio-webpage.description",
+                  "tech": "HTML, CSS",
+                  "links": {
+                    "github": "https://github.com/rue-eru/FCC-HTML-CSS-5-personal-portfolio-webpage",
+                    "demo": "https://rue-eru.github.io/FCC-HTML-CSS-5-personal-portfolio-webpage/"
+                  },
+                  "image": "/images/projects/html-css/personal-portfolio-webpage.gif"
+                },
+                {
+                  "id": "html-css-certificate",
+                  "title": "projects.html-css.certificate.title",
+                  "description": "projects.html-css.certificate.description",
+                  "tech": "HTML, CSS",
+                  "links": {
+                    "fcc": "https://www.freecodecamp.org/certification/fcc058fd235-9bca-44b6-b085-10ee4a9bdda6/responsive-web-design"
+                  },
+                  "image": "/images/certificates/responsive-web-design.png"
+                }
+            ],
+            "js": [
+                {
+                  "id": "palindrome-checker",
+                  "title": "projects.js.palindrome-checker.title",
+                  "description": "projects.js.palindrome-checker.description",
+                  "tech": "JavaScript, CSS, HTML",
+                  "links": {
+                    "github": "https://github.com/rue-eru/FCC-JS-1-palindrome-checker",
+                    "demo": "https://rue-eru.github.io/FCC-JS-1-palindrome-checker/"
+                  },
+                  "image": "/images/projects/js/palindrome-checker.gif"
+                },
+                {
+                  "id": "roman-numeral-converter",
+                  "title": "projects.js.roman-numeral-converter.title",
+                  "description": "projects.js.roman-numeral-converter.description",
+                  "tech": "JavaScript, CSS, HTML",
+                  "links": {
+                    "github": "https://github.com/rue-eru/FCC-JS-2-roman-numeral-converter",
+                    "demo": "https://rue-eru.github.io/FCC-JS-2-roman-numeral-converter/"
+                  },
+                  "image": "/images/projects/js/roman-numeral-converter.gif"
+                },
+                {
+                  "id": "telephone-number-validator",
+                  "title": "projects.js.telephone-number-validator.title",
+                  "description": "projects.js.telephone-number-validator.description",
+                  "tech": "JavaScript, CSS, HTML",
+                  "links": {
+                    "github": "https://github.com/rue-eru/FCC-JS-3-telephone-number-validator",
+                    "demo": "https://rue-eru.github.io/FCC-JS-3-telephone-number-validator/"
+                  },
+                  "image": "/images/projects/js/telephone-number-validator.gif"
+                },
+                {
+                  "id": "cash-register",
+                  "title": "projects.js.cash-register.title",
+                  "description": "projects.js.cash-register.description",
+                  "tech": "JavaScript, CSS, HTML",
+                  "links": {
+                    "github": "https://github.com/rue-eru/FCC-JS-4-cash-register",
+                    "demo": "https://rue-eru.github.io/FCC-JS-4-cash-register/"
+                  },
+                  "image": "/images/projects/js/cash-register.gif"
+                },
+                {
+                  "id": "RPG-creature-search-app",
+                  "title": "projects.js.RPG-creature-search-app.title",
+                  "description": "projects.js.RPG-creature-search-app.description",
+                  "tech": "JavaScript, CSS, HTML",
+                  "links": {
+                    "github": "https://github.com/rue-eru/FCC-JS-5-RPG-creature-search-app",
+                    "demo": "https://rue-eru.github.io/FCC-JS-5-RPG-creature-search-app/"
+                  },
+                  "image": "/images/projects/js/RPG-creature-search-app.gif"
+                },
+                {
+                  "id": "js-certificate",
+                  "title": "projects.js.certificate.title",
+                  "description": "projects.js.js-certificate.description",
+                  "tech": "JavaScript, CSS, HTML",
+                  "links": {
+                    "fcc": "https://www.freecodecamp.org/certification/fcc058fd235-9bca-44b6-b085-10ee4a9bdda6/javascript-algorithms-and-data-structures-v8"
+                  },
+                  "image": "/images/certificates/JavaScript-Algorithms-and-Data-Structures.png"
+                }
+            ],
+            "libraries": [
+                {
+                  "id": "random-quote-machine",
+                  "title": "projects.libraries.random-quote-machine.title",
+                  "description": "projects.libraries.random-quote-machine.description",
+                  "tech": "React 18, Vite, JS, CSS",
+                  "links": {
+                    "github": "https://github.com/rue-eru/random-quote-machine",
+                    "demo": "https://rue-eru.github.io/random-quote-machine/"
+                  },
+                  "image": "/images/projects/libraries/random-quote-machine.gif"
+                },
+                {
+                  "id": "markdown-previewer",
+                  "title": "projects.libraries.markdown-previewer.title",
+                  "description": "projects.libraries.markdown-previewer.description",
+                  "tech": "React 18, Vite, JS, CSS",
+                  "links": {
+                    "github": "https://github.com/rue-eru/markdown-previewer",
+                    "demo": "https://rue-eru.github.io/markdown-previewer/"
+                  },
+                  "image": "/images/projects/libraries/markdown-previewer.gif"
+                },
+                {
+                  "id": "drum-machine",
+                  "title": "projects.libraries.drum-machine.title",
+                  "description": "projects.libraries.drum-machine.description",
+                  "tech": "React 18, Vite, JS, CSS",
+                  "links": {
+                    "github": "https://github.com/rue-eru/drum-machine",
+                    "demo": "https://rue-eru.github.io/drum-machine/"
+                  },
+                  "image": "/images/projects/libraries/drum-machine.gif"
+                },
+                {
+                  "id": "js-calculator",
+                  "title": "projects.libraries.js-calculator.title",
+                  "description": "projects.libraries.js-calculator.description",
+                  "tech": "React 18, Vite, JS, CSS",
+                  "links": {
+                    "github": "https://github.com/rue-eru/js-calculator",
+                    "demo": "https://rue-eru.github.io/js-calculator/"
+                  },
+                  "image": "/images/projects/libraries/js-calculator.gif"
+                },
+                {
+                  "id": "25-5",
+                  "title": "projects.libraries.25-5.title",
+                  "description": "projects.libraries.25-5.description",
+                  "tech": "React 18, Vite, JS, CSS",
+                  "links": {
+                    "github": "https://github.com/rue-eru/25-5",
+                    "demo": "https://rue-eru.github.io/25-5/"
+                  },
+                  "image": "/images/projects/libraries/25-5.gif"
+                },
+                {
+                  "id": "libraries-certificate",
+                  "title": "projects.libraries.certificate.title",
+                  "description": "projects.libraries.certificate.description",
+                  "tech": "React 18, Vite, JS, CSS",
+                  "links": {
+                    "fcc": "https://www.freecodecamp.org/certification/fcc058fd235-9bca-44b6-b085-10ee4a9bdda6/front-end-development-libraries"
+                  },
+                  "image": "/images/certificates/frontend-development-libraries.png"
+                }
+            ]
+        }
     }
-  ]
-}
+}       

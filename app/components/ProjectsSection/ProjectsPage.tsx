@@ -4,22 +4,21 @@ import { useTranslations } from "next-intl";
 import { useState } from "react";
 import SlideIn from "../animations/SlideIn";
 import projectsData from '@/app/data/projects.json';
-import type { Project } from "@/app/utils/interfaces";
 import { styles } from "@/app/utils/styles";
 import ProjectCard from "./ProjectCard";
+import LegacyProjects from "./LegacyProjects";
 
 
 export default function ProjectsPage() {
     const id = `projects`;
-    const t = useTranslations();
     const tPr = useTranslations(id);
     const [isDescriptionHover, setDescriptionHover] = useState<number | null>(null);
-    const projects = projectsData.projects as Project[];
+    const projects = projectsData.projects.featured;
 
     return(
         <div 
             id={id}
-            className="main-page h-screen lg:w-[80%] sm:w-[95%] w-full mx-auto"
+            className="main-page h-screen lg:w-[60%] sm:w-[95%] w-full mx-auto border-4 border-red-600"
         >
             <SlideIn
                 direction="top"
@@ -42,7 +41,7 @@ export default function ProjectsPage() {
             </div>
 
 
-            
+            <LegacyProjects />
         </div>
     )
 }

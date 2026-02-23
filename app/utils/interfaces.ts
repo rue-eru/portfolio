@@ -45,7 +45,7 @@ export interface ProjectCardProps {
     title: string;
     description: string;
     tech: string;
-    links: Record<string, string>;
+    links: Partial<Record<'github' | 'demo' | 'fcc', string>>;
     image: string;
   };
   index: number;

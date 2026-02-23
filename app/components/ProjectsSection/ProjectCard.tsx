@@ -26,6 +26,7 @@ export default function ProjectCard({ project, index, isHovered, onHover }: Proj
           className="object-cover"
           fill
           sizes="360px"
+          loading="lazy"
         />
         
         {isHovered && (
@@ -33,7 +34,7 @@ export default function ProjectCard({ project, index, isHovered, onHover }: Proj
             className="absolute top-0 p-4 flex flex-col w-full h-full bg-gray-900/70 text-set-white text-justify"
             direction="bottom"
           >
-            <div className="text-2xl  leading-4">
+            <div className="text-2xl leading-4">
               <p>{t(project.description)}</p>
               <p className="">{t('projects.main-tech')}{project.tech}</p>
             </div>
@@ -53,6 +54,7 @@ export default function ProjectCard({ project, index, isHovered, onHover }: Proj
                     width={24}
                     height={24}
                     className="object-contain"
+                    loading="lazy"
                   />
                 </a>
               ))}
