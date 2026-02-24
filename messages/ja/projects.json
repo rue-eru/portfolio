@@ -1,13 +1,76 @@
 {
     "main-tech": "主なスタック: ",
     "main-pr": "最近のプロジェクト: ",
+    "legacy-intro": "自分の自学道に気になりましたか？最初のプロジェクトも見てみてくだい！",
     "lads-battles": {
         "title": "恋と深空バトルガイド",
         "description": "「恋と深空（Love and Deepspace）」の戦闘メカニズムに特化したファンメイドガイドサイトです。パートナーの詳細なガイド、武器情報、スキル解説、ゲームプレイ戦略を多言語で提供します。"
     },
     "weather-app": {
-        "title": "動的アニメーション付き\n天気予報アプリ",
+        "title": "動的アニメーション付き天気予報アプリ",
         "description": "アニメーション天気予報アプリは複数の言語でご利用いただけます。アニメーションの背景は現地時間に合わせて調整されます。予報は°C/°Fで表示されます。その他の機能には、「紫外線」、「湿度」、「体感温度」、「風向・風速」などがあります。"
-
+    },
+    "html-css": {
+        "description": "2024年にFreeCodeCampの「Responsive Web Design（レスポンシブWebデザイン）」コースで制作した、初心者向けのシンプルなプロジェクト集です。",
+        "survey-form": {
+            "description": "初めて作ったWebページ！「アンケートフォームを作成する」チャレンジのために制作しました。様々な入力フィールドやボタン、フォーム要素を実際に使いながら、HTMLの構造やid属性の使い方を学びました。"
+        },
+        "tribute-page": {
+            "description": "2つ目のプロジェクトは「トリビュートページ」でした！id属性を使ったスタイリング、画像の配置方法などを練習しました。"
+        },
+        "technical-documentation": {
+            "description": "3つ目のプロジェクトは「テクニカルドキュメントページ」でした！レスポンシブなナビゲーションバーの作成や、意味のあるコンテンツセクションの使い方を学びました。"
+        },
+        "product-landing": {
+            "description": "4つ目のプロジェクトは「プロダクトランディングページ」でした！チャレンジをクリアするために、指定された要件に従ってアプリを作り、メディアクエリやフレックスボックスを使ったレスポンシブデザインを練習しました。"
+        },
+        "personal-portfolio-webpage": {
+            "description": "最後は「パーソナルポートフォリオ」プロジェクト！コースで学んだ知識を全て活かして、ナビゲーションバー、メディアクエリ、ビューポート、外部リンクなど、様々なHTML・CSS要素を使ってポートフォリオページを構築しました。"
+        },
+        "certificate": {
+            "description": "5つのプロジェクト全てに合格し、『Responsive Web Design（レスポンシブWebデザイン）』の修了証を取得しました！この証明書は、HTMLとCSSの基礎を理解していることの証です。"
+        }
+    },
+    "js": {
+        "description": "2024年にFreeCodeCampの「JavaScript Algorithms and Data Structures（JavaScriptアルゴリズムとデータ構造）」コースで制作した、初心者向けのシンプルなプロジェクト集です。",        
+        "palindrome-checker": {
+            "description": "入力された文字列が前から読んでも後ろから読んでも同じになるかチェックします。記号、大文字小文字、スペースは無視します。"
+        },
+        "roman-numeral-converter": {
+            "description": "「ローマ数字コンバーター」です。アラビア数字（1〜3999）をローマ数字に変換します。IV、IX、XL、XC、CD、CMなどの引き算表記にも対応しています。"
+        },
+        "telephone-number-validator": {
+            "description": "「電話番号バリデーター」です。入力された番号が有効なUSの電話番号かどうかをチェックします。国コード「1」から始まるか、エリアコードが正しいかなどのルールに従って検証します。"
+        },
+        "cash-register": {
+            "description": "「レジスター」です。商品価格、支払い額、レジにある現金に基づいてお釣りを計算します。結果は「OPEN」（お釣りあり）、「CLOSED」（ちょうどの金額）、「INSUFFICIENT_FUNDS」（不足）の3つの状態があります。"
+        },
+        "RPG-creature-search-app": {
+            "description": "「RPGクリーチャー検索」です。名前またはIDを使って、freeCodeCampのRPGクリーチャーAPIからポケモンのデータを取得します。ステータス、タイプ、特徴などを表示できます。"
+        },
+        "certificate": {
+            "description": "5つのプロジェクト全てに合格し、「JavaScript Algorithms and Data Structures（JavaScriptアルゴリズムとデータ構造）」の修了証を取得しました！この証明書は、JavaScriptの基礎や問題解決力が身についたことの証です。"
+        }
+    },
+    "libraries": {
+        "description": "2025年前半にFreeCodeCampの「Front-End Libraries（フロントエンドライブラリ）」コースで制作した、初心者向けのシンプルなプロジェクト集です。",        
+        "random-quote-machine": {
+            "description": "「ランダム名言ジェネレーター」です。APIからランダムな名言を取得し、表示すると同時に背景色も変わります。"
+        },
+        "markdown-previewer": {
+            "description": "「マークダウンプレビューアー」です。リアルタイムでマークダウン形式のテキストを入力すると、HTMLに変換された結果が表示されます。"
+        },
+        "drum-machine": {
+            "description": "「ドラムマシン」です。9つの音が入った2種類のドラムパッドを使用できます。電源のON/OFF切り替えや、音量調節も可能です。"
+        },
+        "js-calculator": {
+            "description": "「JavaScript計算機」です。基本的な四則演算ができます。"
+        },
+        "25-5": {
+            "description": "「ポモドーロタイマー（25+5時計）」です。作業時間と休憩時間を設定できます。タイマーの開始、一時停止、リセットが可能で、時間が終わると画面表示と音でお知らせします。"
+        },
+        "certificate": {
+            "description": "5つのプロジェクト全てに合格し、「Front-End Libraries（フロントエンドライブラリ）」の修了証を取得しました！合格のためには、コースで学んだライブラリ（Bootstrap、jQuery、SASS、Redux、React）を使ってプロジェクトを作成する必要がありました。私は全てのプロジェクトでReact 18を選んで使い、理解を深めました。"
+        }
     }
 }

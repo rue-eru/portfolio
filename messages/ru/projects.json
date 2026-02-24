@@ -1,5 +1,7 @@
 {
     "main-tech": "Основные инструменты: ",
+    "main-pr": "Мои проекты",
+    "legacy-intro": "С чего все началось? Ознакомьтесь с проектами, которые я делала на курсах FreeCodeCamp",
     "lads-battles": {
         "title": "Love and Deepspace Battles",
         "description": "Сайт для сбора персонажей в Love and Deepspace (LADS) с детальной информацией о навыках, оружии, геймплее и т.д. Создан, чтобы помочь разобраться с боевыми механиками на нескольких языках."
@@ -9,5 +11,89 @@
         "description": "A fully responsive weather application that visualizes real-time weather through dynamic, animated scenes and supports several languages. The app adjusts visuals by location, and time of day.",
         "tech": "React 19, Tailwind CSS 4, TypeScript, i18n"
 
+    },
+    "html-css": {
+        "title": "Responsive Web Design",
+        "description": "Базовые проекты, выполненные для курса Responsive Web Design (Респосивный Веб Дизайн) на платформе FreeCodeCamp в 2024",
+        "survey-form": {
+            "title": "Survey Form",
+            "description" : "My very first webpage! Built to fulfill the 'Build a Survey Form' challenge. I practiced using different input types, buttons, and form properties while learning about HTML structure and 'id' attributes."
+        },
+        "tribute-page": {
+            "title": "Tribute Page",
+            "description" : "The second project focused on building a tribute page. I practiced working with images and understanding how 'id' attributes help with styling and navigation."
+        },
+        "technical-documentation": {
+            "title": "Technical Documentation Page",
+            "description" : "For the third project, I built a technical documentation page. The main focus was on creating a responsive navigation bar and organizing content with semantic sections."
+        },
+        "product-landing": {
+            "title": "Product Landing Page",
+            "description" : "The fourth project required building a product landing page. I practiced making layouts responsive using media queries and flexbox, while working with pre-defined requirements."
+        },
+        "personal-portfolio-webpage": {
+            "title": "Personal Portfolio Webpage",
+            "description" : "The final project brought everything together - building a personal portfolio. I used navigation bars, external links, media queries, and viewport height properties to create a complete, responsive site."
+        },
+        "certificate": {
+            "title": "Responsive Web Design Certificate",
+            "description": "Certificate earned after completing all 5 required projects, demonstrating foundational knowledge of HTML and CSS for web development."
+        }
+    },
+    "js": {
+        "title": "JavaScript Algorithms and Data",
+        "description": "Simple projects made for FreeCodeCamp's JavaScript Algorithms and Data Structures Course in 2024",
+        "palindrome-checker": {
+            "title": "Palindrome Checker",
+            "description": "Built to detect whether a given string reads the same forwards and backwards, ignoring punctuation, case, and spacing"
+        },
+        "roman-numeral-converter": {
+            "title": "Roman Numeral Converter",
+            "description": "Converts Arabic numbers (1-3999) into Roman numerals with proper subtraction notation (IV, IX, XL, XC, CD, CM)."
+        },
+        "telephone-number-validator": {
+            "title": "Telephone Number Validator",
+            "description": "Validates US phone numbers in various formats, with optional country code (must be 1) and proper area code requirements"
+        },
+        "cash-register": {
+            "title": "Cash Register",
+            "description": "Calculates change due based on purchase price, cash provided, and current cash-in-drawer (CID), handling three possible statuses: OPEN, CLOSED, and INSUFFICIENT_FUNDS."
+        },
+        "RPG-creature-search-app": {
+            "title": "RPG Creature Search App ",
+            "description": "Fetches Pokémon data from freeCodeCamp's RPG Creature API based on name or ID and displays stats, types, and attributes."
+        },
+        "certificate": {
+            "title": "JS Algorithms & Data Structures Certificate",
+            "description": "Certificate earned after completing all 5 projects, demonstrating proficiency in JavaScript fundamentals and problem-solving."
+        }
+    },
+    "libraries": {
+        "title": "Front-End Libraries",
+        "description": "Simple projects made for FreeCodeCamp's Front-End Libraries Course in the first half of 2025",
+        "random-quote-machine": {
+            "title": "Random Quote Machine",
+            "description": "Fetches a random quote from the API and displays it on the page while changing background as well"
+        },
+        "markdown-previewer": {
+            "title": "Markdown Previewer",
+            "description": "Allows users to write Markdown in an editor and see the rendered HTML output in real-time"
+        },
+        "drum-machine": {
+            "title": "Drum Machine",
+            "description": "Allows users to play two sets of Kits by nine notes each, turn the machine on and off, and change the volume. Additional features: power on/off toggle, volume control, and two switchable sound banks."
+        },
+        "js-calculator": {
+            "title": "JavaScript Calculator",
+            "description": "Allows users to do simple arithmetic calculations"
+        },
+        "25-5": {
+            "title": "Pomodoro Clock Project",
+            "description": "a 25 + 5 Clock (also known as a Pomodoro Timer) that allows users to: set custom work and break intervals, start, pause, and reset the timer, and receive visual and audio alerts when the timer ends"
+        },
+        "certificate": {
+            "title": "Front End Development Libraries Certificate",
+            "description": "Certificate earned after completing all 5 projects using frontend libraries. The projects required any frontend libraried to be used in achiving passing scores, preferably the ones taught on the FCC's course lessons (Bootstrap, iQuery, SASS, Redux, React). Personally, I used React 18 for all the projects."
+        }
     }
 }

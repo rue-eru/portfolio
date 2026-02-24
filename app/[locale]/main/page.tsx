@@ -4,6 +4,7 @@ import Nav from "../../components/FrontSection/Nav";
 import ProjectsPage from "../../components/ProjectsSection/ProjectsPage";
 import { use } from "react";
 import { setRequestLocale } from "next-intl/server";
+import StackPage from "@/app/components/StackSection/StackPage";
 
 export default function MainPage ({ params }: { params: Promise<{ locale: Locale }> }) {
     // Enable static rendering
@@ -13,10 +14,11 @@ export default function MainPage ({ params }: { params: Promise<{ locale: Locale
     return(
         <>
             <Nav />
-            <main className="w-full h-full">
+            <main className="w-full h-full font-accent">
 
                 <FrontPage />
                 <ProjectsPage />
+                <StackPage />
             </main>
         </>
     )

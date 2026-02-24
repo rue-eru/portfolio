@@ -10,8 +10,10 @@ import { useCurrentLanguage } from "@/app/hooks/useCurrentLang";
 export default function ProjectCard({ project, index, isHovered, onHover }: ProjectCardProps) {
   const t = useTranslations();
   const linkItems = Object.entries(project.links).map(([name, url]) => ({ name, url }));
-  const { lang } = useCurrentLanguage();
-
+  const { lang, isEn } = useCurrentLanguage();
+  const displayTitle = project.title.startsWith('projects.') 
+    ? t(project.title) 
+    : project.title;
 
   return (
     <div 
@@ -27,6 +29,7 @@ export default function ProjectCard({ project, index, isHovered, onHover }: Proj
           fill
           sizes="360px"
           loading="lazy"
+          unoptimized
         />
         
         {isHovered && (
@@ -34,7 +37,7 @@ export default function ProjectCard({ project, index, isHovered, onHover }: Proj
             className="absolute top-0 p-4 flex flex-col w-full h-full bg-gray-900/70 text-set-white text-justify"
             direction="bottom"
           >
-            <div className="text-2xl leading-4">
+            <div className={`${isEn ? 'text-2xl' : 'text-sm'} leading-4.5`}>
               <p>{t(project.description)}</p>
               <p className="">{t('projects.main-tech')}{project.tech}</p>
             </div>
@@ -63,8 +66,8 @@ export default function ProjectCard({ project, index, isHovered, onHover }: Proj
         )}
       </div>
       
-      <h4 className="text-center text-2xl text-set-white pt-2 bg-gray-600 truncate px-2">
-        {t(project.title)}
+      <h4 className={`${isEn ? 'text-2xl' : 'text-base'} text-center  text-set-white pt-2 text-wrap  bg-gray-600 px-2`}>
+        {displayTitle}
       </h4>
     </div>
   );

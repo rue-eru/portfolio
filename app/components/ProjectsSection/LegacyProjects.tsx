@@ -6,6 +6,7 @@ import { useState } from 'react';
 import ProjectCard from './ProjectCard';
 import Image from 'next/image';
 import { styles } from '@/app/utils/styles';
+import { useCurrentLanguage } from '@/app/hooks/useCurrentLang';
 
 export default function LegacyProjects () {
     const legacyProjects = projectsData.projects.legacy;
@@ -17,19 +18,32 @@ export default function LegacyProjects () {
       ? legacyProjects[openCourse]
       : null;
     const entries = Object. entries(legacyProjects) as [CourseKey, typeof legacyProjects[CourseKey]][];
+    const {isEn} = useCurrentLanguage();
 
     return(
-        <div className="text-center mt-20 space-y-4 relative">
-          <p className="text-gray-400 text-2xl">
-            {t('legacy-intro')}
-          </p>
+        <div className="text-center mt-20 space-y-4">
 
-          <div className="flex justify-center gap-4 flex-wrap md:flex-nowrap text-set-white w-ful">
+          <div className={styles.flexCenter}>
+            <p className={`text-gray-400 w-94 md:w-full
+              ${isEn ? 'text-2xl' : 'text-sm'}`}
+            >
+              {t('legacy-intro')}
+            </p>
+          </div>
+
+          <div className="md:flex justify-center gap-4 flex-wrap md:flex-nowrap text-set-white w-full grid grid-cols-1">
             
-            {entries.map(([courseName]) => (
+            {entries.map(([courseName]) => {
+              const titles = {
+                'html-css': 'Responsive Web Design',
+                'js': 'JavaScript Algorithms and Data Structures',
+                'libraries': 'Front-End Libraries'
+              };
+              
+              return(
               <div key={courseName}>
                 <button
-                  className="bg-gray-600 cursor-pointer inline-flex justify-center items-center gap-2 p-2 rounded transition-all"
+                  className="bg-gray-600 cursor-pointer inline-flex md:justify-center justify-start items-center gap-2 p-2 rounded transition-all w-94 md:w-full"
                   onClick={() => setOpenCourse(prev => prev === courseName ? null : courseName)}
                 >
                   <Image 
@@ -40,17 +54,17 @@ export default function LegacyProjects () {
                     className='object-contain'
                     loading='lazy'
                   />
-                  <span className='text-xl'>{t(`${courseName}.title`)}</span>
+                  <span className={`${isEn ? 'text-xl' : 'text-sm'}`}>{titles[courseName]}</span>
                 </button>
               </div>
-            ))}
+            )})}
           </div>
 
           {activeProjects && (
-            <>
-              <p className='text-2xl'>{t(`${openCourse}.description`)}</p>
-                <div className={styles.projectFlex}>
-                  <div  className={styles.projectGrid}>
+            <div className='transition-all'>
+              <p className={`${isEn ? 'text-2xl' : 'text-sm' } w-94 mx-auto md:w-full transition-all my-8`}>{t(`${openCourse}.description`)}</p>
+                <div className={styles.flexCenter}>
+                  <div  className={styles.projectFlex}>
                     {activeProjects.map((project, index) => (
                       <ProjectCard
                         key={project.id}
@@ -62,7 +76,7 @@ export default function LegacyProjects () {
                     ))}
                   </div>
                 </div>
-            </>
+            </div>
 
           )}
         </div>

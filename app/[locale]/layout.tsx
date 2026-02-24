@@ -1,21 +1,10 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 import "../globals.css";
-import { Dongle } from "@/public/fonts";
+import { Dongle, M_PLUS_Rounded_1c } from "@/public/fonts";
 import { getMessages, getTranslations, setRequestLocale } from "next-intl/server";
 import { hasLocale, NextIntlClientProvider } from "next-intl";
 import { routing } from "@/i18n/routing";
 import { notFound } from "next/navigation";
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
 
 export async function generateMetadata(): Promise<Metadata> {
   const t = await getTranslations('layout');
@@ -49,8 +38,7 @@ export default async function RootLayout({
   return (
     <html lang={locale}>
       <body
-        className={`${Dongle.variable}
-          ${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${Dongle.variable} ${M_PLUS_Rounded_1c} antialiased`}
       >
         <NextIntlClientProvider
           locale={locale} messages={messages}

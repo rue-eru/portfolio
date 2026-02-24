@@ -30,7 +30,7 @@
             "html-css": [
                 {
                   "id": "survey-form",
-                  "title": "projects.html-css.survey-form.title",
+                  "title": "Survey Form",
                   "description": "projects.html-css.survey-form.description",
                   "tech": "HTML, CSS",
                   "links": {
@@ -41,7 +41,7 @@
                 },
                 {
                   "id": "tribute-page",
-                  "title": "projects.html-css.tribute-page.title",
+                  "title": "Tribute Page",
                   "description": "projects.html-css.tribute-page.description",
                   "tech": "HTML, CSS",
                   "links": {
@@ -52,7 +52,7 @@
                 },
                 {
                   "id": "technical-documentation",
-                  "title": "projects.html-css.technical-documentation.title",
+                  "title": "Technical Documentation Page",
                   "description": "projects.html-css.technical-documentation.description",
                   "tech": "HTML, CSS",
                   "links": {
@@ -63,7 +63,7 @@
                 },
                 {
                   "id": "product-landing",
-                  "title": "projects.html-css.product-landing.title",
+                  "title": "Product Landing Page",
                   "description": "projects.html-css.product-landing.description",
                   "tech": "HTML, CSS",
                   "links": {
@@ -74,7 +74,7 @@
                 },
                 {
                   "id": "personal-portfolio-webpage",
-                  "title": "projects.html-css.personal-portfolio-webpage.title",
+                  "title": "Personal Portfolio Webpage",
                   "description": "projects.html-css.personal-portfolio-webpage.description",
                   "tech": "HTML, CSS",
                   "links": {
@@ -85,7 +85,7 @@
                 },
                 {
                   "id": "html-css-certificate",
-                  "title": "projects.html-css.certificate.title",
+                  "title": "Responsive Web Design Certificate",
                   "description": "projects.html-css.certificate.description",
                   "tech": "HTML, CSS",
                   "links": {
@@ -97,7 +97,7 @@
             "js": [
                 {
                   "id": "palindrome-checker",
-                  "title": "projects.js.palindrome-checker.title",
+                  "title": "Palindrome Checker",
                   "description": "projects.js.palindrome-checker.description",
                   "tech": "JavaScript, CSS, HTML",
                   "links": {
@@ -108,7 +108,7 @@
                 },
                 {
                   "id": "roman-numeral-converter",
-                  "title": "projects.js.roman-numeral-converter.title",
+                  "title": "Roman Numeral Converter",
                   "description": "projects.js.roman-numeral-converter.description",
                   "tech": "JavaScript, CSS, HTML",
                   "links": {
@@ -119,7 +119,7 @@
                 },
                 {
                   "id": "telephone-number-validator",
-                  "title": "projects.js.telephone-number-validator.title",
+                  "title": "Telephone Number Validator",
                   "description": "projects.js.telephone-number-validator.description",
                   "tech": "JavaScript, CSS, HTML",
                   "links": {
@@ -130,7 +130,7 @@
                 },
                 {
                   "id": "cash-register",
-                  "title": "projects.js.cash-register.title",
+                  "title": "Cash Register",
                   "description": "projects.js.cash-register.description",
                   "tech": "JavaScript, CSS, HTML",
                   "links": {
@@ -141,7 +141,7 @@
                 },
                 {
                   "id": "RPG-creature-search-app",
-                  "title": "projects.js.RPG-creature-search-app.title",
+                  "title": "RPG Creature Search App",
                   "description": "projects.js.RPG-creature-search-app.description",
                   "tech": "JavaScript, CSS, HTML",
                   "links": {
@@ -152,7 +152,7 @@
                 },
                 {
                   "id": "js-certificate",
-                  "title": "projects.js.certificate.title",
+                  "title": "JS Algorithms & Data Structures Certificate",
                   "description": "projects.js.certificate.description",
                   "tech": "JavaScript, CSS, HTML",
                   "links": {
@@ -164,7 +164,7 @@
             "libraries": [
                 {
                   "id": "random-quote-machine",
-                  "title": "projects.libraries.random-quote-machine.title",
+                  "title": "Random Quote Machine",
                   "description": "projects.libraries.random-quote-machine.description",
                   "tech": "React 18, Vite, JS, CSS",
                   "links": {
@@ -175,7 +175,7 @@
                 },
                 {
                   "id": "markdown-previewer",
-                  "title": "projects.libraries.markdown-previewer.title",
+                  "title": "Markdown Previewer",
                   "description": "projects.libraries.markdown-previewer.description",
                   "tech": "React 18, Vite, JS, CSS",
                   "links": {
@@ -186,7 +186,7 @@
                 },
                 {
                   "id": "drum-machine",
-                  "title": "projects.libraries.drum-machine.title",
+                  "title": "Drum Machine",
                   "description": "projects.libraries.drum-machine.description",
                   "tech": "React 18, Vite, JS, CSS",
                   "links": {
@@ -197,7 +197,7 @@
                 },
                 {
                   "id": "js-calculator",
-                  "title": "projects.libraries.js-calculator.title",
+                  "title": "JavaScript Calculator",
                   "description": "projects.libraries.js-calculator.description",
                   "tech": "React 18, Vite, JS, CSS",
                   "links": {
@@ -208,7 +208,7 @@
                 },
                 {
                   "id": "25-5",
-                  "title": "projects.libraries.25-5.title",
+                  "title": "Pomodoro Clock Project",
                   "description": "projects.libraries.25-5.description",
                   "tech": "React 18, Vite, JS, CSS",
                   "links": {
@@ -219,7 +219,7 @@
                 },
                 {
                   "id": "libraries-certificate",
-                  "title": "projects.libraries.certificate.title",
+                  "title": "Front End Development Libraries Certificate",
                   "description": "projects.libraries.certificate.description",
                   "tech": "React 18, Vite, JS, CSS",
                   "links": {

@@ -5,6 +5,7 @@
   --main-white: #F0F8FF;
   --accent-color: #C0FF00;
   --font-dongle: initial;
+  --font-m-plus: initial;
 }
 
 @theme inline {
@@ -12,24 +13,34 @@
   --color-set-white: var(--main-white);
   --color-set-accent: var(--accent-color);
   --font-dongle: var(--font-dongle);
-
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-m-plus: var(--font-m-plus);
 }
 
 body {
   background-color: var(--color-set-white);
-  color: var(--color-set-black)
+  color: var(--color-set-black);
+}
+
+html[lang="en"] .font-accent {
+  font-family: var(--font-dongle);
+}
+
+html[lang="ru"] .font-accent {
+  font-family: var(--font-m-plus);
+}
+
+html[lang="ja"] .font-accent {
+  font-family: var(--font-m-plus)
 }
 
 .front-page {
   background-color: var(--color-set-black);
   color: var(--color-set-white);
   font-family: var(--font-dongle);
+
 }
 
 .main-page {
   background-color: var(--color-set-white);
   color: var(--color-set-black);
-  font-family: var(--font-dongle);
 }
