@@ -1,0 +1,18 @@
+{
+    "stack-title": "development stack",
+    "l10n-title": "localization & translation tools",
+    "lang": {
+        "en": {
+            "level": "Fluent",
+            "description": "Majored English at university as a translator"
+        },
+        "ru": {
+            "level": "Native",
+            "description": "Born and raised in Russian speaking background"
+        },
+        "ja": {
+            "level": "N2 (intermediate)",
+            "description": "Self-taught"
+        }
+    }
+}

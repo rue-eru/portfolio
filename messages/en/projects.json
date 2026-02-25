@@ -70,7 +70,7 @@
             "description": "a 25 + 5 Clock (also known as a Pomodoro Timer) that allows users to: set custom work and break intervals, start, pause, and reset the timer, and receive visual and audio alerts when the timer ends"
         },
         "certificate": {
-            "description": "Certificate earned after completing all 5 projects using frontend libraries. The projects required any frontend libraried to be used in achiving passing scores, preferably the ones taught on the FCC's course lessons (Bootstrap, iQuery, SASS, Redux, React). Personally, I used React 18 for all the projects."
+            "description": "Certificate earned after completing all 5 projects using frontend libraries. The projects required any frontend libraried to be used in achiving passing scores, preferably the ones taught on the FCC's course lessons (Bootstrap, jQuery, SASS, Redux, React). Personally, I used React 18 for all the projects."
         }
     }
 }

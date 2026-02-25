@@ -1,0 +1,113 @@
+{
+    "stack": [
+        {
+            "id": "react",
+            "title": "React",
+            "icon": "/images/tech-stack-icons/dev-icons/react.png"
+        },
+        {
+            "id": "next-js",
+            "title": "Next.js",
+            "icon": "/images/tech-stack-icons/dev-icons/next_js.png"
+        },
+        {
+            "id": "ts",
+            "title": "TypeScript",
+            "icon": "/images/tech-stack-icons/dev-icons/TypeScript.png"
+        },
+        {
+            "id": "tailwind",
+            "title": "Tailwind CSS",
+            "icon": "/images/tech-stack-icons/dev-icons/Tailwind_CSS.png"
+        },
+        {
+            "id": "i18n",
+            "title": "i18n",
+            "icon": "/images/tech-stack-icons/dev-icons/i18n.png"
+        },
+        {
+            "id": "next-intl",
+            "title": "next-intl",
+            "icon": "/images/tech-stack-icons/dev-icons/next-intl.png"
+        },
+        {
+            "id": "js",
+            "title": "JavaScript",
+            "icon": "/images/tech-stack-icons/dev-icons/javascript.png"
+        },
+        {
+            "id": "css",
+            "title": "CSS3",
+            "icon": "/images/tech-stack-icons/dev-icons/CSS.png"
+        },
+        {
+            "id": "html",
+            "title": "HTML5",
+            "icon": "/images/tech-stack-icons/dev-icons/HTML.png"
+        },
+        {
+            "id": "vite",
+            "title": "Vite",
+            "icon": "/images/tech-stack-icons/dev-icons/Vite.png"
+        },
+        {
+            "id": "github",
+            "title": "Github",
+            "icon": "/images/tech-stack-icons/dev-icons/github.png"
+        },
+        {
+            "id": "git",
+            "title": "Git",
+            "icon": "/images/tech-stack-icons/dev-icons/git.png"
+        },
+        {
+            "id": "node-js",
+            "title": "Node.js",
+            "icon": "/images/tech-stack-icons/dev-icons/Node-js.png"
+        },
+        {
+            "id": "figma",
+            "title": "Figma",
+            "icon": "/images/tech-stack-icons/dev-icons/figma.png"
+        }
+    ],
+    "l10n": {
+        "tools": [
+            {
+                "id": "smartcat",
+                "title": "SmartCat",
+                "icon": "/images/tech-stack-icons/l10n-icons/smartcat-logo.png"
+            },
+            {
+                "id": "matecat",
+                "title": "MateCat",
+                "icon": "/images/tech-stack-icons/l10n-icons/matecat-logo.png"
+            },
+            {
+                "id": "memsource",
+                "title": "Memsource",
+                "icon": "/images/tech-stack-icons/l10n-icons/Memsource.jpg"
+            }
+        ],
+        "languages": [
+            {
+                "id": "ru",
+                "icon": "/images/icons/ru.png",
+                "level": "tech.lang.ru.level",
+                "description": "tech.lang.ru.description"
+            },
+            {
+                "id": "en",
+                "icon": "/images/icons/en.png",
+                "level": "tech.lang.en.level",
+                "description": "tech.lang.en.description"
+            },
+            {
+                "id": "ja",
+                "icon": "/images/icons/ja.png",
+                "level": "tech.lang.ja.level",
+                "description": "tech.lang.ru.description"
+            }
+        ]
+    }   
+}

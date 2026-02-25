@@ -52,3 +52,14 @@ export interface ProjectCardProps {
   isHovered: boolean;
   onHover: (index: number | null) => void;
 }
+
+export interface ListCardProps {
+  tool: {
+    id: string;
+    title: string;
+    icon: string;
+  };
+  index: number;
+  imgClassName?: string;
+  hideTitle?: boolean;
+}

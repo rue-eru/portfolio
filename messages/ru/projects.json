@@ -1,99 +1,76 @@
 {
-    "main-tech": "Основные инструменты: ",
+    "main-tech": "Осн. инструменты: ",
     "main-pr": "Мои проекты",
-    "legacy-intro": "С чего все началось? Ознакомьтесь с проектами, которые я делала на курсах FreeCodeCamp",
+    "legacy-intro": "С чего все началось? Ознакомьтесь с моими проектами, сделанными на курсах FreeCodeCamp",
     "lads-battles": {
         "title": "Love and Deepspace Battles",
-        "description": "Сайт для сбора персонажей в Love and Deepspace (LADS) с детальной информацией о навыках, оружии, геймплее и т.д. Создан, чтобы помочь разобраться с боевыми механиками на нескольких языках."
+        "description": "Фан-сайт по Love and Deepspace (LADS) с детальной информацией о персонажах: навыки, оружие, геймплей и т.д. Создан, чтобы помочь разобраться с боевыми механиками на нескольких языках."
     },
     "weather-app": {
         "title": "Сайт с погодой",
-        "description": "A fully responsive weather application that visualizes real-time weather through dynamic, animated scenes and supports several languages. The app adjusts visuals by location, and time of day.",
-        "tech": "React 19, Tailwind CSS 4, TypeScript, i18n"
-
+        "description": "Адаптивное приложение для прогноза погоды с анимированными фонами, подстраивающимися под местное время. Температура в °C/°F. Доп. функции: УФ-индекс, влажность, ощущается как, направление и скорость ветра. Доступно на 3 языках."
     },
     "html-css": {
-        "title": "Responsive Web Design",
-        "description": "Базовые проекты, выполненные для курса Responsive Web Design (Респосивный Веб Дизайн) на платформе FreeCodeCamp в 2024",
+        "description": "Простые проекты, созданные для курса FreeCodeCamp по адаптивному веб-дизайну (Responsive Web Design) в 2024 году",
         "survey-form": {
-            "title": "Survey Form",
-            "description" : "My very first webpage! Built to fulfill the 'Build a Survey Form' challenge. I practiced using different input types, buttons, and form properties while learning about HTML structure and 'id' attributes."
+            "description" : "Самая первая веб-страница. Создана для выполнения задания «форма опроса». Использовались разные поля ввода, кнопки и свойства форм. За основу брались структура HTML и атрибуты id."
         },
         "tribute-page": {
-            "title": "Tribute Page",
-            "description" : "The second project focused on building a tribute page. I practiced working with images and understanding how 'id' attributes help with styling and navigation."
+            "description" : "Второй проект был посвящен созданию мемориальной страницы. Задание затрагивало элемент img и работу с ним, также id и, как его атрибуты помогают в оформлении."
         },
         "technical-documentation": {
-            "title": "Technical Documentation Page",
-            "description" : "For the third project, I built a technical documentation page. The main focus was on creating a responsive navigation bar and organizing content with semantic sections."
+            "description" : "В рамках третьего проекта нужно было создать страницу с технической документацией. Основное внимание уделялось адаптивной панели навигации и организации контента с помощью семантических разделов."
         },
         "product-landing": {
-            "title": "Product Landing Page",
-            "description" : "The fourth project required building a product landing page. I practiced making layouts responsive using media queries and flexbox, while working with pre-defined requirements."
+            "description" : "Четвертый проект заключался в создании лендинг страницы. Для выполнения задач использовались адаптивный макет с media queries, flexbox и другие техники." 
         },
         "personal-portfolio-webpage": {
-            "title": "Personal Portfolio Webpage",
-            "description" : "The final project brought everything together - building a personal portfolio. I used navigation bars, external links, media queries, and viewport height properties to create a complete, responsive site."
+            "description" : "В финальном проекте использовались все полученные на курсе знания. Для создания личного портфолио использовались панель навигации, изображения, внутренние и внешние ссылки. Для адаптивности использовались такие свойства, как media querу и viewport height."
         },
         "certificate": {
-            "title": "Responsive Web Design Certificate",
-            "description": "Certificate earned after completing all 5 required projects, demonstrating foundational knowledge of HTML and CSS for web development."
+            "description": "Сертификат полученный после выполнения всех 5 обязательных проектов, и подтверждающий базовые знания HTML и CSS для веб-разработки."
         }
     },
     "js": {
-        "title": "JavaScript Algorithms and Data",
-        "description": "Simple projects made for FreeCodeCamp's JavaScript Algorithms and Data Structures Course in 2024",
+        "description": "Простые проекты, созданные для курса FreeCodeCamp по алгоритмам и структурам данных на JavaScript (JavaScript Algorithms and Data Structures) в 2024 году",
         "palindrome-checker": {
-            "title": "Palindrome Checker",
-            "description": "Built to detect whether a given string reads the same forwards and backwards, ignoring punctuation, case, and spacing"
+            "description": "Приложение, проверяющее является ли введенное слово палиндромом, т.е. читается ли оно одинаково слева направо и справа налево, игнорируя знаки препинания, заглавные буквы и пробелы." 
         },
         "roman-numeral-converter": {
-            "title": "Roman Numeral Converter",
-            "description": "Converts Arabic numbers (1-3999) into Roman numerals with proper subtraction notation (IV, IX, XL, XC, CD, CM)."
+            "description": "Приложение преобразующее арабские цифры (1-3999) в римские в соответствующем формате (IV, IX, XL, XC, CD, CM)."
         },
         "telephone-number-validator": {
-            "title": "Telephone Number Validator",
-            "description": "Validates US phone numbers in various formats, with optional country code (must be 1) and proper area code requirements"
+            "description": "Приложение, проверяющее является ли телефонный номер действительным (формат US). Также включает необязательный код страны (US = 1) и проверку кода города."
         },
         "cash-register": {
-            "title": "Cash Register",
-            "description": "Calculates change due based on purchase price, cash provided, and current cash-in-drawer (CID), handling three possible statuses: OPEN, CLOSED, and INSUFFICIENT_FUNDS."
+            "description": "Программа рассчитывает сдачу на основе цены товара, предоставленных денежных средств и текущего остатка в кассе. Обрабатывает три возможных статуса кассы: OPEN (открыто), CLOSED (закрыто) и INSUFFICIENT FUNDS (недостаточно средств)."
         },
         "RPG-creature-search-app": {
-            "title": "RPG Creature Search App ",
-            "description": "Fetches Pokémon data from freeCodeCamp's RPG Creature API based on name or ID and displays stats, types, and attributes."
+            "description": "Приложение для поиска существ в RPG игре. Получает данные о покемонах из API freeCodeCamp RPG-существ  по имени или ID и отображает статистику, типы и характеристики."
         },
         "certificate": {
-            "title": "JS Algorithms & Data Structures Certificate",
-            "description": "Certificate earned after completing all 5 projects, demonstrating proficiency in JavaScript fundamentals and problem-solving."
+            "description": "Сертификат получен после завершения всех 5 проектов, подтверждающий владение основами JavaScript и умением применять их для решения проблем."
         }
     },
     "libraries": {
-        "title": "Front-End Libraries",
-        "description": "Simple projects made for FreeCodeCamp's Front-End Libraries Course in the first half of 2025",
+        "description": "Простые проекты, созданные для курса FreeCodeCamp Фронтенд-библиотеки (Front-End Libraries) в первой половине 2025 года",
         "random-quote-machine": {
-            "title": "Random Quote Machine",
-            "description": "Fetches a random quote from the API and displays it on the page while changing background as well"
+            "description": "Генератор случайных цитат. Получает случайную цитату из API и отображает её на странице, меняя фон. Цитатой можно поделиться в Twitter (X)." 
         },
         "markdown-previewer": {
-            "title": "Markdown Previewer",
-            "description": "Allows users to write Markdown in an editor and see the rendered HTML output in real-time"
+            "description": "Редактор Markdown. Позволяет писать текст в формате Markdown и в реальном времени видеть результат в HTML." 
         },
         "drum-machine": {
-            "title": "Drum Machine",
-            "description": "Allows users to play two sets of Kits by nine notes each, turn the machine on and off, and change the volume. Additional features: power on/off toggle, volume control, and two switchable sound banks."
+            "description": "Симулятор электронной барабанной установки. Позволяет воспроизводить два набора по девять звуков, включать/выключать питание и регулировать громкость." 
         },
         "js-calculator": {
-            "title": "JavaScript Calculator",
-            "description": "Allows users to do simple arithmetic calculations"
+            "description": "Калькулятор на JavaScript. Позволяет пользователям выполнять простые арифметические вычисления."
         },
         "25-5": {
-            "title": "Pomodoro Clock Project",
-            "description": "a 25 + 5 Clock (also known as a Pomodoro Timer) that allows users to: set custom work and break intervals, start, pause, and reset the timer, and receive visual and audio alerts when the timer ends"
+            "description": "Таймер 25 + 5 (метод Помодоро). Позволяет устанавливать рабочие интервалы и перерывы; запускать, ставить на паузу и сбрасывать таймер; получать визуальные и звуковые оповещения по окончании времени." 
         },
         "certificate": {
-            "title": "Front End Development Libraries Certificate",
-            "description": "Certificate earned after completing all 5 projects using frontend libraries. The projects required any frontend libraried to be used in achiving passing scores, preferably the ones taught on the FCC's course lessons (Bootstrap, iQuery, SASS, Redux, React). Personally, I used React 18 for all the projects."
+            "description": "Сертификат получен после завершения всех 5 проектов с использованием фронтенд-библиотек. Для прохождения требовалось воспользоваться библиотеками, которые изучаются на курсах freeCodeCamp (Bootstrap, jQuery, SASS, Redux, React). Моё предпочтение для всех проектов было отдано React 18."
         }
     }
 }

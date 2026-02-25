@@ -17,7 +17,7 @@ export default function LegacyProjects () {
     const activeProjects = openCourse
       ? legacyProjects[openCourse]
       : null;
-    const entries = Object. entries(legacyProjects) as [CourseKey, typeof legacyProjects[CourseKey]][];
+    const entries = Object.entries(legacyProjects) as [CourseKey, typeof legacyProjects[CourseKey]][];
     const {isEn} = useCurrentLanguage();
 
     return(
@@ -43,7 +43,9 @@ export default function LegacyProjects () {
               return(
               <div key={courseName}>
                 <button
-                  className="bg-gray-600 cursor-pointer inline-flex md:justify-center justify-start items-center gap-2 p-2 rounded transition-all w-94 md:w-full"
+                  className={`bg-gray-600 cursor-pointer inline-flex md:justify-center justify-start items-center gap-2 p-2 rounded transition-all w-94 md:w-full
+                  ${openCourse === courseName  ? 'bg-set-accent text-gray-600 transition-colors' : ''}
+                `}
                   onClick={() => setOpenCourse(prev => prev === courseName ? null : courseName)}
                 >
                   <Image 
@@ -62,7 +64,7 @@ export default function LegacyProjects () {
 
           {activeProjects && (
             <div className='transition-all'>
-              <p className={`${isEn ? 'text-2xl' : 'text-sm' } w-94 mx-auto md:w-full transition-all my-8`}>{t(`${openCourse}.description`)}</p>
+              <p className={`${isEn ? 'text-2xl' : 'text-sm' }  w-94 mx-auto md:w-full transition-all my-8`}>{t(`${openCourse}.description`)}</p>
                 <div className={styles.flexCenter}>
                   <div  className={styles.projectFlex}>
                     {activeProjects.map((project, index) => (

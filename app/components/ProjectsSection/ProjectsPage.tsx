@@ -18,7 +18,7 @@ export default function ProjectsPage() {
     return(
         <div 
             id={id}
-            className="main-page h-fit lg:w-[80%] sm:w-[95%] w-full mx-auto my-12 "
+            className={styles.sectionWidth}
         >
             <SlideIn
                 direction="top"
