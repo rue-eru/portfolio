@@ -1,4 +1,18 @@
 {
-    "stack-title": "",
-    "l10n-title": ""
+    "stack-title": "для разработки",
+    "l10n-title": "для локализации",
+    "lang": {
+        "en": {
+            "level": "С1",
+            "description": "Дипломированный переводчик (англ. основной)"
+        },
+        "ru": {
+            "level": "Родной",
+            "description": "\n"
+        },
+        "ja": {
+            "level": "Средний уровень (JLPT N2)",
+            "description": "Самоучка"
+        }
+    }
 }

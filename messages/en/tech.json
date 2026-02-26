@@ -4,14 +4,14 @@
     "lang": {
         "en": {
             "level": "Fluent",
-            "description": "Majored English at university as a translator"
+            "description": "Majored at university as a translator"
         },
         "ru": {
             "level": "Native",
-            "description": "Born and raised in Russian speaking background"
+            "description": "Born and raised speaking it"
         },
         "ja": {
-            "level": "N2 (intermediate)",
+            "level": "Intermediate (certified N2)",
             "description": "Self-taught"
         }
     }

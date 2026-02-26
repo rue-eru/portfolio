@@ -15,7 +15,7 @@ export default function FrontPage () {
 
 
     return (
-        <div id="frontpage" className="front-page h-screen flex justify-center items-center">
+        <div id="frontpage" className="front-page h-dvh flex justify-center items-center">
             <div className="w-[80%] flex flex-wrap justify-center items-center ">
                 {isJa ? (
 

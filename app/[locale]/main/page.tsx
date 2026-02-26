@@ -5,6 +5,7 @@ import ProjectsPage from "../../components/ProjectsSection/ProjectsPage";
 import { use } from "react";
 import { setRequestLocale } from "next-intl/server";
 import StackPage from "@/app/components/StackSection/StackPage";
+import AboutPage from "@/app/components/AboutSection/AboutPage";
 
 export default function MainPage ({ params }: { params: Promise<{ locale: Locale }> }) {
     // Enable static rendering
@@ -19,6 +20,7 @@ export default function MainPage ({ params }: { params: Promise<{ locale: Locale
                 <FrontPage />
                 <ProjectsPage />
                 <StackPage />
+                <AboutPage />
             </main>
         </>
     )

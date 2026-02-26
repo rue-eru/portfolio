@@ -1,4 +1,18 @@
 {
-    "stack-title": "",
-    "l10n-title": ""
+    "stack-title": "使用技術",
+    "l10n-title": "ローカライズ技術",
+    "lang": {
+        "en": {
+            "level": "流暢",
+            "description": "翻訳と翻訳学専門（主な英語）"
+        },
+        "ru": {
+            "level": "母国語",
+            "description": "生まれ育ち"
+        },
+        "ja": {
+            "level": "N2取得",
+            "description": "自学"
+        }
+    }
 }

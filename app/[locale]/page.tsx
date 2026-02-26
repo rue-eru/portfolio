@@ -3,7 +3,7 @@ import { styles } from "../utils/styles";
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center front-page">
+    <div className="flex min-h-dvh items-center justify-center front-page">
       <main className=" h-full">
 
         <div className="-mt-20">

@@ -106,7 +106,7 @@
                 "id": "ja",
                 "icon": "/images/icons/ja.png",
                 "level": "tech.lang.ja.level",
-                "description": "tech.lang.ru.description"
+                "description": "tech.lang.ja.description"
             }
         ]
     }   

@@ -17,7 +17,7 @@ export default function ProjectCard({ project, index, isHovered, onHover }: Proj
 
   return (
     <div 
-      className="bg-gray-600 p-2 rounded hover:scale-120 transition-transform duration-300 mx-auto"
+      className="bg-gray-600 p-2 rounded hover:scale-120 transition-transform duration-300"
       onMouseEnter={() => onHover(index)}
       onMouseLeave={() => onHover(null)}
     >

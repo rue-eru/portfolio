@@ -1,0 +1,62 @@
+{
+    "factsgame": [
+        {
+            "id": "the-anime-name",
+            "description": "about.facts-game.the-anime-name.description",
+            "achivement": "about.facts-game.the-anime-name.achivement"
+        },
+        {
+            "id": "the-walking-dictionary",
+            "description": "about.facts-game.the-walking-dictionary.description",
+            "achivement": "about.facts-game.the-walking-dictionary.achivement"
+        },
+        {
+            "id": "the-tumblr-beginning",
+            "description": "about.facts-game.the-tumblr-beginning.description",
+            "achivement": "about.facts-game.the-tumblr-beginning.achivement"
+
+        },
+        {
+            "id": "the-fateful-advice",
+            "description": "about.facts-game.the-fateful-advice.description",
+            "achivement": "about.facts-game.the-fateful-advice.achivement"
+
+        },
+        {
+            "id": "the-diverted-path",
+            "description": "about.facts-game.the-diverted-path.description",
+            "achivement": "about.facts-game.the-diverted-path..achivement"
+
+        },
+        {
+            "id": "the-proactive-kid",
+            "description": "about.facts-game.the-proactive-kid.description",
+            "achivement": "about.facts-game.the-proactive-kid.achivement"
+
+        },
+        {
+            "id": "the-language-environment",
+            "description": "about.facts-game.the-language-environment.description",
+            "achivement": "about.facts-game.the-language-environment.achivement"
+
+        },
+        {
+            "id": "learning-english-through-music",
+            "description": "about.facts-game.learning-english-through-music.description",
+            "achivement": "about.facts-game.learning-english-through-music.achivement"
+
+        },
+        {
+            "id": "the-passionate-linguist",
+            "description": "about.facts-game.the-passionate-linguist.description",
+            "achivement": "about.facts-game.the-passionate-linguist.achivement"
+
+        },
+        {
+            "id": "the-nlp-revelation",
+            "description": "about.facts-game.the-nlp-revelation.description",
+            "achivement": "about.facts-game.the-nlp-revelation.achivement"
+        }
+    ],
+    "bio": {}
+}
