@@ -8,5 +8,10 @@ export const styles = {
     ulLiFlex: `flex flex-wrap justify-center gap-1`,
     toolDiv: `flex flex-col items-center p-12 w-fit md:w-160`,
     liStyle: `flex justify-center items-center gap-1.5 bg-gray-300/50 rounded-md p-1.5 w-fit`,
-    liHover: `bg-set-accent/90 transition-colors`
+    liHover: `bg-set-accent/90 transition-colors`,
+
+    //game-console styles
+    consoleColor: `pink-400`,
+    screenText: `text-sky-100 text-shadow-md text-shadow-indigo-950`
+
 } as const 

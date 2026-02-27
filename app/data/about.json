@@ -3,59 +3,59 @@
         {
             "id": "the-anime-name",
             "description": "about.facts-game.the-anime-name.description",
-            "achivement": "about.facts-game.the-anime-name.achivement"
+            "achievement": "about.facts-game.the-anime-name.achievement"
         },
         {
             "id": "the-walking-dictionary",
             "description": "about.facts-game.the-walking-dictionary.description",
-            "achivement": "about.facts-game.the-walking-dictionary.achivement"
+            "achievement": "about.facts-game.the-walking-dictionary.achievement"
         },
         {
             "id": "the-tumblr-beginning",
             "description": "about.facts-game.the-tumblr-beginning.description",
-            "achivement": "about.facts-game.the-tumblr-beginning.achivement"
+            "achievement": "about.facts-game.the-tumblr-beginning.achievement"
 
         },
         {
             "id": "the-fateful-advice",
             "description": "about.facts-game.the-fateful-advice.description",
-            "achivement": "about.facts-game.the-fateful-advice.achivement"
+            "achievement": "about.facts-game.the-fateful-advice.achievement"
 
         },
         {
             "id": "the-diverted-path",
             "description": "about.facts-game.the-diverted-path.description",
-            "achivement": "about.facts-game.the-diverted-path..achivement"
+            "achievement": "about.facts-game.the-diverted-path.achievement"
 
         },
         {
             "id": "the-proactive-kid",
             "description": "about.facts-game.the-proactive-kid.description",
-            "achivement": "about.facts-game.the-proactive-kid.achivement"
+            "achievement": "about.facts-game.the-proactive-kid.achievement"
 
         },
         {
             "id": "the-language-environment",
             "description": "about.facts-game.the-language-environment.description",
-            "achivement": "about.facts-game.the-language-environment.achivement"
+            "achievement": "about.facts-game.the-language-environment.achievement"
 
         },
         {
             "id": "learning-english-through-music",
             "description": "about.facts-game.learning-english-through-music.description",
-            "achivement": "about.facts-game.learning-english-through-music.achivement"
+            "achievement": "about.facts-game.learning-english-through-music.achievement"
 
         },
         {
             "id": "the-passionate-linguist",
             "description": "about.facts-game.the-passionate-linguist.description",
-            "achivement": "about.facts-game.the-passionate-linguist.achivement"
+            "achievement": "about.facts-game.the-passionate-linguist.achievement"
 
         },
         {
             "id": "the-nlp-revelation",
             "description": "about.facts-game.the-nlp-revelation.description",
-            "achivement": "about.facts-game.the-nlp-revelation.achivement"
+            "achievement": "about.facts-game.the-nlp-revelation.achievement"
         }
     ],
     "bio": {}

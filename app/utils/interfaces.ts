@@ -66,3 +66,23 @@ export interface ListCardProps {
   isHovered: boolean;
   onHover: (index: number | null) => void;
 }
+
+export interface FactsGameProps {
+  showPrize: boolean;
+  resetGame: () => void;
+  currentFact: {
+    id: string;
+    description: string;
+    achievement: string;
+  };
+  pulledFacts: number[];
+  totalFacts: number;
+  pullRandomFact: () => void;
+  gameComplete: boolean;
+}
+
+export interface AchievementDisplayProps {
+  currentAchievement: string;
+  showAchievement: boolean;
+  
+}

@@ -2,44 +2,54 @@
     "facts-game": {
         "the-anime-name": {
             "description": "Once, a Japanese guy told me my short name sounds like an anime character's name and thought it was just a nerdy nickname. I wasn't confused—I just calmly explained that even my mom has called me that since childhood. And that's the story of why I am (e)L. Nice to meet you!",
-            "achivement": ""
+            "achievement": "CANON EVEN"
         } ,
         "the-walking-dictionary": {
             "description": "At university, I was a very thorough student. During our practical translation classes, I always dug up the most prominent and interesting meanings of words. Of course, my groupmates were often annoyed by this, and they even started calling me 'the walking dictionary'. What a nerd I was!",
-            "achivement": ""
+            "achievement": "LEXICON MASTER"
         },
         "the-tumblr-beginning": {
             "description": "In middle school, I discovered Tumblr, which had a 'design your blog' feature: a full HTML editor. I knew next to nothing about coding back then, but we used to find open-source theme codes and edit them, adding features like custom cursors! It was my first time thinking about web design, and it was so much fun.",
-            "achivement": ""
+            "achievement": "WEB DINO"
         },
         "the-fateful-advice": {
             "description": "I finally decided to become a frontend developer during a professional game localization course. I thought I would just deepen my knowledge of CAT tools, but the tutor recommended taking an HTML course to better understand its usage in documentation. I did... and here I am. I was sucked into the abyss of coding, and I love it!",
-            "achivement": ""
+            "achievement": "ORIGIN STORY"
         },
         "the-diverted-path": {
             "description": "I originally wanted to major in Computer Science. In Russia, you must choose your final exam subjects (the Unified State Exam) in advance. My computer science teacher told me straight out that she wouldn't let me take the exam because our previous teacher hadn't prepared us properly, and she would be punished if we failed. I was a shy kid and didn't protest (though now I know I should have stood up for myself). So, I took English and History exams instead, which led me to major in Translation Studies. (But I found my way back to the original plan in the end!)",
-            "achivement": ""
+            "achievement": "PLOT TWIST"
         },
         
         "the-proactive-kid": {
             "description": "I used to be a very proactive kid! My mom enrolled me in extracurricular activities like dancing, English, and swimming! I was almost always in a rush, but I still managed to do all my homework and be a good student. I just wish I'd had more time to truly excel at swimming!",
-            "achivement" : ""
+            "achievement" : "ENERGY MODE"
         },
         "the-language-environment": {
             "description": "I've heard foreign languages since childhood. My native language is Russian, but most of my family speaks Tatar. I grew up in Bashkortostan, where we studied Bashkir in school. My first English class was at age five. I wanted to learn Japanese since the 5th grade and finally started as a hobby in my first year of university — the same year we had Latin classes. My main language at university was English, with German as my minor. Language learning is tough, but there are so many more I'd love to learn someday.",
-            "achivement": ""
+            "achievement": "POLYGLOT"
         },
         "learning-english-through-music": {
             "description": "I've always felt a bit awkward listening to music in Russian (native) and have preferred English music since my teens. This massively helped me progress in English. I even used to write down lyrics in a notebook to analyze and sing along. This is what I always recommend to people struggling with motivation for language learning: find something you're obsessed with and let yourself learn while enjoying it. Right now, I'm obsessed with Japanese music!",
-            "achivement": ""
+            "achievement": "LYRICIST"
         },
         "the-passionate-linguist": {
             "description": "When I meet new people, the conversation often turns to me sharing random linguistic facts (especially about etymology!), explaining how basic localization works, or me getting passionately worked up about people who claim neologisms 'pollute' a language... LET ME READ YOU MY FINAL PAPER ON THAT TOPIC, WHERE I USED GOOGLE NGRAMS AND MASS MEDIA RESOURCES! Just remember, language is a living structure; it will always pick up new vocabulary and adapt to modern needs. PERIOD.",
-            "achivement": ""
+            "achievement": "FINAL BOSS"
         },
         "the-nlp-revelation": {
             "description": "At university, we had an NLP class (Natural Language Processing)—a field that connects linguistics with mathematics and coding, widely used in AI today. We discussed everything from CAT-tools and n-grams to how VPNs work. In our third year, we had to use a book as documentation to search a large literary database using Python. As translation majors with zero coding experience, we were astonished and utterly terrified. Back then, it felt like a nightmare, but now I understand the core concept of the task; we were just woefully unprepared.",
-            "achivement": ""
+            "achievement": "ORIGIN STORY 2.0"
+        },
+        "face-reveal": {
+            "description": "",
+            "achievement": "MET THE DEV"
         }
+        
+    },
+    "game-section":{
+        "congrats": "Congratulations!",
+        "hi": "I'm L, nice to meet you!",
+        "again": "Play Again?"
     }
 }
