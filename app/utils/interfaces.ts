@@ -83,6 +83,5 @@ export interface FactsGameProps {
 
 export interface AchievementDisplayProps {
   currentAchievement: string;
-  showAchievement: boolean;
   
 }

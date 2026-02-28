@@ -50,6 +50,9 @@
     "game-section":{
         "congrats": "Congratulations!",
         "hi": "I'm L, nice to meet you!",
-        "again": "Play Again?"
+        "again": "Play Again?",
+        "achievement-unlocked": "ACHIEVEMENT UNLOCKED",
+        "start": "start",
+        "pull": "pull"
     }
 }

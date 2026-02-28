@@ -36,7 +36,7 @@ export default function FactsGame () {
             setShowAchievement(true);
             setTimeout(() => {
                 setShowAchievement(false)
-            }, 3000)            
+            }, 10000)            
             return
         }
 
@@ -79,7 +79,6 @@ export default function FactsGame () {
                     currentAchievement={currentAchievement}
                 />
             )}
-
 
             <MdPlusDisplay 
                 showPrize={showPrize}
