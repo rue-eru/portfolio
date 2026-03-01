@@ -21,7 +21,7 @@ export default function ProjectCard({ project, index, isHovered, onHover }: Proj
       onMouseEnter={() => onHover(index)}
       onMouseLeave={() => onHover(null)}
     >
-      <div className="w-90 h-50 relative overflow-hidden rounded">
+      <div className="xs:w-90 w-75 h-50 relative overflow-hidden rounded">
         <Image 
           src={project.image}
           alt={project.id}

@@ -14,9 +14,8 @@ export default function MainPage ({ params }: { params: Promise<{ locale: Locale
 
     return(
         <>
-            <Nav />
             <main className="w-full h-full font-accent">
-
+                <Nav />
                 <FrontPage />
                 <ProjectsPage />
                 <StackPage />

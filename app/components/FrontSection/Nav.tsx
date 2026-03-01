@@ -11,7 +11,7 @@ export default function Nav () {
 
     return (
 
-        <div className={`p-2 flex items-center text-2xl bg-transparent fixed left-0 right-0 top-0 text-set-white
+        <div className={`p-2 flex items-center bg-transparent fixed left-0 right-0 top-0 text-set-white text-xs
         `}>
 
             <SlideIn 

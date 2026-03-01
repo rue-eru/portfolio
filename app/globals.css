@@ -14,6 +14,7 @@
   --color-set-accent: var(--accent-color);
   --font-dongle: var(--font-dongle);
   --font-m-plus: var(--font-m-plus);
+  --breakpoint-xs: 420px;
 }
 
 body {
@@ -37,7 +38,6 @@ html[lang="ja"] .font-accent {
   background-color: var(--color-set-black);
   color: var(--color-set-white);
   font-family: var(--font-dongle);
-
 }
 
 .main-page {

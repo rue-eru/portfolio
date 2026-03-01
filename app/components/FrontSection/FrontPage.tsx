@@ -15,7 +15,7 @@ export default function FrontPage () {
 
 
     return (
-        <div id="frontpage" className="front-page h-dvh flex justify-center items-center">
+        <div id="frontpage" className="front-page h-dvh w-full flex justify-center items-center">
             <div className="w-[80%] flex flex-wrap justify-center items-center ">
                 {isJa ? (
 
@@ -29,7 +29,7 @@ export default function FrontPage () {
                         {charactersJA.map((char, i) => (
                             <span
                                 key={i}
-                                className="text-7xl"
+                                className="sm:text-7xl"
                             >
                                 {char}
                             </span>

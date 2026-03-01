@@ -18,6 +18,7 @@ export default function FactsGame () {
     const [currentAchievement, setCurrentAchievement] = useState('');
     const [showAchievement, setShowAchievement] = useState(false);
     const totalFacts = factKeys.length;
+    const photo = `/images/icons/cat.jpg`
 
     useEffect(() => {
         const randomIndex = Math.floor(Math.random() * totalFacts)
@@ -88,6 +89,7 @@ export default function FactsGame () {
                 totalFacts={totalFacts}
                 pullRandomFact={pullRandomFact}
                 gameComplete={gameComplete}
+                photo={photo}
             />
 
             <SmallDisplay 
@@ -98,6 +100,7 @@ export default function FactsGame () {
                 totalFacts={totalFacts}
                 pullRandomFact={pullRandomFact}
                 gameComplete={gameComplete}
+                photo={photo}
             />
         </>
     )

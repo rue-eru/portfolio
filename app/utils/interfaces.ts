@@ -79,6 +79,7 @@ export interface FactsGameProps {
   totalFacts: number;
   pullRandomFact: () => void;
   gameComplete: boolean;
+  photo: string;
 }
 
 export interface AchievementDisplayProps {

@@ -16,7 +16,7 @@ export default function StackPage () {
     const {isEn, isRu} = useCurrentLanguage();
     const textSize = `${isEn ? "text-2xl" : "text-sm"}`;
     const liClassName = `${textSize} ${styles.liStyle}`;
-    const titleStyle = `${isEn ? "text-7xl leading-10 uppercase px-10 py-5" : "text-6xl px-5 text-nowrap mb-10"} ${styles.h1}`;
+    const titleStyle = `${isEn ? "text-7xl leading-10 uppercase px-10 py-5" : "sm:text-6xl text-4xl px-5 sm:text-nowrap text-wrap mb-10"} ${styles.h1}`;
     const [hoveredStack, setHoveredStack] = useState<number | null>(null);
     const [hoveredCat, setHoveredCat] = useState<number | null>(null);
     const [hoveredLang, setHoveredLang] = useState<number | null>(null); 
@@ -27,7 +27,7 @@ export default function StackPage () {
             className={`${styles.sectionWidth} flex flex-col`}
         >
 
-            <div className="flex justify-start">
+            <div className="flex sm:justify-start">
                 <div className={`${styles.toolDiv}`}>
                 <h1 className={titleStyle}>{tTech('stack-title')}</h1>
                         <ul className={styles.ulLiFlex}>
@@ -49,7 +49,7 @@ export default function StackPage () {
                 </div>
             </div>
 
-            <div className="flex justify-end">
+            <div className="flex sm:justify-end flex-wrap">
                 <div className={`${styles.toolDiv}`}>
                     <h1 className={titleStyle}>{tTech('l10n-title')}</h1>
                     <ul className={styles.ulLiFlex}>

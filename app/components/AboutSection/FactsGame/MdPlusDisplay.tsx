@@ -1,4 +1,4 @@
-'ise client'
+'use client'
 
 import { useCurrentLanguage } from "@/app/hooks/useCurrentLang";
 import type { FactsGameProps } from "@/app/utils/interfaces";
@@ -8,12 +8,12 @@ import Image from "next/image";
 import { useState } from "react";
 
 export default function MdPlusDisplay ({
-    showPrize, resetGame, currentFact, pullRandomFact, pulledFacts, totalFacts, gameComplete
+    showPrize, resetGame, currentFact, pullRandomFact, pulledFacts, totalFacts, gameComplete, photo
 }: FactsGameProps) {
       const t = useTranslations();
       const tGame = useTranslations("about.game-section")
-      const {isEn, isJa, isRu} = useCurrentLanguage();
-        const [startScreen, setStartScreen] = useState(true);
+      const {isEn, isJa} = useCurrentLanguage();
+      const [startScreen, setStartScreen] = useState(true);
 
 
     return(
@@ -21,16 +21,13 @@ export default function MdPlusDisplay ({
           <div className={`${styles.flexCenter} mt-40`}>
               
               <div id="upper-part" 
-                  className="absolute w-150 h-100 bg-fuchsia-100  bg- mx-auto 
+                  className="absolute w-150 h-100 bg-fuchsia-100 mx-auto 
                       border-2 border-pink-300 
                       rounded-tl-2xl rounded-tr-2xl
               ">
                   <div id="main-screen"
-                    className={`bg-purple-200 w-130 h-90 mt-3 mx-auto border-2 border-cyan-950/20 rounded x-50  overflow-y-auto
-                      [&::-webkit-scrollbar]:w-1.5
-                    [&::-webkit-scrollbar-track]:bg-purple-200
-                    [&::-webkit-scrollbar-thumb]:bg-pink-300
-                      [&::-webkit-scrollbar-thumb]:rounded `}
+                    className={`bg-purple-200 w-130 h-90 mt-3 mx-auto border-2 border-cyan-950/20 rounded  ${styles.overflowScreen}[&::-webkit-scrollbar-thumb]:bg-pink-300
+`}
                   >
                     {startScreen && (
                       <div 
@@ -47,10 +44,11 @@ export default function MdPlusDisplay ({
 
                       </div>
                     )}
+
                     <div className={`${startScreen ? "hidden" : "block"}`}>
 
                       <div id="progress-displayer" 
-                        className={`flex flex-row justify-end gap-2 transition-all ${showPrize ? 'hidden' : "block"} ${styles.screenText}`}>
+                        className={`${styles.startScreenContainer} ${showPrize ? 'hidden' : "block"} ${styles.screenText}`}>
                         <Image 
                           src={`/images/icons/key.png`}
                           alt="key icon"
@@ -63,10 +61,10 @@ export default function MdPlusDisplay ({
                       </div>
 
                           {showPrize ? (
-                            <div className={`text-center pt-8 ${styles.screenText} z-10`}>
-                              <h2 className="text-2xl font-bold text-pink-500 animate-bounce">{tGame('congrats')}</h2>
+                            <div className={`text-center pt-4 ${styles.screenText} z-10`}>
+                              <h2 className="text-2xl my-4 font-bold text-pink-500 animate-bounce">{tGame('congrats')}</h2>
                               <Image 
-                                src={`/images/icons/cat.jpg`}
+                                src={photo}
                                 alt="meet the dev"
                                 width={200}
                                 height={200}
@@ -84,10 +82,10 @@ export default function MdPlusDisplay ({
                           `}>{t(currentFact.description)}</p>)}
 
                         <div id="progression-bar" 
-                            className={`w-126 absolute z-40 bg-purple-200/80 h-6 -mt-44 ${showPrize ? 'hidden' : "block"}`}>
-                          <div className="w-96 h-2 ml-16 bg-gray-700 rounded-full mt-2 overflow-hidden border border-gray-400  transition-all">
+                            className={`w-126 -mt-44 h-6 ${styles.progressBarBG} ${showPrize ? 'hidden' : "block"}`}>
+                          <div className={`w-96 h-2 ml-16 ${styles.progressBarBorder}`}>
                             <div 
-                              className="h-full bg-linear-to-r from-sky-200 to-indigo-400  duration-300 z-50"
+                              className={styles.progressBarColors}
                               style={{ width: `${(pulledFacts.length / totalFacts) * 100}%` }}
                             />
                           </div>
