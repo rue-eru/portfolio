@@ -17,6 +17,8 @@ export default function FactsGame () {
     const [showPrize, setShowPrize] = useState(false);
     const [currentAchievement, setCurrentAchievement] = useState('');
     const [showAchievement, setShowAchievement] = useState(false);
+    const [startScreen, setStartScreen] = useState(true);
+    const [achievementTimeout, setAchievementTimeout] = useState<NodeJS.Timeout|null>(null);
     const totalFacts = factKeys.length;
     const photo = `/images/icons/cat.jpg`
 
@@ -26,6 +28,27 @@ export default function FactsGame () {
         setPulledFacts([randomIndex])
     }, []);
 
+
+    const clearAchievementTimeout = () => {
+        if (achievementTimeout) {
+            clearTimeout(achievementTimeout)
+            setAchievementTimeout(null)
+        }
+    }
+
+    const showAchievementWithTimer = (achievement: string, duration: number = 5000) => {
+        clearAchievementTimeout();
+        setCurrentAchievement(achievement)
+        setShowAchievement(true)
+
+        const timeout = setTimeout(() => {
+            setShowAchievement(false)
+            setAchievementTimeout(null)
+        }, duration)
+
+        setAchievementTimeout(timeout)
+    }
+
     const pullRandomFact = () => {
         if (gameComplete) return
 
@@ -33,11 +56,7 @@ export default function FactsGame () {
             setGameComplete(true)
             setShowPrize(true)
 
-            setCurrentAchievement(t('about.facts-game.face-reveal.achievement'));
-            setShowAchievement(true);
-            setTimeout(() => {
-                setShowAchievement(false)
-            }, 10000)            
+            showAchievementWithTimer(t('about.facts-game.face-reveal.achievement'), 10000)            
             return
         }
 
@@ -53,25 +72,43 @@ export default function FactsGame () {
 
         const newFact = facts[randomUncollectedIndex];
         if (newFact?.achievement) {
-            setCurrentAchievement(t(newFact.achievement));
-            setShowAchievement(true);
-
-            setTimeout(() => {
-                setShowAchievement(false);
-            }, 5000);
+            showAchievementWithTimer(t(newFact.achievement), 5000);
         }
 
     };
 
     const resetGame = () => {
+        clearAchievementTimeout();
         const randomIndex = Math.floor(Math.random() * totalFacts)
         setCurrentFactIndex(randomIndex);
         setPulledFacts([randomIndex]);
         setGameComplete(false);
         setShowPrize(false);
         setShowAchievement(false);
+        setShowAchievement(false);
+        setStartScreen(true);
     }
     const currentFact = facts[currentFactIndex];
+
+    //cleans up on unmount
+    useEffect(() => {
+        return() => {
+            if (achievementTimeout) {
+                clearTimeout(achievementTimeout);
+            }
+        }
+    }, [])
+
+    useEffect(() => {
+        if (!startScreen && pulledFacts.length > 0 && !showPrize) {
+        //achievement for first fact included
+            const firstFact = facts[currentFactIndex]
+            if (firstFact?.achievement) {
+                showAchievementWithTimer(t(firstFact.achievement), 4000)
+            }
+
+    }}, [startScreen, resetGame]);
+
 
     return (
         <>
@@ -90,6 +127,8 @@ export default function FactsGame () {
                 pullRandomFact={pullRandomFact}
                 gameComplete={gameComplete}
                 photo={photo}
+                startScreen={startScreen}
+                setStartScreen={setStartScreen}
             />
 
             <SmallDisplay 
@@ -101,6 +140,8 @@ export default function FactsGame () {
                 pullRandomFact={pullRandomFact}
                 gameComplete={gameComplete}
                 photo={photo}
+                startScreen={startScreen}
+                setStartScreen={setStartScreen}
             />
         </>
     )

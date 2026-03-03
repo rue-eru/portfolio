@@ -80,6 +80,8 @@ export interface FactsGameProps {
   pullRandomFact: () => void;
   gameComplete: boolean;
   photo: string;
+  startScreen: boolean;
+  setStartScreen: (v: boolean) => void;
 }
 
 export interface AchievementDisplayProps {

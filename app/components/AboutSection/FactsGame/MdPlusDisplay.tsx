@@ -1,19 +1,15 @@
-'use client'
-
 import { useCurrentLanguage } from "@/app/hooks/useCurrentLang";
 import type { FactsGameProps } from "@/app/utils/interfaces";
 import { styles } from "@/app/utils/styles";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
-import { useState } from "react";
 
 export default function MdPlusDisplay ({
-    showPrize, resetGame, currentFact, pullRandomFact, pulledFacts, totalFacts, gameComplete, photo
+    showPrize, resetGame, currentFact, pullRandomFact, pulledFacts, totalFacts, gameComplete, photo, startScreen, setStartScreen
 }: FactsGameProps) {
       const t = useTranslations();
       const tGame = useTranslations("about.game-section")
       const {isEn, isJa} = useCurrentLanguage();
-      const [startScreen, setStartScreen] = useState(true);
 
 
     return(

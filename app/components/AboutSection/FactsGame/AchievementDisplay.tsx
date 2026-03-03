@@ -8,7 +8,7 @@ export default function AchievementDisplay({currentAchievement}: AchievementDisp
     const t = useTranslations();
 
     return(
-        <div className="absolute right-4
+        <div className="fixed top-4 right-4  
             bg-linear-to-r from-sky-200 to-indigo-400 
             text-black font-bold py-3 px-6 rounded-lg
             shadow-2xl border-2 border-indigo-200
