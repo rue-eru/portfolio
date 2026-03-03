@@ -2,7 +2,7 @@
     "facts-game": {
         "the-anime-name": {
             "description": "Once, a Japanese guy told me my short name sounds like an anime character's name and thought it was just a nerdy nickname. I wasn't confused—I just calmly explained that even my mom has called me that since childhood. And that's the story of why I am (e)L. Nice to meet you!",
-            "achievement": "CANON EVEN"
+            "achievement": "CANON EVENT"
         } ,
         "the-walking-dictionary": {
             "description": "At university, I was a very thorough student. During our practical translation classes, I always dug up the most prominent and interesting meanings of words. Of course, my groupmates were often annoyed by this, and they even started calling me 'the walking dictionary'. What a nerd I was!",
@@ -42,14 +42,13 @@
             "achievement": "ORIGIN STORY 2.0"
         },
         "face-reveal": {
-            "description": "",
             "achievement": "MET THE DEV"
         }
         
     },
     "game-section":{
         "congrats": "Congratulations!",
-        "hi": "I'm L, nice to meet you!",
+        "hi": "I'm Elina (L), nice to meet you!",
         "again": "Play Again?",
         "achievement-unlocked": "ACHIEVEMENT UNLOCKED",
         "start": "start",

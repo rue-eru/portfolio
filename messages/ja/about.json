@@ -42,13 +42,13 @@
             "achievement": "続・始まりの物語"
         },
         "face-reveal": {
-            "description": "",
             "achievement": "開発者に会った"
         }
     },
     "game-section":{
         "congrats": "おめでとうございます!",
-        "hi": "はじめまして！私はエリナ（エル）です！\nよろしくお願いします！",
+        "hi": "はじめまして！私はエリナ（エル）です！",
+        "nice-to-meet-you": "よろしくお願いします！",
         "again": "もう一回",
         "achievement-unlocked": "実績解除",
         "start": "スタート",

@@ -27,27 +27,28 @@ export default function StackPage () {
             className={`${styles.sectionWidth} flex flex-col`}
         >
 
-            <div className="flex sm:justify-start">
-                <div className={`${styles.toolDiv}`}>
-                <h1 className={titleStyle}>{tTech('stack-title')}</h1>
-                        <ul className={styles.ulLiFlex}>
-                            {stackData.map((tool, index) => {
-                                const isNextIntl = tool.id === 'next-intl';
-                                return(
-                                <ListCard
-                                    key={`${tool.id}-${index}`}
-                                    tool={tool}
-                                    index={index}
-                                    imgClassName={`${isNextIntl? 'w-20' : 'w-10'}`}
-                                    hideTitle={isNextIntl}
-                                    liClassName={liClassName}   
-                                    isHovered={hoveredStack === index}
-                                    onHover={setHoveredStack}
-                                />
-                            )})}
-                        </ul>
+        
+                <div className="flex sm:justify-start">
+                    <div className={`${styles.toolDiv}`}>
+                    <h1 className={titleStyle}>{tTech('stack-title')}</h1>
+                            <ul className={styles.ulLiFlex}>
+                                {stackData.map((tool, index) => {
+                                    const isNextIntl = tool.id === 'next-intl';
+                                    return(
+                                    <ListCard
+                                        key={`${tool.id}-${index}`}
+                                        tool={tool}
+                                        index={index}
+                                        imgClassName={`${isNextIntl? 'w-20' : 'w-10'}`}
+                                        hideTitle={isNextIntl}
+                                        liClassName={liClassName}   
+                                        isHovered={hoveredStack === index}
+                                        onHover={setHoveredStack}
+                                    />
+                                )})}
+                            </ul>
+                    </div>
                 </div>
-            </div>
 
             <div className="flex sm:justify-end flex-wrap">
                 <div className={`${styles.toolDiv}`}>

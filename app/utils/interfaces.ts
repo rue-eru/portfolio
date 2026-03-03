@@ -86,5 +86,14 @@ export interface FactsGameProps {
 
 export interface AchievementDisplayProps {
   currentAchievement: string;
-  
+}
+
+export interface FloatProps {
+  children: ReactNode;
+  amplitude?: number;
+  duration?: number;
+  delay?: number;
+  className?: string;
+  rotate?: boolean;
+  direction?: 'clockwise' | 'counterclockwise' | 'random';
 }

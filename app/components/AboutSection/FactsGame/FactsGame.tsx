@@ -2,10 +2,11 @@
 
 import factsData from "@/app/data/about.json"
 import { useTranslations } from "next-intl";
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import MdPlusDisplay from "./MdPlusDisplay";
 import SmallDisplay from "./SmallScreenDisplay";
 import AchievementDisplay from "./AchievementDisplay";
+import Float from "../../animations/Float";
 
 export default function FactsGame () {
     const t = useTranslations();
@@ -18,7 +19,7 @@ export default function FactsGame () {
     const [currentAchievement, setCurrentAchievement] = useState('');
     const [showAchievement, setShowAchievement] = useState(false);
     const [startScreen, setStartScreen] = useState(true);
-    const [achievementTimeout, setAchievementTimeout] = useState<NodeJS.Timeout|null>(null);
+    const achievementTimeoutRef = useRef<NodeJS.Timeout|null>(null);
     const totalFacts = factKeys.length;
     const photo = `/images/icons/cat.jpg`
 
@@ -28,34 +29,34 @@ export default function FactsGame () {
         setPulledFacts([randomIndex])
     }, []);
 
-
+    // memoizes clearAchievementTimeout to prevent recreations
     const clearAchievementTimeout = () => {
-        if (achievementTimeout) {
-            clearTimeout(achievementTimeout)
-            setAchievementTimeout(null)
+        if (achievementTimeoutRef.current) {
+            clearTimeout(achievementTimeoutRef.current)
+            achievementTimeoutRef.current = null
         }
     }
 
-    const showAchievementWithTimer = (achievement: string, duration: number = 5000) => {
+    // useCallback is hook that caches (memoizes) a function definition between renders, returning the same instance unless dependencies change. I
+    const showAchievementWithTimer = useCallback((achievement: string, duration: number = 5000) => {
         clearAchievementTimeout();
         setCurrentAchievement(achievement)
         setShowAchievement(true)
 
         const timeout = setTimeout(() => {
             setShowAchievement(false)
-            setAchievementTimeout(null)
+            achievementTimeoutRef.current = null
         }, duration)
 
-        setAchievementTimeout(timeout)
-    }
+       achievementTimeoutRef.current = timeout
+    }, [clearAchievementTimeout]);
 
-    const pullRandomFact = () => {
+    const pullRandomFact = useCallback(() => {
         if (gameComplete) return
 
         if (pulledFacts.length >= totalFacts) {
             setGameComplete(true)
             setShowPrize(true)
-
             showAchievementWithTimer(t('about.facts-game.face-reveal.achievement'), 10000)            
             return
         }
@@ -75,9 +76,9 @@ export default function FactsGame () {
             showAchievementWithTimer(t(newFact.achievement), 5000);
         }
 
-    };
+    }, [gameComplete, pulledFacts, totalFacts, factKeys, facts, showAchievementWithTimer, t]);
 
-    const resetGame = () => {
+    const resetGame = useCallback(() => {
         clearAchievementTimeout();
         const randomIndex = Math.floor(Math.random() * totalFacts)
         setCurrentFactIndex(randomIndex);
@@ -87,17 +88,9 @@ export default function FactsGame () {
         setShowAchievement(false);
         setShowAchievement(false);
         setStartScreen(true);
-    }
-    const currentFact = facts[currentFactIndex];
+    }, [clearAchievementTimeout, totalFacts]);
 
-    //cleans up on unmount
-    useEffect(() => {
-        return() => {
-            if (achievementTimeout) {
-                clearTimeout(achievementTimeout);
-            }
-        }
-    }, [])
+    const currentFact = facts[currentFactIndex];
 
     useEffect(() => {
         if (!startScreen && pulledFacts.length > 0 && !showPrize) {
@@ -107,8 +100,16 @@ export default function FactsGame () {
                 showAchievementWithTimer(t(firstFact.achievement), 4000)
             }
 
-    }}, [startScreen, resetGame]);
+    }}, [startScreen]);
 
+    //cleans up on unmount
+    useEffect(() => {
+        return() => {
+            if (achievementTimeoutRef.current) {
+                clearTimeout(achievementTimeoutRef.current);
+            }
+        }
+    }, []);
 
     return (
         <>
@@ -118,18 +119,18 @@ export default function FactsGame () {
                 />
             )}
 
-            <MdPlusDisplay 
-                showPrize={showPrize}
-                resetGame={resetGame}
-                currentFact={currentFact}
-                pulledFacts={pulledFacts}
-                totalFacts={totalFacts}
-                pullRandomFact={pullRandomFact}
-                gameComplete={gameComplete}
-                photo={photo}
-                startScreen={startScreen}
-                setStartScreen={setStartScreen}
-            />
+                <MdPlusDisplay 
+                    showPrize={showPrize}
+                    resetGame={resetGame}
+                    currentFact={currentFact}
+                    pulledFacts={pulledFacts}
+                    totalFacts={totalFacts}
+                    pullRandomFact={pullRandomFact}
+                    gameComplete={gameComplete}
+                    photo={photo}
+                    startScreen={startScreen}
+                    setStartScreen={setStartScreen}
+                />
 
             <SmallDisplay 
                 showPrize={showPrize}

@@ -11,19 +11,16 @@ export default function MdPlusDisplay ({
       const tGame = useTranslations("about.game-section")
       const {isEn, isJa} = useCurrentLanguage();
 
-
     return(
       <div id="game-console" className="md:block hidden w-full h-full ">
           <div className={`${styles.flexCenter} mt-40`}>
               
               <div id="upper-part" 
                   className="absolute w-150 h-100 bg-fuchsia-100 mx-auto 
-                      border-2 border-pink-300 
-                      rounded-tl-2xl rounded-tr-2xl
+                      rounded-tl rounded-tr
               ">
                   <div id="main-screen"
-                    className={`bg-purple-200 w-130 h-90 mt-3 mx-auto border-2 border-cyan-950/20 rounded  ${styles.overflowScreen}[&::-webkit-scrollbar-thumb]:bg-pink-300
-`}
+                    className={`bg-purple-200 w-130 h-90 mt-3 mx-auto border-2 border-cyan-950/20 rounded flex flex-col relative`}
                   >
                     {startScreen && (
                       <div 
@@ -37,58 +34,74 @@ export default function MdPlusDisplay ({
                           loading="lazy"
                           className="object-contain"
                         />
-
                       </div>
                     )}
 
-                    <div className={`${startScreen ? "hidden" : "block"}`}>
-
-                      <div id="progress-displayer" 
-                        className={`${styles.startScreenContainer} ${showPrize ? 'hidden' : "block"} ${styles.screenText}`}>
-                        <Image 
-                          src={`/images/icons/key.png`}
-                          alt="key icon"
-                          width={25}
-                          height={25}
-                          className={`object-contain pt-1 ${pulledFacts ? "animate-bounce duration-100": ""}`}
-                          loading="lazy"
-                        />
-                        <span className="text-xl pr-4">{pulledFacts.length} / {totalFacts}</span>
-                      </div>
-
-                          {showPrize ? (
-                            <div className={`text-center pt-4 ${styles.screenText} z-10`}>
-                              <h2 className="text-2xl my-4 font-bold text-pink-500 animate-bounce">{tGame('congrats')}</h2>
-                              <Image 
-                                src={photo}
-                                alt="meet the dev"
-                                width={200}
-                                height={200}
-                                loading="lazy"
-                                className="object-cover mx-auto rounded-full"
-                              />
-                              <p className={`mt-2 mx-auto ${isJa ? "w-80": ""}`}>{tGame('hi')}</p>
-                            </div>
-                          )  
-
-                          : 
-                          
-                          (<p className={`text-justify px-4 text-wrap h-120 ${styles.screenText}
-                            ${isEn ? "" : "text-lg "}
-                          `}>{t(currentFact.description)}</p>)}
-
-                        <div id="progression-bar" 
-                            className={`w-126 -mt-44 h-6 ${styles.progressBarBG} ${showPrize ? 'hidden' : "block"}`}>
-                          <div className={`w-96 h-2 ml-16 ${styles.progressBarBorder}`}>
-                            <div 
-                              className={styles.progressBarColors}
-                              style={{ width: `${(pulledFacts.length / totalFacts) * 100}%` }}
+                    {!startScreen && (
+                      <div className="flex flex-col h-full">
+                        {/* FACT INDICATOR TOP FIXED */}
+                        {!showPrize && (
+                          <div id="progress-displayer" 
+                            className={`${styles.startScreenContainer} ${styles.screenText} shrink-0`}>
+                            <Image 
+                              src={`/images/icons/key.png`}
+                              alt="key icon"
+                              width={25}
+                              height={25}
+                              className={`object-contain pt-1 ${pulledFacts ? "animate-bounce duration-100": ""}`}
+                              loading="lazy"
                             />
+                            <span className={`pr-4 ${isEn ? 'text-2xl' : 'text-xl'}`}>{pulledFacts.length} / {totalFacts}</span>
                           </div>
-                        </div>
-                          
+                        )}
+
+                        {/* CONTENT AREA - different for prize vs game */}
+                        {showPrize ? (
+                          // PRIZE VIEW - YOUR ORIGINAL STYLES PRESERVED
+                          <div className={`text-center pt-4 ${styles.screenText} z-10 flex-1 overflow-y-auto`}>
+                            <h2 className={`my-4 font-bold text-pink-500 animate-bounce ${isEn ? 'text-4xl' : 'text-2xl'}`}>{tGame('congrats')}</h2>
+                            <Image 
+                              src={photo}
+                              alt="meet the dev"
+                              width={200}
+                              height={200}
+                              loading="lazy"
+                              className="object-cover mx-auto rounded-full"
+                            />
+                            <p className={`mt-2 mx-auto flex flex-col gap-0 ${isEn ? 'text-3xl' : ''}`}>
+                              <span>{tGame('hi')}</span>
+                              <span className={isEn ? 'hidden' : 'block'}>{tGame('nice-to-meet-you')}</span>
+                            </p>
+                          </div>
+                        ) : (
+                          // GAME VIEW 
+                          <>
+                            {/* SCROLLABLE TEXT AREA with padding for bottom bar */}
+                            <div className="flex-1 overflow-y-auto px-4 pb-12
+                              [&::-webkit-scrollbar]:w-1.5
+                              [&::-webkit-scrollbar-track]:bg-purple-200
+                              [&::-webkit-scrollbar-thumb]:bg-pink-300
+                              [&::-webkit-scrollbar-thumb]:rounded">
+                              <p className={`text-justify text-wrap ${styles.screenText}
+                                ${isEn ? "text-2xl leading-7" : "text-lg "}
+                              `}>{t(currentFact.description)}</p>
+                            </div>
+
+                            {/* PROGRESS BAR only in game mode */}
+                            <div id="progression-bar" 
+                                className={`w-full h-6 ${styles.progressBarBG} absolute bottom-0 left-0 right-0`}>
+                              <div className={`w-96 h-2 mx-auto ${styles.progressBarBorder}`}>
+                                <div 
+                                  className={styles.progressBarColors}
+                                  style={{ width: `${(pulledFacts.length / totalFacts) * 100}%` }}
+                                />
+                              </div>
+                            </div>
+                          </>
+                        )}
                       </div>
-                    </div>
+                    )}
+                  </div>
                 </div>
   
   
