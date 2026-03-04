@@ -7,6 +7,7 @@ import projectsData from '@/app/data/projects.json';
 import { styles } from "@/app/utils/styles";
 import ProjectCard from "./ProjectCard";
 import LegacyProjects from "./LegacyProjects";
+import { Float } from "../animations/Float";
 
 
 export default function ProjectsPage() {
@@ -20,10 +21,10 @@ export default function ProjectsPage() {
             id={id}
             className={styles.sectionWidth}
         >
-            <SlideIn
-                direction="top"
-            >
-                <h3 className={styles.h3}>{tPr('main-pr')}</h3>
+            <SlideIn direction="top">
+                <Float>
+                    <h3 className={styles.h3}>{tPr('main-pr')}</h3>
+                </Float>
             </SlideIn>
 
             <div className={styles.flexCenter}>

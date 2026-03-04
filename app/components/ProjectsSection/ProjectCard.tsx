@@ -6,6 +6,7 @@ import SlideIn from "../animations/SlideIn";
 import { useTranslations } from "next-intl";
 import type { ProjectCardProps } from "@/app/utils/interfaces";
 import { useCurrentLanguage } from "@/app/hooks/useCurrentLang";
+import { Float } from "../animations/Float";
 
 export default function ProjectCard({ project, index, isHovered, onHover }: ProjectCardProps) {
   const t = useTranslations();
@@ -16,6 +17,7 @@ export default function ProjectCard({ project, index, isHovered, onHover }: Proj
     : project.title;
 
   return (
+    <Float>
     <div 
       className="bg-gray-600 p-2 rounded hover:scale-120 transition-transform duration-300"
       onMouseEnter={() => onHover(index)}
@@ -70,5 +72,6 @@ export default function ProjectCard({ project, index, isHovered, onHover }: Proj
         {displayTitle}
       </h4>
     </div>
+    </Float>
   );
 }

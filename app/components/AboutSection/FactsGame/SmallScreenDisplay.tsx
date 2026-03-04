@@ -5,7 +5,7 @@ import { useTranslations } from "next-intl";
 import { useCurrentLanguage } from "@/app/hooks/useCurrentLang";
 
 export default function SmallDisplay ({
-    showPrize, resetGame, currentFact, pullRandomFact, pulledFacts, totalFacts, gameComplete, photo, startScreen, setStartScreen
+    showPrize, resetGame, currentFact, pullRandomFact, pulledFacts, totalFacts, gameComplete, photo, startScreen, setStartScreen, keyJump
 }: FactsGameProps) {
       const t = useTranslations();
       const tGame = useTranslations("about.game-section")
@@ -60,9 +60,9 @@ export default function SmallDisplay ({
                                     loading="lazy"
                                     className="object-cover mx-auto rounded-full"
                                 />
-                                <p className={`mt-2 mx-auto ${isJa ? "p-4": "text-2xl"}`}>
-                                    {tGame('hi')}
-                                </p>
+                                <p className={`mt-2 mx-auto ${isEn ? "text-2xl" : "p-4"}`}>
+                                    <span>{tGame('hi')}</span>
+                                    <span className={isEn ? 'hidden' : 'block'}>{tGame('nice-to-meet-you')}</span>                                </p>
                                 <button 
                                     onClick={resetGame}
                                     className={`${btnStyles} w-fit`}>
@@ -78,7 +78,7 @@ export default function SmallDisplay ({
                                         alt="key icon"
                                         width={25}
                                         height={25}
-                                        className={`object-contain pt-1 ${pulledFacts ? "animate-bounce duration-100": ""}`}
+                                        className={`object-contain transition-transform ${keyJump ? '-translate-y-2' : 'translate-y-0'}`}
                                         loading="lazy"
                                     />
                                     <span className={`${isEn ? `text-2xl` : `text-base`} pr-4`}>

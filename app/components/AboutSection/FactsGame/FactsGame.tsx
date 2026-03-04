@@ -6,7 +6,7 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import MdPlusDisplay from "./MdPlusDisplay";
 import SmallDisplay from "./SmallScreenDisplay";
 import AchievementDisplay from "./AchievementDisplay";
-import Float from "../../animations/Float";
+import useSound from "use-sound";
 
 export default function FactsGame () {
     const t = useTranslations();
@@ -20,6 +20,9 @@ export default function FactsGame () {
     const [showAchievement, setShowAchievement] = useState(false);
     const [startScreen, setStartScreen] = useState(true);
     const achievementTimeoutRef = useRef<NodeJS.Timeout|null>(null);
+    const [keyJump, setKeyJump] = useState(false);
+    const [playCollect] = useSound('/sounds/collected.wav', {volume:0.2})
+    const [playWon] = useSound('/sounds/winfantasia.wav', {volume:0.5})
     const totalFacts = factKeys.length;
     const photo = `/images/icons/cat.jpg`
 
@@ -56,6 +59,7 @@ export default function FactsGame () {
 
         if (pulledFacts.length >= totalFacts) {
             setGameComplete(true)
+            playWon();
             setShowPrize(true)
             showAchievementWithTimer(t('about.facts-game.face-reveal.achievement'), 10000)            
             return
@@ -68,15 +72,17 @@ export default function FactsGame () {
         const randomUncollectedIndex = uncollectedIndices[Math.floor(Math.random() * uncollectedIndices.length)];
 
         setCurrentFactIndex(randomUncollectedIndex);
-
         setPulledFacts([...pulledFacts, randomUncollectedIndex]);
+        playCollect();
+        setKeyJump(true);
+        setTimeout(() => setKeyJump(false), 300);
 
         const newFact = facts[randomUncollectedIndex];
         if (newFact?.achievement) {
             showAchievementWithTimer(t(newFact.achievement), 5000);
         }
 
-    }, [gameComplete, pulledFacts, totalFacts, factKeys, facts, showAchievementWithTimer, t]);
+    }, [gameComplete, pulledFacts, totalFacts, factKeys, facts, showAchievementWithTimer, t, keyJump]);
 
     const resetGame = useCallback(() => {
         clearAchievementTimeout();
@@ -98,6 +104,7 @@ export default function FactsGame () {
             const firstFact = facts[currentFactIndex]
             if (firstFact?.achievement) {
                 showAchievementWithTimer(t(firstFact.achievement), 4000)
+                playCollect()
             }
 
     }}, [startScreen]);
@@ -119,18 +126,19 @@ export default function FactsGame () {
                 />
             )}
 
-                <MdPlusDisplay 
-                    showPrize={showPrize}
-                    resetGame={resetGame}
-                    currentFact={currentFact}
-                    pulledFacts={pulledFacts}
-                    totalFacts={totalFacts}
-                    pullRandomFact={pullRandomFact}
-                    gameComplete={gameComplete}
-                    photo={photo}
-                    startScreen={startScreen}
-                    setStartScreen={setStartScreen}
-                />
+            <MdPlusDisplay 
+                showPrize={showPrize}
+                resetGame={resetGame}
+                currentFact={currentFact}
+                pulledFacts={pulledFacts}
+                totalFacts={totalFacts}
+                pullRandomFact={pullRandomFact}
+                gameComplete={gameComplete}
+                photo={photo}
+                startScreen={startScreen}
+                setStartScreen={setStartScreen}
+                keyJump={keyJump}
+            />
 
             <SmallDisplay 
                 showPrize={showPrize}
@@ -143,6 +151,7 @@ export default function FactsGame () {
                 photo={photo}
                 startScreen={startScreen}
                 setStartScreen={setStartScreen}
+                keyJump={keyJump}
             />
         </>
     )

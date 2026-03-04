@@ -7,6 +7,7 @@ import ProjectCard from './ProjectCard';
 import Image from 'next/image';
 import { styles } from '@/app/utils/styles';
 import { useCurrentLanguage } from '@/app/hooks/useCurrentLang';
+import { Float } from '../animations/Float';
 
 export default function LegacyProjects () {
     const legacyProjects = projectsData.projects.legacy;
@@ -41,7 +42,8 @@ export default function LegacyProjects () {
               };
               
               return(
-              <div key={courseName}>
+
+              <Float key={courseName}>
                 <button
                   className={`bg-gray-600 cursor-pointer inline-flex md:justify-center justify-start items-center gap-2 p-2 rounded transition-all xs:w-94 w-70 md:w-full
                   ${openCourse === courseName  ? 'bg-set-accent text-gray-600 transition-colors' : ''}
@@ -58,7 +60,7 @@ export default function LegacyProjects () {
                   />
                   <span className={`${isEn ? 'text-xl' : 'text-sm'}`}>{titles[courseName]}</span>
                 </button>
-              </div>
+              </Float>
             )})}
           </div>
 

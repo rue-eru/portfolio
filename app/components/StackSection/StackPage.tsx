@@ -7,6 +7,7 @@ import ListCard from "./ListCard";
 import Image from "next/image";
 import { useCurrentLanguage } from "@/app/hooks/useCurrentLang";
 import { useState } from "react";
+import { Float } from "../animations/Float";
 
 export default function StackPage () {
     const tTech = useTranslations('tech');
@@ -27,7 +28,7 @@ export default function StackPage () {
             className={`${styles.sectionWidth} flex flex-col`}
         >
 
-        
+            <Float>
                 <div className="flex sm:justify-start">
                     <div className={`${styles.toolDiv}`}>
                     <h1 className={titleStyle}>{tTech('stack-title')}</h1>
@@ -49,53 +50,56 @@ export default function StackPage () {
                             </ul>
                     </div>
                 </div>
+            </Float>
 
-            <div className="flex sm:justify-end flex-wrap">
-                <div className={`${styles.toolDiv}`}>
-                    <h1 className={titleStyle}>{tTech('l10n-title')}</h1>
-                    <ul className={styles.ulLiFlex}>
-                        {l10nData.tools.map((tool, index) => (
-                            <ListCard 
-                                key={`${tool.id}-${index}`}
-                                tool={tool}
-                                index={index}
-                                imgClassName="w-10"
-                                liClassName={liClassName}   
-                                isHovered={hoveredCat === index}
-                                onHover={setHoveredCat}
-                            />
-                        ))}
-                    </ul>
-                    <div className="flex flex-wrap gap-1 justify-center items-center mt-1">
-                        {l10nData.languages.map((lang, index) => (
-                            <div
-                                key={`${lang.id}-${index}`}
-                                onMouseEnter={() => setHoveredLang(index)}
-                                onMouseLeave={() => setHoveredLang(null)}
-                                className={`${liClassName} w-10 ${
-                                    hoveredLang === index ? styles.liHover : ''
-                                }`}
-                            >
-                                <Image 
-                                    src={lang.icon}
-                                    alt={lang.id}
-                                    className="object-cover w-7 h-7"
-                                    width={20}
-                                    height={20}
-                                    loading="lazy"
+            <Float>
+                <div className="flex sm:justify-end flex-wrap">
+                    <div className={`${styles.toolDiv}`}>
+                        <h1 className={titleStyle}>{tTech('l10n-title')}</h1>
+                        <ul className={styles.ulLiFlex}>
+                            {l10nData.tools.map((tool, index) => (
+                                <ListCard 
+                                    key={`${tool.id}-${index}`}
+                                    tool={tool}
+                                    index={index}
+                                    imgClassName="w-10"
+                                    liClassName={liClassName}   
+                                    isHovered={hoveredCat === index}
+                                    onHover={setHoveredCat}
                                 />
-                                <div className="flex flex-col">
-                                    <span className={textSize}>
-                                        {t(lang.level)}
-                                        {!(isRu && lang.id === 'ru') && <span> • </span>}
-                                        {t(lang.description)}
-                                    </span>
+                            ))}
+                        </ul>
+                        <div className="flex flex-wrap gap-1 justify-center items-center mt-1">
+                            {l10nData.languages.map((lang, index) => (
+                                <div
+                                    key={`${lang.id}-${index}`}
+                                    onMouseEnter={() => setHoveredLang(index)}
+                                    onMouseLeave={() => setHoveredLang(null)}
+                                    className={`${liClassName} w-10 ${
+                                        hoveredLang === index ? styles.liHover : ''
+                                    }`}
+                                >
+                                    <Image 
+                                        src={lang.icon}
+                                        alt={lang.id}
+                                        className="object-cover w-7 h-7"
+                                        width={20}
+                                        height={20}
+                                        loading="lazy"
+                                    />
+                                    <div className="flex flex-col">
+                                        <span className={textSize}>
+                                            {t(lang.level)}
+                                            {!(isRu && lang.id === 'ru') && <span> • </span>}
+                                            {t(lang.description)}
+                                        </span>
+                                    </div>
                                 </div>
-                            </div>
-                        ))}
+                            ))}
+                        </div>
                     </div>
                 </div>
-            </div>
+            </Float>
 
         </div>
     )

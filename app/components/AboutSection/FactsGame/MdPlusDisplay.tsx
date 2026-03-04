@@ -5,11 +5,11 @@ import { useTranslations } from "next-intl";
 import Image from "next/image";
 
 export default function MdPlusDisplay ({
-    showPrize, resetGame, currentFact, pullRandomFact, pulledFacts, totalFacts, gameComplete, photo, startScreen, setStartScreen
+    showPrize, resetGame, currentFact, pullRandomFact, pulledFacts, totalFacts, gameComplete, photo, startScreen, setStartScreen, keyJump
 }: FactsGameProps) {
       const t = useTranslations();
       const tGame = useTranslations("about.game-section")
-      const {isEn, isJa} = useCurrentLanguage();
+      const {isEn} = useCurrentLanguage();
 
     return(
       <div id="game-console" className="md:block hidden w-full h-full ">
@@ -48,7 +48,7 @@ export default function MdPlusDisplay ({
                               alt="key icon"
                               width={25}
                               height={25}
-                              className={`object-contain pt-1 ${pulledFacts ? "animate-bounce duration-100": ""}`}
+                              className={`object-contain transition-transform ${keyJump ? '-translate-y-1' : 'translate-y-0'}`}
                               loading="lazy"
                             />
                             <span className={`pr-4 ${isEn ? 'text-2xl' : 'text-xl'}`}>{pulledFacts.length} / {totalFacts}</span>
