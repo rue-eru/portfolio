@@ -7,6 +7,7 @@ import MdPlusDisplay from "./MdPlusDisplay";
 import SmallDisplay from "./SmallScreenDisplay";
 import AchievementDisplay from "./AchievementDisplay";
 import useSound from "use-sound";
+import { styles } from "@/app/utils/styles";
 
 export default function FactsGame () {
     const t = useTranslations();
@@ -119,7 +120,8 @@ export default function FactsGame () {
     }, []);
 
     return (
-        <>
+        <div className={styles.sectionWidth}>
+            
             {showAchievement && (
                 <AchievementDisplay
                     currentAchievement={currentAchievement}
@@ -153,6 +155,6 @@ export default function FactsGame () {
                 setStartScreen={setStartScreen}
                 keyJump={keyJump}
             />
-        </>
+        </div>
     )
 }

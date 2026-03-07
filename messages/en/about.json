@@ -49,9 +49,52 @@
     "game-section":{
         "congrats": "Congratulations!",
         "hi": "I'm Elina (L), nice to meet you!",
+        "nice-to-meet-you": "nice to meet you!",
         "again": "Play Again?",
         "achievement-unlocked": "ACHIEVEMENT UNLOCKED",
         "start": "start",
         "pull": "pull"
+    },
+    "bio": {
+        "1998": {
+            "title": "Birth",
+            "description": "My name is Elina. I was born and raised in Ufa, a city in the Southern Urals where Eastern and Western cultures intersect. Growing up surrounded by Russian, Tatar, and Bashkir cultures sparked my lifelong interest in languages and cross-cultural communication."
+        },
+        "2016": {
+            "title": "The Foundation in Linguistics",
+            "li1": "Enrolled at Bashkir State University, driven by a passion for English and cross-cultural communication — my first formal step toward understanding how people connect across languages.",
+            "li2": "Earned a Specialist Degree (equiv. to M.A.) in Translation & Translation Studies, where I learned that 'translating' isn't just words - it's about preserving meaning, context, and emotion.",
+            "li3": "Majored in English, minored in German, and began self-studying Japanese as a hobby."
+        },
+        "2018": {
+            "title": "Passion Project: Fan Translation & Localization",
+            "li1": "Led the fan translation of a Japanese game with no official localizations, managing a project (at its peak the community had around 1,000 members on VK) that included:",
+            "li2": "Translating in-game text, news, and a novel from Japanese/English to Russian.",
+            "li3": "Designing and typesetting translated materials.",
+            "li4": "Creating and timing subtitles for video content.",
+            "li5": "This project taught me leadership, attention to detail, and confirmed how much I enjoy building things that people actually use."
+        },
+        "2019": {
+            "title": "First Professional Steps & Specialization",
+            "li1": "Internship at a Language School: Taught English to students (3-15 y.o.), developing skills in explaining complex concepts clearly.",
+            "li2": "Participated in several English Summer Camps where students worked in teams to write, film, and present short movies in English. I helped guide the projects and edited the final videos using Camtasia.",
+            "li3": "Translation & Curriculum Development: Participated in creating a technical translation course. Translated materials and provided professional reference translations, building a foundation in technical documentation and precision. Organized the materials in Google Classroom for students."
+        },
+        "2021": {
+            "title": "Teaching & Continuous Learning",
+            "li1": "Worked as a private English tutor, honing my ability to break down problems and tailor solutions to individual needs.",
+            "li2": "Completed a professional Game Localization course to deepen my knowledge of CAT tools and industry workflows. The HTML module in this course unexpectedly sparked my interest in programming."
+        },
+        "2024": {
+            "title": "The Pivot to Development",
+            "li1": "Discovered a passion for building solutions firsthand while learning HTML/CSS for localization documentation.",
+            "li2": "Completed 3 front-end related courses on freeCodeCamp and received certificates.",
+            "li3": "Currently studying the modern frontend stack including React, Next.js, TypeScript, internationalization, and Tailwind CSS.",
+            "li4": "Goal: merge my expertise in language and culture with frontend development to build multilingual, accessible web experiences.",
+            "li5": "Japanese language progress: JLPT N3 (July 2024), JLPT N2 (December 2025)."
+        }
+    },
+    "bio-section": {
+        "present": "Present"
     }
 }

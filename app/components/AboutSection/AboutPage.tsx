@@ -5,7 +5,7 @@ import FactsGame from "./FactsGame/FactsGame";
 export default function AboutPage () {
 
     return(
-        <div className={styles.sectionWidth} id="about">
+        <div className={`${styles.sectionWidth} font-accent`} id="about">
             <FactsGame />
             <Bio />
         </div>

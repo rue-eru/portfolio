@@ -58,5 +58,123 @@
             "achievement": "about.facts-game.the-nlp-revelation.achievement"
         }
     ],
-    "bio": {}
+    "bio": [
+        {
+            "id": "1998",
+            "year": "1998",
+            "title": "about.bio.1998.title",
+            "description": [
+                {
+                    "type": "none",
+                    "text": "about.bio.1998.description"
+                }
+            ]
+        },
+        {
+            "id": "2016",
+            "year": "2016 - 2021",
+            "title": "about.bio.2016.title",
+            "description": [
+                {
+                    "type": "main",
+                    "text": "about.bio.2016.li1"
+                },
+                {
+                    "type": "main",
+                    "text": "about.bio.2016.li2"
+                },
+                {
+                    "type": "main",
+                    "text": "about.bio.2016.li3"
+                }
+            ]
+        },
+        {
+            "id": "2018",
+            "year": "2018 - 2020",
+            "title": "about.bio.2018.title",
+            "description": [
+                {
+                    "type": "main",
+                    "text": "about.bio.2018.li1"
+                },
+                {
+                    "type": "sub",
+                    "text": "about.bio.2018.li2"
+                },
+                {
+                    "type": "sub",
+                    "text": "about.bio.2018.li3"
+                },
+                {
+                    "type": "sub",
+                    "text": "about.bio.2018.li4"
+                },
+                {
+                    "type": "main",
+                    "text": "about.bio.2018.li5"
+                }
+            ]
+        },
+        {
+            "id": "2019",
+            "year": "2019 - 2021",
+            "title": "about.bio.2019.title",
+            "description": [
+                {
+                    "type": "main",
+                    "text": "about.bio.2019.li1"
+                },
+                {
+                    "type": "main",
+                    "text": "about.bio.2019.li2"
+                },
+                {
+                    "type": "main",
+                    "text": "about.bio.2019.li3"
+                }            ]
+        },
+        {
+            "id": "2021",
+            "year": "2021 - present",
+            "title": "about.bio.2021.title",
+            "description": [
+                {
+                    "type": "main",
+                    "text": "about.bio.2021.li1"
+                },
+                {
+                    "type": "main",
+                    "text": "about.bio.2021.li2"
+                }
+            ]
+        },
+        {
+            "id": "2024",
+            "year": "2024 - present",
+            "title": "about.bio.2024.title",
+            "description": [
+                {
+                    "type": "main",
+                    "text": "about.bio.2024.li1"
+                },
+                {
+                    "type": "main",
+                    "text": "about.bio.2024.li2"
+                },
+                {
+                    "type": "main",
+                    "text": "about.bio.2024.li3"
+                },
+                {
+                    "type": "main",
+                    "text": "about.bio.2024.li4"
+                },
+                {
+                    "type": "main",
+                    "text": "about.bio.2024.li5"
+                }            
+            ]
+        }
+    ]
 }
