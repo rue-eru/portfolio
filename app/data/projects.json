@@ -8,7 +8,8 @@
             "tech": "Next.js 16, React 19, Tailwind CSS 4, TypeScript 5, Next-intl 4",
             "links": {
               "github": "https://github.com/rue-eru/lads-battles",
-              "demo": "https://lads-battles.vercel.app/"
+              "demo": "https://lads-battles.vercel.app/",
+              "x": "https://x.com/ladsbattles"
             },
             "image": "/images/projects/lads-battles.gif",
             "featured": true
