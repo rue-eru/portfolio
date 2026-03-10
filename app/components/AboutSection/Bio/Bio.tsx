@@ -31,12 +31,15 @@ export default function Bio (){
 
                             {descriptionVisible === index && (
                                 <div 
-                                    className="absolute p-4 flex flex-col w-80 h-fit text-justif
-                                        backdrop-blur-sm rounded-lg shadow-2xl
-                                        bg-set-accent z-50
+                                    className="absolute p-4 flex flex-col w-80 h-fit text-justify
+                                        rounded-lg shadow-2xl
+                                        bg-white/80
+                                        backdrop-blur-md
+                                        border border-white/40
+                                        z-50 transition-all
                                         max-h-96 overflow-y-auto
                                         left-1/2 transform -translate-x-1/2
-                                        bottm-full mb-4
+                                        mb-4
                                         [&::-webkit-scrollbar]:w-1.5
                                         [&::-webkit-scrollbar-track]:bg-gray-800
                                         [&::-webkit-scrollbar-thumb]:bg-set-accent                                    ">
