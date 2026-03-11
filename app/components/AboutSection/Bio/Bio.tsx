@@ -4,46 +4,136 @@ import { styles } from "@/app/utils/styles";
 import AboutData from "@/app/data/about.json"
 import { useTranslations } from "next-intl";
 import { useState } from "react";
+import { useCurrentLanguage } from "@/app/hooks/useCurrentLang";
 
 export default function Bio (){
     const BioData = AboutData.bio
     const t = useTranslations();
-    const [descriptionVisible, setDescriptionVisible] = useState<number | null>(null);
-
+    const [hovered, setHovered] = useState<number | null>(null);
+    const [active, setActive] = useState<number | null>(null);
+    const visible = active ?? hovered;
+    const {isEn} = useCurrentLanguage();               
 
     return(
-        <div className={styles.sectionWidth}>
-            <div className={`flex justify-center items-baseline w-full `}>
-                <div className="bg-set-black h-1 rounded-full w-full flex justify-around items-end">
-                    {BioData.map((year, index) => {
-                        const ulData = year.description;
+        <section className={`${isEn ? 'text-2xl leading-5' : 'text-sm'} ${styles.sectionWidth}`}>
+
+            {/*mobile layout */}
+            <div className="flex flex-col gap-10 md:hidden p-4">
+                {BioData.map((year, i) => {
+                    const isOpen = visible === i
+
+                    return (
+                        <div key={year.id} className="flex gap-4">
+                            <div
+                                onMouseEnter={() => setHovered(i)}
+                                onMouseLeave={() => setHovered(null)}
+                                onClick={() => setActive(active === i ? null : i)}
+                                className="
+                                    w-4 h-4 rounded-full
+                                    bg-lime-400
+                                    transition
+                                    hover:scale-125
+                                    hover:ring-4 hover:ring-lime-200
+                                    cursor-pointer
+                                "
+                            />
+
+
+                            <div className="flex-1">
+                                <div 
+                                    className=" text-gray-500 mb-1 cursor-pointer"
+                                    onClick={() => setActive(active === i ? null : i)}
+                                >{year.id}</div>
+
+                                {isOpen && (
+                                    <div className="
+                                        bg-transparent
+                                        border border-lime-300
+                                        shadow-lg
+                                        rounded-xl
+                                        p-4
+                                        animate-in fade-in slide-in-from-bottom-2
+                                    ">
+                                        <h3 className="font-semibold border-b mb-4 pb-2">
+                                            {year.year.includes('present') ? (
+                                              <span>
+                                                {year.year.split('-')[0].trim()} - {t('about.bio-section.present')}
+                                              </span>
+                                            ) : (
+                                              <span>{year.year}</span>
+                                            )}
+                                            <span>: </span>
+                                            {t(year.title)}                                            
+                                        </h3>
+                                        <ul className="space-y-4">
+                                            {year.description.map((li, i) => {
+                                            const listStyles = 
+                                                li.type === 'main'
+                                                    ? 'list-inside [&::marker]:content-[">>"]'
+                                                    : li.type === 'sub'
+                                                    ? 'list-outside pl-2 [&::marker]:content-["▸"] ml-4'
+                                                    : '';
+                                                return(
+                                                <li key={`${li}-${i}`} className={listStyles}>
+                                                    {t(li.text)}
+                                                </li>
+                                            )})}
+                                        </ul>
+                                    </div>
+                                )}
+                            </div>
+                        </div>
+                    )
+                })}
+            </div>
+
+            {/* md+ layout*/}
+            <div className="hidden md:block relative w-full">
+                <div className="absolute top-8.5 mx-auto w-full h-0.5 bg-gray-300"/>
+                <div className="flex justify-around">
+                    {BioData.map((year, i) => {
+                        const isOpen = visible === i
+                        const popupPlacement = ['1998', '2016'].includes(year.id)
+                            ? 'left-0'
+                            : ['2018', '2019'].includes(year.id)
+                            ? '-left'
+                            : ['2021', '2024'].includes(year.id)
+                            ? 'right-0'
+                            : ''
 
                         return (
-                        <div key={`${year.id}-${index}`}
-                            onMouseEnter={() => setDescriptionVisible(index)}
-                            onMouseLeave={() => setDescriptionVisible(null)}
-                            onClick={() => setDescriptionVisible ( descriptionVisible === index ? null : index)}
+                        <div 
+                            key={`${year.id}-${i}`}
+                            className="flex left- flex-col items-center relative"
                         >
-                            <div className={`${styles.flexCenter} flex-col`}>
-                                <h2 className="hover:scale-110 text-2xl hover:bg-set-accent px-2">{year.id}</h2>
-                                <div className="w-3 h-3 hover:bg-set-accent bg-set-black rounded-full border-2 border-set-black"/>                           
-                             </div>
+                            <h2 className="mb-2 text-gray-500">{year.id}</h2>
+                            <div 
+                                onMouseEnter={() => setHovered(i)}
+                                onMouseLeave={() => setHovered(null)}
+                                onClick={() => setActive(active === i ? null : i)}
+                                className="
+                                    w-4 h-4
+                                    bg-lime-400
+                                    rounded-full
+                                    z-10
+                                    cursor-pointer
+                                    transition 
+                                    hover:scale-125
+                                    hover:right-4 hover:ring-lime-200
+                                "
+                            />                      
 
-                            {descriptionVisible === index && (
+                            {isOpen && (
                                 <div 
-                                    className="absolute p-4 flex flex-col w-80 h-fit text-justify
-                                        rounded-lg shadow-2xl
-                                        bg-white/80
-                                        backdrop-blur-md
-                                        border border-white/40
-                                        z-50 transition-all
-                                        max-h-96 overflow-y-auto
-                                        left-1/2 transform -translate-x-1/2
-                                        mb-4
-                                        [&::-webkit-scrollbar]:w-1.5
-                                        [&::-webkit-scrollbar-track]:bg-gray-800
-                                        [&::-webkit-scrollbar-thumb]:bg-set-accent                                    ">
-                                    <h2 className="text-2xl bg-set-white w-fit px-2 text-center">
+                                    className={`absolute top-20 w-140
+                                        bg-set-white
+                                        border border-lime-300
+                                        shadow-xl rounded-xl
+                                        p-4 transition-all 
+                                        ${popupPlacement}
+                                    `}>
+
+                                    <h2 className="font-semibold border-b pb-2 mb-4">
                                         {year.year.includes('present') ? (
                                           <span>
                                             {year.year.split('-')[0].trim()} - {t('about.bio-section.present')}
@@ -54,8 +144,9 @@ export default function Bio (){
                                         <span>: </span>
                                         {t(year.title)}
                                     </h2>
+
                                     <ul>
-                                        {ulData.map((li, index) => {
+                                        {year.description.map((li, index) => {
                                             const listStyles = 
                                                 li.type === 'main'
                                                     ? 'list-inside [&::marker]:content-[">>"]'
@@ -65,7 +156,7 @@ export default function Bio (){
                                             
                                             return (
                                             <li key={`${li.text}-${index}`}
-                                                className={listStyles}
+                                                className={`${listStyles} my-4`}
                                             >
                                                 {t(li.text)}
                                             </li>
@@ -77,6 +168,6 @@ export default function Bio (){
                     )})}
                 </div>
             </div>
-        </div>
+        </section>
     )
 }
