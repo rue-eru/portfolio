@@ -3,7 +3,7 @@
 import { styles } from "@/app/utils/styles";
 import AboutData from "@/app/data/about.json"
 import { useTranslations } from "next-intl";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useCurrentLanguage } from "@/app/hooks/useCurrentLang";
 
 export default function Bio (){
@@ -12,7 +12,35 @@ export default function Bio (){
     const [hovered, setHovered] = useState<number | null>(null);
     const [active, setActive] = useState<number | null>(null);
     const visible = active ?? hovered;
-    const {isEn} = useCurrentLanguage();               
+    const {isEn} = useCurrentLanguage();    
+    const [viewedYears, setViewedYears] = useState<Set<string>>(new Set());
+    
+    // load viewed years from localstorage on mount
+    useEffect(() => {
+        const saved = localStorage.getItem('viewedBioYears')
+        if (saved) {
+            setViewedYears(new Set(JSON.parse(saved)))
+        }
+    }, [])
+
+    // save to localstorage when viewed years change
+    useEffect(() => {
+        localStorage.setItem('viewedBioYears', JSON.stringify([...viewedYears]))
+    }, [viewedYears])
+
+
+    const handleOpen = (i: number, yearId: string) => {
+        setActive(active === i ? null : i)
+        setViewedYears(prev => new Set(prev).add(yearId))
+    }
+
+    const lastViewedIndex = Math.max(
+        ...BioData.map((y, i) => viewedYears.has(y.id) ? i : -1)
+    )
+
+    const proggressPercentage = lastViewedIndex <= 0
+        ? 0
+        : (lastViewedIndex / (BioData.length - 1)) * 100
 
     return(
         <section className={`${isEn ? 'text-2xl leading-5' : 'text-sm'} ${styles.sectionWidth}`}>
@@ -21,28 +49,30 @@ export default function Bio (){
             <div className="flex flex-col gap-10 md:hidden p-4">
                 {BioData.map((year, i) => {
                     const isOpen = visible === i
+                    const isViewed = viewedYears.has(year.id)
 
                     return (
                         <div key={year.id} className="flex gap-4">
                             <div
                                 onMouseEnter={() => setHovered(i)}
                                 onMouseLeave={() => setHovered(null)}
-                                onClick={() => setActive(active === i ? null : i)}
-                                className="
+                                onClick={() => handleOpen(i, year.id)}
+                                className={`
                                     w-4 h-4 rounded-full
-                                    bg-lime-400
-                                    transition
+                                    transition-all duration-300
+                                    ${isViewed ? 'bg-lime-400' : 'bg-gray-300'}
                                     hover:scale-125
                                     hover:ring-4 hover:ring-lime-200
                                     cursor-pointer
-                                "
+                                    ${isOpen ? 'ring-4 ring-lime-300' : ''}
+                                `}
                             />
 
 
                             <div className="flex-1">
                                 <div 
                                     className=" text-gray-500 mb-1 cursor-pointer"
-                                    onClick={() => setActive(active === i ? null : i)}
+                                    onClick={() => handleOpen(i, year.id)}
                                 >{year.id}</div>
 
                                 {isOpen && (
@@ -52,7 +82,6 @@ export default function Bio (){
                                         shadow-lg
                                         rounded-xl
                                         p-4
-                                        animate-in fade-in slide-in-from-bottom-2
                                     ">
                                         <h3 className="font-semibold border-b mb-4 pb-2">
                                             {year.year.includes('present') ? (
@@ -90,9 +119,15 @@ export default function Bio (){
             {/* md+ layout*/}
             <div className="hidden md:block relative w-full">
                 <div className="absolute top-8.5 mx-auto w-full h-0.5 bg-gray-300"/>
-                <div className="flex justify-around">
+                {/*animated progress line*/}
+                <div 
+                    className="absolute top-8.5 mx-auto h-0.5 bg-lime-400 transition-all duration-500 ease-in-out"
+                    style={{width: `${proggressPercentage}%`}}
+                />
+                <div className="flex">
                     {BioData.map((year, i) => {
                         const isOpen = visible === i
+                        const isViewed = viewedYears.has(year.id)
                         const popupPlacement = ['1998', '2016'].includes(year.id)
                             ? 'left-0'
                             : ['2018', '2019'].includes(year.id)
@@ -104,23 +139,27 @@ export default function Bio (){
                         return (
                         <div 
                             key={`${year.id}-${i}`}
-                            className="flex left- flex-col items-center relative"
+                            className="flex-1 flex flex-col items-center relative"
                         >
-                            <h2 className="mb-2 text-gray-500">{year.id}</h2>
+                            <h2 className={`mb-2 transition-colors duration-300
+                                ${isViewed ? 'text-lime-600' : 'text-gray-500'}`}>
+                                    {year.id}
+                            </h2>
                             <div 
                                 onMouseEnter={() => setHovered(i)}
                                 onMouseLeave={() => setHovered(null)}
-                                onClick={() => setActive(active === i ? null : i)}
-                                className="
+                                onClick={() => handleOpen(i, year.id)}
+                                className={`
                                     w-4 h-4
-                                    bg-lime-400
                                     rounded-full
                                     z-10
                                     cursor-pointer
-                                    transition 
+                                    transition-all duration-200
+                                    ${isViewed ? 'bg-lime-400' : 'bg-gray-300'}
                                     hover:scale-125
-                                    hover:right-4 hover:ring-lime-200
-                                "
+                                    hover:ring-4 hover:ring-lime-200
+                                    ${isOpen ? 'ring-4 ring-lime-300 scale-125' : ''}
+                                `}
                             />                      
 
                             {isOpen && (
