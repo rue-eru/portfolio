@@ -1,13 +1,14 @@
-import { styles } from "@/app/utils/styles";
 import Bio from "./Bio/Bio";
 import FactsGame from "./FactsGame/FactsGame";
 
 export default function AboutPage () {
 
     return(
-        <div className={`${styles.sectionWidth} font-accent`} id="about">
+        <div className="font-accent w-full h-auto" id="about">
             <FactsGame />
-            <Bio />
+            <div className="bg-set-black">
+                <Bio />
+            </div>
         </div>
     )
 }

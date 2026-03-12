@@ -3,7 +3,7 @@
 import { styles } from "@/app/utils/styles";
 import AboutData from "@/app/data/about.json"
 import { useTranslations } from "next-intl";
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { useCurrentLanguage } from "@/app/hooks/useCurrentLang";
 
 export default function Bio (){
@@ -31,7 +31,12 @@ export default function Bio (){
 
     const handleOpen = (i: number, yearId: string) => {
         setActive(active === i ? null : i)
-        setViewedYears(prev => new Set(prev).add(yearId))
+        setViewedYears(prev => {
+            const next = new Set(prev)
+            if(!next.has(yearId)) next.add(yearId)
+            return next
+        })
+        
     }
 
     const lastViewedIndex = Math.max(
@@ -42,11 +47,35 @@ export default function Bio (){
         ? 0
         : (lastViewedIndex / (BioData.length - 1)) * 100
 
+    const segmentHeight = 100 / (BioData.length - 1)
+
+    // calculates progress based only on viewedYears
+    const mobileProgress = useMemo(() => {
+        if (viewedYears.size === 0) return 0;
+
+        // find the furthest viewed year
+        let furthestIndex = -1;
+        BioData.forEach((year, i) => {
+            if (viewedYears.has(year.id)) {
+                furthestIndex = Math.max(furthestIndex, i);
+            }
+        });
+
+        return furthestIndex >= 0 ? furthestIndex * segmentHeight : 0;
+    }, [viewedYears]);
+
     return(
-        <section className={`${isEn ? 'text-2xl leading-5' : 'text-sm'} ${styles.sectionWidth}`}>
+        <section className={`${styles.sectionWidth} ${isEn ? 'text-2xl leading-5' : 'text-sm'} text-set-white pt-50 px-4`}>
 
             {/*mobile layout */}
-            <div className="flex flex-col gap-10 md:hidden p-4">
+            <div className="flex flex-col gap-10 md:hidden px-4 relative">
+                <div className="absolute left-5.5 top-2 bottom-2 w-0.5 bg-gray-300">
+                {/*animated progress line*/}
+                    <div    
+                        className="absolute left-0 top-0 w-0.5 bg-lime-400 transition-all duration-500 ease-in-out origin-top"
+                        style={{height: `${mobileProgress}%`}}
+                    />
+                </div>
                 {BioData.map((year, i) => {
                     const isOpen = visible === i
                     const isViewed = viewedYears.has(year.id)
@@ -68,10 +97,9 @@ export default function Bio (){
                                 `}
                             />
 
-
                             <div className="flex-1">
                                 <div 
-                                    className=" text-gray-500 mb-1 cursor-pointer"
+                                    className="text-gray-300 cursor-pointer"
                                     onClick={() => handleOpen(i, year.id)}
                                 >{year.id}</div>
 
@@ -79,7 +107,7 @@ export default function Bio (){
                                     <div className="
                                         bg-transparent
                                         border border-lime-300
-                                        shadow-lg
+                                        shadow-sm shadow-lime-300
                                         rounded-xl
                                         p-4
                                     ">
@@ -116,30 +144,32 @@ export default function Bio (){
                 })}
             </div>
 
+
             {/* md+ layout*/}
             <div className="hidden md:block relative w-full">
-                <div className="absolute top-8.5 mx-auto w-full h-0.5 bg-gray-300"/>
-                {/*animated progress line*/}
-                <div 
-                    className="absolute top-8.5 mx-auto h-0.5 bg-lime-400 transition-all duration-500 ease-in-out"
-                    style={{width: `${proggressPercentage}%`}}
-                />
-                <div className="flex">
+                <div className="absolute top-8.5 left-2 right-2  h-0.5 bg-gray-300">
+                    {/*animated progress line*/}
+                    <div 
+                        className="absolute top-0 left-0 h-0.5 bg-lime-400 transition-all duration-500 ease-in-out"
+                        style={{width: `${proggressPercentage}%`}}
+                    />
+                </div>
+                <div className="flex justify-between">
                     {BioData.map((year, i) => {
                         const isOpen = visible === i
                         const isViewed = viewedYears.has(year.id)
                         const popupPlacement = ['1998', '2016'].includes(year.id)
-                            ? 'left-0'
+                            ? 'left-10'
                             : ['2018', '2019'].includes(year.id)
                             ? '-left'
                             : ['2021', '2024'].includes(year.id)
-                            ? 'right-0'
+                            ? 'right-10'
                             : ''
 
                         return (
                         <div 
                             key={`${year.id}-${i}`}
-                            className="flex-1 flex flex-col items-center relative"
+                            className="flex flex-col items-center relative"
                         >
                             <h2 className={`mb-2 transition-colors duration-300
                                 ${isViewed ? 'text-lime-600' : 'text-gray-500'}`}>
@@ -165,9 +195,8 @@ export default function Bio (){
                             {isOpen && (
                                 <div 
                                     className={`absolute top-20 w-140
-                                        bg-set-white
                                         border border-lime-300
-                                        shadow-xl rounded-xl
+                                        shadow-sm shadow-lime-200 rounded-xl
                                         p-4 transition-all 
                                         ${popupPlacement}
                                     `}>

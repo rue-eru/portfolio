@@ -120,7 +120,7 @@ export default function FactsGame () {
     }, []);
 
     return (
-        <div className={styles.sectionWidth}>
+        <section className={styles.sectionWidth}>
             
             {showAchievement && (
                 <AchievementDisplay
@@ -155,6 +155,6 @@ export default function FactsGame () {
                 setStartScreen={setStartScreen}
                 keyJump={keyJump}
             />
-        </div>
+        </section>
     )
 }
