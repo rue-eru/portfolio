@@ -1,0 +1,17 @@
+{
+    "h1": "Certificates",
+    "languages": {
+        "jlpt-n2": {
+            "title": "Japanese Language Proficiency Test (JLPT) N2",
+            "description": "Participated in the winter exam what took place in Kazan, Russia on Dec 7th 2025. N2 is the 4rd out of 5 JLPT levels and represents intermediate and upper-intermidiate levels. It covers up to B1-B2 levels by European language standards."
+        },
+        "jlpt-n3": {
+            "title": "Japanese Language Proficiency Test (JLPT) N3",
+            "description": "Participated in the summer exam what took place in Ekaterinbung, Russia on July 7th 2024. N3 is the 3rd out of 5 JLPT levels and represents pre-intermidiate and intermediate levels. It covers up to A2-B1 levels by European language standards."
+        },
+        "efset": {
+            "title": "EF Standard English Test (EFSET)",
+            "description": "Unfortunately, due to sanctions I am not able to take IELTS or TOEFL at the moment to prove my English skills but I mainly studied in English through my whole university years and I never got anything lower than C1 in EFSET so my comprehention skills are fluent."
+        }
+    }
+}

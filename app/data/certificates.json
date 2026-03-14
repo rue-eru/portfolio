@@ -1,0 +1,32 @@
+{
+    "languages": [
+     
+        {
+            "id": "jlpt-n2",
+            "label": "languages",
+            "preview": "JLPT N2",
+            "title": "languages.jlpt-n2.title",
+            "description": "languages.jlpt-n2.description",
+            "image": "/images/certificates/JLPT_N2.jpg"
+        },
+        {
+            "id": "jlpt-n3",
+            "label": "languages",
+            "preview": "JLPT N3",
+            "title": "languages.jlpt-n3.title",
+            "description": "languages.jlpt-n2.description",
+            "image": [
+                "/images/certificates/JLPT_N3_1.png",
+                "/images/certificates/JLPT_N3_2.png"
+            ]
+        },
+        {
+            "id": "efset",
+            "preview": "EFSET",
+            "label": "languages",
+            "title": "languages.efset.title",
+            "description": "languages.efset.description",
+            "image": "/images/certificates/EFSET-Certificate.jpg"
+        }
+    ]
+}
