@@ -40,17 +40,17 @@ export default function CertCard () {
                                 onMouseLeave={()=> setDescription(null)}
                             >
                                 {descriptionCover === i && (
-                                    <SlideIn className={`w-full h-full ${styles.flexCenter} flex-col`}>
-                                        <p className="text-5xl font-semibold text-center p-12">{t(cert.title)}</p>
+                                    <SlideIn className={`w-full h-full ${styles.flexCenter} flex-col text-justify p-12`}>
+                                        <p className="text-5xl text-center font-semibold border-b-2 mb-4 pb-4">{t(cert.title)}</p>
                                         <p className="mt-2">{t(cert.description)}</p>
                                     </SlideIn>
                                 )}
 
-                                <SlideIn className="bg-set-accent w-full h-full text-set-black text-[200px] uppercase font-accent flex justify-center items-center"
+                                <SlideIn className="bg-set-accent w-full h-full text-set-black text-[200px] uppercase font-accent flex justify-center items-center text-nowrap"
                                     direction="left"
                                 >
                                     <SlideIn direction="bottom" delay={1}>
-                                        <p className="rotate-90 w-fit h-it">{cert.preview}</p>
+                                        <p className="rotate-90 w-fit h-fit">{cert.preview}</p>
                                     </SlideIn>
                                 </SlideIn>
                             </div>

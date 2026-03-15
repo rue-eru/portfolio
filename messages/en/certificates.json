@@ -13,5 +13,39 @@
             "title": "EF Standard English Test (EFSET)",
             "description": "Unfortunately, due to sanctions I am not able to take IELTS or TOEFL at the moment to prove my English skills but I mainly studied in English through my whole university years and I never got anything lower than C1 in EFSET so my comprehention skills are fluent."
         }
+    },
+    "coding" : {
+        "responsive-web-design" : {
+            "title": "",
+            "description": ""
+        },
+        "javascript-algorithms-and-data-structures": {
+            "title": "",
+            "description": ""
+        },
+        "frontend-development-libraries": {
+            "title": "",
+            "description": ""
+        }
+    },
+    "localization": {
+        "gamelocalization_course": {
+            "title": "",
+            "description": ""
+        },
+        "dictation": {
+            "title": "",
+            "description": ""
+        }
+    },
+    "uni": {
+        "volunteer_participation": {
+            "title": "",
+            "description": ""
+        },
+        "translation_competition": {
+            "title": "",
+            "description": ""
+        }
     }
 }
