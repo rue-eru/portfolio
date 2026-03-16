@@ -16,36 +16,36 @@
     },
     "coding" : {
         "responsive-web-design" : {
-            "title": "",
-            "description": ""
+            "title": "Responsive Web Design",
+            "description": "The first course I took on freeCodeCamp in 2024 that covers HTML and CSS basics and  after completing all the lessons requires to pass 5 projects that should satisfy the set requirments based on the course's curriculum. I was no stranger to these two concept but it helped me deeping my understanding and knowledge and made me realize that I do like making web pages."
         },
         "javascript-algorithms-and-data-structures": {
-            "title": "",
-            "description": ""
+            "title": "JavaScript Algorithms and Data Structures",
+            "description": "The second course I did on freeCodeCamp in the late 2024. I did start JavaScript earlier that year myself but it was rather tough at first. That course  made me go through all the core concepts that made it easier for me to catch with TypeScript later on my own. Though the projects set for passing to get the certificate took me a lot of time to complete. They were no beginner friendly, but make you face the real challenge early and be ready to search and try."
         },
         "frontend-development-libraries": {
-            "title": "",
-            "description": ""
+            "title": "Front-End Libraries",
+            "description": "The final course I took on freeCodeCamp in early 2025 that covers different libraries that are used in frontend development. Getting used to each libraries used in the course lessons required time but it taught me to work with documentation and not be scared of new and undiscovered. Although, I got used to React pretty quickly and made all the projects required for passing requirments in getting the certificate in it so I am React biased now but I'm glad I was able to work in it for these projects cause it was rather easy to switch to Next.js later on."
         }
     },
     "localization": {
         "gamelocalization_course": {
-            "title": "",
-            "description": ""
+            "title": "Basics of Gamelocalization",
+            "description": "This is the first course I took after graduation from the university. I finished it in 2022 and I took it to deepen my undertanding and work in modern CAT-tools used by translators. The course as it is said is focused on localization in gaming sphere and mostly is in xml format that does use HTML propertise like variables, text stylings and line breakers. And it is important for tranlators to understand and work with them, so the teacher on the course strongly recommended to take any HTML related course and as you may assume I did and found myself in a neighbouring field! How tables have turned!."
         },
         "dictation": {
-            "title": "",
-            "description": ""
+            "title": "Translation Dictations",
+            "description": "Before taking the course on Gamelocalization's platform I participated in several Translation Dictations they hosted through 2021-2022. The concept of that workshop is it lasts for a week and you get several text for translation throughout the so called week. They cover different themes (I participated in 3: the 2.0 that was their second event and it was in general gaming related, Nordic and RPG). It does feel like what I did in university on translation practice classes but it was more field focused and we were required to use CAT-tools so it was rather a fun activity which also was very useful!"
         }
     },
     "uni": {
         "volunteer_participation": {
-            "title": "",
-            "description": ""
+            "title": "Volunteering at 'Teaching and Studying English: Modern Approaches' event",
+            "description": "These are a certificate for volunteering and a gratitude for assistance in managing international seminar. During my student years, I was an intern at the language school “Expert English Studio”. Before the pandemic, the school was actively involved in holding various seminars on studying foreign languages. So eventually I myself managed to participate in one of these events. Other volunteers and I were helping foreign guests and we also participated in a workshop. As for me, I helped one of our teachers. I did a presentation and speech in English In front of a big audience. That was overwhelming and awesome at the same time!"
         },
         "translation_competition": {
-            "title": "",
-            "description": ""
+            "title": "Translation Competition",
+            "description": "In 2018 I also participated in the young translators competition and received two diplomas: in the nomination of a best English translation of a russian text and in the nomination of a best Russian translation of a short English piece of literature."
         }
     }
 }

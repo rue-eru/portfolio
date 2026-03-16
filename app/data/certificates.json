@@ -7,7 +7,7 @@
             "preview": "JLPT N2",
             "title": "languages.jlpt-n2.title",
             "description": "languages.jlpt-n2.description",
-            "image": "/images/certificates/JLPT_N2.jpg"
+            "image": ["/images/certificates/JLPT_N2.jpg"]
         },
         {
             "id": "jlpt-n3",
@@ -26,7 +26,7 @@
             "label": "languages",
             "title": "languages.efset.title",
             "description": "languages.efset.description",
-            "image": "/images/certificates/EFSET-Certificate.jpg"
+            "image": ["/images/certificates/EFSET-Certificate.jpg"]
         }
     ],
     "coding": [
@@ -36,7 +36,7 @@
             "preview": "HTML&CSS",
             "title": "coding.responsive-web-design.title",
             "description": "coding.responsive-web-design.description",
-            "image": "/images/certificates/responsive-web-design.png"        
+            "image": ["/images/certificates/responsive-web-design.png"]        
         },
         {
             "id": "javascript-algorithms-and-data-structures",
@@ -44,7 +44,7 @@
             "preview": "JavaScript",
             "title": "coding.javascript-algorithms-and-data-structures.title",
             "description": "coding.javascript-algorithms-and-data-structures.description",
-            "image": "/images/certificates/javascript-algorithms-and-data-structures.png"        
+            "image": ["/images/certificates/javascript-algorithms-and-data-structures.png"]        
         },
         {
             "id": "frontend-development-libraries",
@@ -52,7 +52,7 @@
             "preview": "FrontEnd",
             "title": "coding.frontend-development-libraries.title",
             "description": "coding.frontend-development-libraries.description",
-            "image": "/images/certificates/frontend-development-libraries.png"        
+            "image": ["/images/certificates/frontend-development-libraries.png"]        
         }
     ],
     "localization": [
@@ -62,11 +62,11 @@
             "preview": "gameloc",
             "title": "localization.gamelocalization_course.title",
             "description": "localization.gamelocalization_course.description",
-            "image": "/images/certificates/gamelocalization_course_en.jpg"        
+            "image": ["/images/certificates/gamelocalization_course_en.jpg" ]       
         },
         {
             "id": "dictation",
-            "label": "localization]",
+            "label": "localization",
             "preview": "dictation",
             "title": "localization.dictation.title",
             "description": "localization.dictation.description",
@@ -81,7 +81,7 @@
         {
             "id": "volunteer_participation",
             "label": "uni",
-            "preview": "volunteer_participation",
+            "preview": "volunteering",
             "title": "uni.volunteer_participation.title",
             "description": "uni.volunteer_participation.description",
             "image": [
@@ -92,7 +92,7 @@
         {
             "id": "translation_competition",
             "label": "uni",
-            "preview": "volunteer_participation",
+            "preview": "competition",
             "title": "uni.translation_competition.title",
             "description": "uni.translation_competition.description",
             "image": [
