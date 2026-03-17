@@ -88,3 +88,17 @@ export interface FactsGameProps {
 export interface AchievementDisplayProps {
   currentAchievement: string;
 }
+export interface LightboxProps {
+  onClose: () => void;
+  cert: any;
+  imageIndex: Record<string, number>
+  setImageIndex: React.Dispatch<React.SetStateAction<Record<string, number>>>
+}
+
+
+export interface ImageArrowsProps {
+  cert: any;
+  className: string;
+  setImageIndex: React.Dispatch<React.SetStateAction<Record<string, number>>>;
+  onClose?: () => void;
+}

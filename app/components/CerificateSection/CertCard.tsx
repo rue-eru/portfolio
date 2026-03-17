@@ -5,16 +5,23 @@ import { useTranslations } from "next-intl";
 import { styles } from "@/app/utils/styles";
 import { useState } from "react";
 import SlideIn from "../animations/SlideIn";
+import { Lightbox } from "./Lightbox";
+import ImageArrows from "./ImageArrows";
 
 export default function CertCard () {
     const t = useTranslations('certificates');
     const CertData = CertificatesData;
     const [descriptionCover, setDescription] = useState<number | null>(null);
     const [imageIndex, setImageIndex] = useState<Record<string, number>>({});
+    const [openImage, setOpenImage] = useState<{
+        cert: any
+    } | null>(null);
+
+
     return(
         <div>
             {Object.entries(CertData).map(([groupName, certs]: [string, any]) => (
-                <div key={groupName} className="">
+                <div key={groupName} id={groupName}>
                     <SlideIn className={`${styles.flexCenter} h-dvh`} direction="right">
                         <h2 className="text-9xl font-bold mb-4 capitalize hover:bg-set-accent hover:text-set-black hover:p-5 transition-all">{groupName}</h2>
                     </SlideIn>
@@ -31,52 +38,19 @@ export default function CertCard () {
                                         className="object-cover cursor-zoom-in h-full w-full"
                                         height={500}
                                         width={500}
-                                    />
-                                    {cert.image.length > 1 && (<>
-                                        <button
-                                            className="absolute top-1/2 right-0"
-                                            onClick={() => 
-                                                setImageIndex((prev) => {
-                                                    const current = prev[cert.id] ?? 0
-                                                    const next = 
-                                                        current === cert.image.length - 1
-                                                            ? 0 
-                                                            : current + 1
-                                                    return {...prev, [cert.id]: next}
+                                        loading="lazy"
+                                        onClick={() => 
+                                            setOpenImage({
+                                                cert
                                             })
-                                            }
-                                        >
-                                            <Image 
-                                                src={`/images/icons/next-arrow.png`}
-                                                alt="sliding arrow image"
-                                                className="object-contain opacity-50 hover:opacity-100 transition-opacity"
-                                                height={50}
-                                                width={50}
-                                            />
-                                        </button>
-                                        <button
-                                            className="absolute top-1/2 left-0"
-                                            onClick={() => 
-                                                setImageIndex((prev) => {
-                                                    const current = prev[cert.id] ?? 0
-                                                    const next = 
-                                                        current === 0
-                                                            ? cert.image.length - 1
-                                                            : current - 1
-                                                    return {...prev, [cert.id]: next}
-                                                })
-                                            }
-                                        >
-                                            <Image 
-                                                src={`/images/icons/back-arrow.png`}
-                                                alt="sliding back arrow image"
-                                                className="object-contain opacity-50 hover:opacity-100 transition-opacity"
-                                                height={50}
-                                                width={50}
-                                            />
-                                        </button>
-                                    </>
-                                    )}
+                                        }
+                                    />
+
+                                    <ImageArrows 
+                                        setImageIndex={setImageIndex}
+                                        className="top-1/2 bg-set-black/50 rounded-2xl p-0.5"
+                                        cert={cert}
+                                    />
                                 </SlideIn>
                             
                             <div 
@@ -103,6 +77,15 @@ export default function CertCard () {
                     ))}
                 </div>
             ))}
+
+            {openImage && (
+                <Lightbox
+                    cert={openImage.cert}
+                    imageIndex={imageIndex}
+                    setImageIndex={setImageIndex}
+                    onClose={() => setOpenImage(null)}
+                />
+            )}
 
         </div>
     )
