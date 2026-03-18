@@ -47,6 +47,13 @@ export function Lightbox({
                 className="top-0 w-50 h-full flex items-center"
                 onClose={onClose}
             />
+            
+            <button
+                onClick={onClose}
+                className="absolute top-0 right-2 py-1 px-2.5 m-2 text-2xl opacity-50 hover:opacity-100 bg-set-black/50 rounded-full"
+            >
+                ⨯
+            </button>
         </div>
     )
 }

@@ -81,7 +81,7 @@
         {
             "id": "volunteer_participation",
             "label": "uni",
-            "preview": "volunteering",
+            "preview": "volunteer",
             "title": "uni.volunteer_participation.title",
             "description": "uni.volunteer_participation.description",
             "image": [
@@ -92,7 +92,7 @@
         {
             "id": "translation_competition",
             "label": "uni",
-            "preview": "competition",
+            "preview": "contest",
             "title": "uni.translation_competition.title",
             "description": "uni.translation_competition.description",
             "image": [

@@ -32,6 +32,9 @@ export const styles = {
         [&::-webkit-scrollbar-thumb]:rounded 
     `,
 
-    ds:`bg-pink-600 hover:bg-pink-500 transition-colors px-4 py-2 h-fit rounded text-white text-sm text-sky-100 text-shadow-md text-shadow-indigo-950`
+    ds:`bg-pink-600 hover:bg-pink-500 transition-colors px-4 py-2 h-fit rounded text-white text-sm text-sky-100 text-shadow-md text-shadow-indigo-950`,
+
+    //certificates 
+    accentHeader: `hover:bg-set-accent hover:text-set-black hover:p-5 transition-all`
 
 } as const 
