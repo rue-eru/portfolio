@@ -4,33 +4,55 @@ import type { ImageArrowsProps } from "@/app/utils/interfaces";
 import Image from "next/image";
 import { useEffect } from "react";
 
-export default function ImageArrows ( {cert, className, setImageIndex, onClose}: ImageArrowsProps ) {
+export default function ImageArrows ( {
+    cert, 
+    className, 
+    setImageIndex, 
+    onClose,
+    images,
+    currentIndex,
+    setCurrentIndex
+}: ImageArrowsProps ) {
+
+    const isGlobal = !!images;
 
     const arrowNext = () => {
-        setImageIndex((prev) => {
-            const current = prev[cert.id] ?? 0
-            const next = 
-                current === cert.image.length - 1
-                    ? 0 
-                    : current + 1
-            return {...prev, [cert.id]: next}
-        })
+        if (isGlobal) {
+            setCurrentIndex!(prev => (prev + 1) % images.length);
+        } else {
+            setImageIndex!((prev) => {
+                const current = prev[cert.id] ?? 0
+                const next = 
+                    current === cert.image.length - 1
+                        ? 0 
+                        : current + 1
+                return {...prev, [cert.id]: next}
+            })
+        }
     }
 
     const arrowPrev = () => {
-        setImageIndex((prev) => {
-            const current = prev[cert.id] ?? 0
-            const next = 
-                current === 0
-                    ? cert.image.length - 1
-                    : current - 1
-            return {...prev, [cert.id]: next}
-        })
+        if (isGlobal) {
+            setCurrentIndex!( prev => 
+                prev === 0 
+                    ? images.length -1 
+                    : prev - 1
+            );
+        } else {
+            setImageIndex!((prev) => {
+                const current = prev[cert.id] ?? 0
+                const next = 
+                    current === 0
+                        ? cert.image.length - 1
+                        : current - 1
+                return {...prev, [cert.id]: next}
+            })
+        }
     }
 
     useEffect(() => {
         const handleKey = (e: KeyboardEvent) => {
-            if (e.key === "Escape") onClose;
+            if (e.key === "Escape") onClose?.();
 
             if (e.key === "ArrowRight") arrowNext();
 
@@ -38,15 +60,20 @@ export default function ImageArrows ( {cert, className, setImageIndex, onClose}:
         }
         window.addEventListener("keydown", handleKey)
         return () => window.removeEventListener("keydown", handleKey)
-    }, [cert, setImageIndex, onClose])
+    }, [cert, images])
+
+    const hasMultiple = isGlobal
+        ? images.length > 1
+        : cert.image.length > 1;
 
     return (
         <div>
-            {cert.image.length > 1 && (
+            {hasMultiple && (
                 <div onClick={(e) => e.stopPropagation()} >
                     {/*prevents lightbox closing on clicking arrows */}
                     <button
-                        className={`${className} absolute right-2 opacity-50 hover:opacity-100 transition-opacity justify-end`}
+                        className={`${className} absolute right-2
+                         opacity-50 hover:opacity-100 transition-opacity justify-end`}
                         onClick={() => arrowNext()}
                     >
                         <Image

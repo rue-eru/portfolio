@@ -78,7 +78,7 @@ export default function CertCard () {
 
                                 <SlideIn className="md:hidden p-4">
                                     <details 
-                                        className={`font-accent ${isEn ? "text-2xl" : "text-base"}`}
+                                        className={`font-accent ${isEn ? "text-base" : "text-base"}`}
                                         onClick={() => setExpandedDetails(cert.id)}
                                     >
                                         <summary className={`text-center font-semibold ${expandedDetails === cert.id ? "bg-set-accent text-set-black" : ""}`}>{t(cert.title)}</summary>
