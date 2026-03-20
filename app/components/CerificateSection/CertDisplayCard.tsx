@@ -56,7 +56,8 @@ export default function CertDisplayCard () {
                                     loading="lazy"
                                     key={`${cert.id}-${index}`}
                                     onClick={() => {
-                                        setCurrentIndex(currentIndex);
+                                        const globalIndex = imageToGlobalIndex.get(`${cert.id}-${index}`)!;
+                                        setCurrentIndex(globalIndex);
                                         setIsOpen(true);
                                     }}
                                 />                                
@@ -74,7 +75,7 @@ export default function CertDisplayCard () {
                     images={allImages}
                     currentIndex={currentIndex}
                     setCurrentIndex={setCurrentIndex}
-                    onClose={() => setCurrentIndex(0)}
+                    onClose={() => setIsOpen(false)}
                 />
             )}
         </div>

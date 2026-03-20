@@ -17,7 +17,7 @@ export default function ImageArrows ( {
     const isGlobal = !!images;
 
     const arrowNext = () => {
-        if (isGlobal) {
+        if (images) {
             setCurrentIndex!(prev => (prev + 1) % images.length);
         } else {
             setImageIndex!((prev) => {
@@ -32,7 +32,7 @@ export default function ImageArrows ( {
     }
 
     const arrowPrev = () => {
-        if (isGlobal) {
+        if (images) {
             setCurrentIndex!( prev => 
                 prev === 0 
                     ? images.length -1 
@@ -60,7 +60,7 @@ export default function ImageArrows ( {
         }
         window.addEventListener("keydown", handleKey)
         return () => window.removeEventListener("keydown", handleKey)
-    }, [cert, images])
+    }, [cert, setImageIndex, onClose, images])
 
     const hasMultiple = isGlobal
         ? images.length > 1

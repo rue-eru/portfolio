@@ -33,7 +33,7 @@ export function Lightbox({
 
     return(
         <div 
-            className="fixed inset-0 z-50 bg-set-black/80 flex items-center justify-center flex-col h-fit"
+            className="fixed inset-0 z-50 bg-set-black/80 flex items-center justify-center flex-col overflow-y-auto"
             onClick={onClose}
             onTouchStart={(e) => setTouchStart(e.targetTouches[0].clientX)}
             onTouchMove={(e) => setTouchEnd(e.targetTouches[0].clientX)}
@@ -49,7 +49,8 @@ export function Lightbox({
             }}
         >
             <div 
-                className="relative w-[90vw] h-[90vh]"
+                className="relative w-[90vw] min-h-[90vh]"
+                onClick={(e) => e.stopPropagation()}
             >
                 <Image
                     src={currentSrc}
@@ -71,7 +72,10 @@ export function Lightbox({
             />
             
             <button
-                onClick={onClose}
+                onClick={(e) => {
+                    e.stopPropagation();
+                    onClose();
+                }}
                 className="absolute top-0 right-2 py-1 px-2.5 m-2 text-2xl opacity-50 hover:opacity-100 bg-set-black/50 rounded-full"
             >
                 ⨯
