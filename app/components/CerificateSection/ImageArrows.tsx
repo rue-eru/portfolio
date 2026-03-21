@@ -72,8 +72,7 @@ export default function ImageArrows ( {
                 <div onClick={(e) => e.stopPropagation()} >
                     {/*prevents lightbox closing on clicking arrows */}
                     <button
-                        className={`${className} absolute right-2
-                         opacity-50 hover:opacity-100 transition-opacity justify-end`}
+                        className={`${className} absolute right-2 opacity-50 hover:opacity-100 transition-opacity justify-end`}
                         onClick={() => arrowNext()}
                     >
                         <Image

@@ -31,9 +31,15 @@ export function Lightbox({
       ? images[currentIndex!].cert
       : cert;
 
+
     return(
         <div 
-            className="fixed inset-0 z-50 bg-set-black/80 flex items-center justify-center flex-col overflow-y-auto"
+            className="fixed inset-0 z-50 bg-set-black/80 flex items-center flex-col overflow-y-auto
+                [&::-webkit-scrollbar]:w-2
+                 [&::-webkit-scrollbar-track]:bg-set-black
+                 [&::-webkit-scrollbar-thumb]:bg-set-white/50
+                 [&::-webkit-scrollbar-thumb]:rounded
+            "
             onClick={onClose}
             onTouchStart={(e) => setTouchStart(e.targetTouches[0].clientX)}
             onTouchMove={(e) => setTouchEnd(e.targetTouches[0].clientX)}
@@ -49,40 +55,41 @@ export function Lightbox({
             }}
         >
             <div 
-                className="relative w-[90vw] min-h-[90vh]"
+                className="relative shrink-0"
                 onClick={(e) => e.stopPropagation()}
             >
                 <Image
                     src={currentSrc}
                     alt={currentCert.id}
-                    fill
-                    className="object-contain cursor-zoom-out"
+                    width={1200}
+                    height={800}
+                    className="object-contain sm:w-screen mx-auto w-[98%] h-auto max-h-[90vh]"
                     loading="lazy"
                 />
+
+                <ImageArrows 
+                    cert={cert}
+                    setImageIndex={setImageIndex}
+                    className="top-1/2 -translate-y-1/2 flex items-center"
+                    onClose={onClose}
+                    images={images}
+                    currentIndex={currentIndex}
+                    setCurrentIndex={setCurrentIndex}
+                />
+
+                <button
+                    onClick={(e) => {
+                        e.stopPropagation();
+                        onClose();
+                    }}
+                    className="absolute top-0 right-2 py-1 px-2.5 m-2 text-2xl opacity-50 hover:opacity-100 bg-set-black/50 rounded-full"
+                >
+                    ⨯
+                </button>
+                
             </div>
-
-            <ImageArrows 
-                cert={cert}
-                setImageIndex={setImageIndex}
-                className="top-0 w-50 h-full flex items-center"
-                onClose={onClose}
-                images={images}
-                currentIndex={currentIndex}
-                setCurrentIndex={setCurrentIndex}
-            />
             
-            <button
-                onClick={(e) => {
-                    e.stopPropagation();
-                    onClose();
-                }}
-                className="absolute top-0 right-2 py-1 px-2.5 m-2 text-2xl opacity-50 hover:opacity-100 bg-set-black/50 rounded-full"
-            >
-                ⨯
-            </button>
-                <div className="bg-set-white h-0.5 w-[98%] my-4 px-4 rounded-2xl" />
-
-            <div className={`w-full my-4 text-white px-100 text-justify font-accent ${isEn ? "text-2xl" : ""}`}>
+            <div className={` my-4 text-white lg:w-[60%] md:w-[80%] sm:w-[90%] w-[95%] text-justify font-accent ${isEn ? "text-2xl" : ""}`}>
               <h2 className="font-semibold">{t(currentCert.title)}</h2>
               <p>{t(currentCert.description)}</p>
             </div>

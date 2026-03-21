@@ -18,7 +18,8 @@ export default function CertDisplayCard () {
           certId: cert.id,
           cert,
           src: img,
-          index
+          index,
+          screen: cert.screen,
         }))
       )
     )
@@ -32,15 +33,15 @@ export default function CertDisplayCard () {
     return(
         <div>
             {Object.entries(CertData).map(([groupName, certs]: [string, any]) => (
-                <div key={groupName}>
-                    <div className="flex w-full h-fit justify-center items-center gap-2">
+                <div key={groupName} className="flex flex-col gap-4">
+                    <div className="flex w-full h-fit justify-center items-center gap-2 mt-4">
                         <h2 className={`flex-1 ${isEn ? "text-2xl capitalize" : ""}`}>{groupName}</h2>
                         <div className="w-full h-0.5 bg-set-white"/>
 
 
                     </div >
 
-                    <div className="flex gap-2">
+                    <div className="flex flex-wrap gap-2">
                         {certs.map((cert: any) => 
                             cert.image.map((img: string, index: number) => {
 
@@ -51,8 +52,8 @@ export default function CertDisplayCard () {
                                     src={img}
                                     alt={cert.id}
                                     className="object-cover cursor-zoom-in hover:outline-2 hover:outline-set-accent transition-colors"
-                                    height={100}
-                                    width={100}
+                                    height={150}
+                                    width={150}
                                     loading="lazy"
                                     key={`${cert.id}-${index}`}
                                     onClick={() => {
