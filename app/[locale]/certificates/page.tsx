@@ -1,5 +1,4 @@
-import CertCard from "@/app/components/CerificateSection/CertCard";
-import CertNav from "@/app/components/CerificateSection/CertNav";
+import CertClient from "@/app/components/CerificateSection/CertClient";
 import {  type Locale } from "next-intl";
 import { setRequestLocale } from "next-intl/server";
 import { use } from "react";
@@ -11,10 +10,7 @@ export default function CertificatesPage({ params }: { params: Promise<{ locale:
 
     return(
         <main className="w-full h-fit bg-set-black text-set-white">
-            <CertNav />
-            <section>
-                <CertCard />
-            </section>
+            <CertClient />
         </main>
     )
 }

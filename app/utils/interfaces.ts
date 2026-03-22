@@ -119,3 +119,13 @@ export interface ImageArrowsProps {
   setCurrentIndex?: React.Dispatch<React.SetStateAction<number>>;
 }
 
+
+
+export interface CertNavProps {
+    activeGroup: string | null;
+    setActiveGroup: (group: string | null) => void;
+}
+
+export interface CertCardProps {
+    activeGroup: string | null;
+}

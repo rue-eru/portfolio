@@ -6,22 +6,26 @@ import CertificatesData from "@/app/data/certificates.json"
 import { useCurrentLanguage } from "@/app/hooks/useCurrentLang";
 import { Link } from "@/i18n/navigation";
 import { styles } from "@/app/utils/styles";
+import type { CertNavProps } from "@/app/utils/interfaces";
 
-export default function CertNav () {
+
+export default function CertNav ({activeGroup, setActiveGroup}: CertNavProps) {
     const [menuOpen, setMenuOpen] = useState(false);
     const t = useTranslations('certificates');
     const CertData = CertificatesData;
     const {isEn} = useCurrentLanguage();
     const [onHover, setOnHover] = useState(false);
 
+
     return (
-        <nav className="fixed top-0 w-full md:w-fit md:top-2 md:right-2 z-50 capitalize font-accent ">
-            {/*md+ screens*/}
+        <nav className="fixed top-0 w-full lg:w-fit lg:top-2 lg:right-2 z-50 capitalize font-accent ">
+            {/*lg+ screens*/}
             {menuOpen ? (
                 <div className="flex gap-5">
                     <div className={`flex flex-col gap-1 items-end ${isEn ? "text-2xl" : ""}`}>
                         {Object.entries(CertData).map(([groupName, i]: [string, any]) => (
-                            <a href={`#${groupName}`} key={`section-${groupName}-${i}`}
+                            <a href={`#${groupName}`} 
+                                key={`section-${groupName}-${i}`}
                                 className={`${styles.navCert} rounded-2xl px-2`} >{groupName}</a>
                         ))}
                         <Link className={`${styles.navCert} rounded-2xl px-2`} href="/certificates/all">see all</Link>
@@ -39,7 +43,7 @@ export default function CertNav () {
                     onClick={() => setMenuOpen(true)}
                     onMouseEnter={() => setOnHover(true)}
                     onMouseLeave={() => setOnHover(false)}
-                    className={`hidden md:block rounded-full p-2 ${styles.navCert}`}
+                    className={`hidden lg:block rounded-full p-2 ${styles.navCert}`}
                 >
                     <Image 
                         src={`${onHover ? '/images/icons/menu-burger-black.png' : '/images/icons/menu-burger-white.png'}`}
@@ -53,14 +57,16 @@ export default function CertNav () {
             )}
 
             {/*small screens*/}
-            <div className={`w-full h-fit bg-set-black md:hidden ${isEn ? "text-2xl" : ""}`}>
+            <div className={`w-full h-fit bg-set-black lg:hidden ${isEn ? "text-2xl" : ""}`}>
 
-                <div className="flex flex-wrap border justify-around">
+                <div className="flex flex-wrap justify-around">
                     {Object.entries(CertData).map(([groupName, i]: [string, any]) => (
-                        <a href={`#${groupName}`} key={`section-${groupName}-${i}`}
-                            className="hover:bg-set-accent hover:text-set-black transition-all px-2">{groupName}</a>
+                        <button 
+                            key={`section-${groupName}-${i}`}
+                            onClick={() => setActiveGroup(groupName)}
+                            className={styles.smallBtnsCertNav}>{groupName}</button>
                     ))}
-                    <Link href="/certificates/all">see all</Link>
+                    <Link href="/certificates/all" className={styles.smallBtnsCertNav}>see all</Link>
                 </div>
             </div>
 

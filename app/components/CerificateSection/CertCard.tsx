@@ -8,8 +8,9 @@ import SlideIn from "../animations/SlideIn";
 import { Lightbox } from "./Lightbox";
 import ImageArrows from "./ImageArrows";
 import { useCurrentLanguage } from "@/app/hooks/useCurrentLang";
+import type { CertCardProps } from "@/app/utils/interfaces";
 
-export default function CertCard () {
+export default function CertCard ({activeGroup}: CertCardProps) {
     const {isEn} = useCurrentLanguage();
     const t = useTranslations('certificates');
     const CertData = CertificatesData;
@@ -23,16 +24,18 @@ export default function CertCard () {
 
     return(
         <div>
-            {Object.entries(CertData).map(([groupName, certs]: [string, any]) => (
+            {Object.entries(CertData).map(([groupName, certs]: [string, any]) => {
+                if (activeGroup && activeGroup !== groupName) return null
+                return(
                 <div key={groupName} id={groupName}>
-                    <SlideIn className={`h-dvh hidden md:flex justify-center items-center `} direction="right">
+                    <SlideIn className={`h-dvh hidden lg:flex justify-center items-center `} direction="right">
                         <h2 className={`md:text-9xl text-4xl font-bold mb-4 capitalize ${styles.accentHeader}`}>{groupName}</h2>
                     </SlideIn>
 
                     {certs.map((cert: any, i: number) => (
-                        <div className="flex md:flex-row flex-col md:h-dvh" key={`${cert.id}-${i}`}>
+                        <div className="flex lg:flex-row flex-col lg:h-dvh" key={`${cert.id}-${i}`}>
                                 <SlideIn 
-                                    className="md:flex-1 relative" 
+                                    className="lg:flex-1 relative" 
                                     direction="right"
                                 >
                                     <Image 
@@ -57,18 +60,18 @@ export default function CertCard () {
                                 </SlideIn>
                             
                             <div 
-                                className="md:flex-1 relative"
+                                className="lg:flex-1 relative"
                                 onMouseEnter={() => setDescription(cert.id)}
                                 onMouseLeave={()=> setDescription(null)}
                             >
                                 {descriptionCover === cert.id && (
-                                    <SlideIn className={`hidden md:block w-full h-full ${styles.flexCenter} flex-col text-justify p-12 absolute top-0 z-40 bg-set-black`}>
+                                    <SlideIn className={`hidden lg:block w-full h-full ${styles.flexCenter} flex-col text-justify p-12 absolute top-0 z-40 bg-set-black`}>
                                         <h2 className={`text-5xl text-center font-semibold border-b-2 mb-4 p-5 ${styles.accentHeader}`}>{t(cert.title)}</h2>
                                         <p className="mt-2">{t(cert.description)}</p>
                                     </SlideIn>
                                 )}
 
-                                <SlideIn className="hidden bg-set-accent w-full h-full text-set-black lg:text-[150px] md:text-[100px] text-6xl uppercase font-accent md:flex justify-center items-center text-nowrap z-0"
+                                <SlideIn className="hidden bg-set-accent w-full h-full text-set-black lg:text-[150px] md:text-[100px] text-6xl uppercase font-accent lg:flex justify-center items-center text-nowrap z-0"
                                     direction="left"
                                 >
                                     <SlideIn direction="bottom" delay={1}>
@@ -76,9 +79,9 @@ export default function CertCard () {
                                     </SlideIn>
                                 </SlideIn>
 
-                                <SlideIn className="md:hidden p-4">
+                                <SlideIn className="lg:hidden p-4">
                                     <details 
-                                        className={`font-accent ${isEn ? "text-base" : "text-base"}`}
+                                        className={`font-accent ${isEn ? "sm:text-3xl text-2xl" : "text-base"}`}
                                         onClick={() => setExpandedDetails(cert.id)}
                                     >
                                         <summary className={`text-center font-semibold ${expandedDetails === cert.id ? "bg-set-accent text-set-black" : ""}`}>{t(cert.title)}</summary>
@@ -89,7 +92,7 @@ export default function CertCard () {
                         </div>
                     ))}
                 </div>
-            ))}
+            )})}
 
             {openImage && (
                 <Lightbox
