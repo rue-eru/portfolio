@@ -1,6 +1,7 @@
 'use client'
 
 import type { ImageArrowsProps } from "@/app/utils/interfaces";
+import { styles } from "@/app/utils/styles";
 import Image from "next/image";
 import { useEffect } from "react";
 
@@ -72,7 +73,7 @@ export default function ImageArrows ( {
                 <div onClick={(e) => e.stopPropagation()} >
                     {/*prevents lightbox closing on clicking arrows */}
                     <button
-                        className={`${className} absolute right-2 opacity-50 hover:opacity-100 transition-opacity justify-end`}
+                        className={`${className} ${styles.arrowStyle} right-2 justify-end`}
                         onClick={() => arrowNext()}
                     >
                         <Image
@@ -84,7 +85,7 @@ export default function ImageArrows ( {
                         />
                     </button>
                     <button
-                        className={`${className} absolute left-2 opacity-50 hover:opacity-100 transition-opacity justify-start`}
+                        className={`${className} ${styles.arrowStyle} left-2 justify-start`}
                         onClick={() => arrowPrev()}
                     >
                         <Image 

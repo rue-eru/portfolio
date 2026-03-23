@@ -20,6 +20,7 @@ export function Lightbox({
     const {isEn} = useCurrentLanguage();
     const [touchStart, setTouchStart] = useState<number | null>(null);
     const [touchEnd, setTouchEnd] = useState<number | null>(null);
+    const [zoomed, setZoomed] = useState(false);
     const minSwipeDistance = 50;
     const isGlobal = !!images;
 
@@ -58,14 +59,28 @@ export function Lightbox({
                 className="relative shrink-0"
                 onClick={(e) => e.stopPropagation()}
             >
-                <Image
-                    src={currentSrc}
-                    alt={currentCert.id}
-                    width={1200}
-                    height={800}
-                    className="object-contain sm:w-screen mx-auto w-[98%] h-auto max-h-[90vh]"
-                    loading="lazy"
-                />
+                <div
+                    onClick={(e) => {
+                        e.stopPropagation();
+                        setZoomed(prev => !prev)
+                    }}
+                    className="overflow-scroll
+                        [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]
+                    "
+                >
+                    <Image
+                        src={currentSrc}
+                        alt={currentCert.id}
+                        width={1200}
+                        height={800}
+                        className={`object-contain sm:w-screen mx-auto w-[98%] h-auto max-h-[90vh]
+                            transition-transform duration-300 ${
+                                zoomed ? "scale-150 cursor-zoom-out" : "scale-100 cursor-zoom-in"
+                            }
+                            `}
+                        loading="lazy"
+                    />
+                </div>
 
                 <ImageArrows 
                     cert={cert}
@@ -82,7 +97,7 @@ export function Lightbox({
                         e.stopPropagation();
                         onClose();
                     }}
-                    className="absolute top-0 right-2 py-1 px-2.5 m-2 text-2xl opacity-50 hover:opacity-100 bg-set-black/50 rounded-full"
+                    className="absolute top-0 right-2 py-1 px-2.5 m-2 text-2xl opacity-50 hover:opacity-100 bg-set-black/50 rounded-full cursor-pointer"
                 >
                     ⨯
                 </button>

@@ -13,6 +13,7 @@ import type { CertCardProps } from "@/app/utils/interfaces";
 export default function CertCard ({activeGroup}: CertCardProps) {
     const {isEn} = useCurrentLanguage();
     const t = useTranslations('certificates');
+    const tNav = useTranslations('certificates.nav');
     const CertData = CertificatesData;
     const [descriptionCover, setDescription] = useState<number | null>(null);
     const [imageIndex, setImageIndex] = useState<Record<string, number>>({});
@@ -29,7 +30,7 @@ export default function CertCard ({activeGroup}: CertCardProps) {
                 return(
                 <div key={groupName} id={groupName}>
                     <SlideIn className={`h-dvh hidden lg:flex justify-center items-center `} direction="right">
-                        <h2 className={`md:text-9xl text-4xl font-bold mb-4 capitalize ${styles.accentHeader}`}>{groupName}</h2>
+                        <h2 className={`md:text-9xl text-4xl font-bold mb-4 capitalize ${styles.accentHeader}`}>{tNav(groupName)}</h2>
                     </SlideIn>
 
                     {certs.map((cert: any, i: number) => (

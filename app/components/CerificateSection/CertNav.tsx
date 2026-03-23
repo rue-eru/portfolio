@@ -11,7 +11,7 @@ import type { CertNavProps } from "@/app/utils/interfaces";
 
 export default function CertNav ({activeGroup, setActiveGroup}: CertNavProps) {
     const [menuOpen, setMenuOpen] = useState(false);
-    const t = useTranslations('certificates');
+    const t = useTranslations('certificates.nav');
     const CertData = CertificatesData;
     const {isEn} = useCurrentLanguage();
     const [onHover, setOnHover] = useState(false);
@@ -26,9 +26,9 @@ export default function CertNav ({activeGroup, setActiveGroup}: CertNavProps) {
                         {Object.entries(CertData).map(([groupName, i]: [string, any]) => (
                             <a href={`#${groupName}`} 
                                 key={`section-${groupName}-${i}`}
-                                className={`${styles.navCert} rounded-2xl px-2`} >{groupName}</a>
+                                className={`${styles.navCert} rounded-2xl px-2`} >{t(groupName)}</a>
                         ))}
-                        <Link className={`${styles.navCert} rounded-2xl px-2`} href="/certificates/all">see all</Link>
+                        <Link className={`${styles.navCert} rounded-2xl px-2`} href="/certificates/all">{t('all')}</Link>
                     </div>
 
                     <button
@@ -64,9 +64,9 @@ export default function CertNav ({activeGroup, setActiveGroup}: CertNavProps) {
                         <button 
                             key={`section-${groupName}-${i}`}
                             onClick={() => setActiveGroup(groupName)}
-                            className={styles.smallBtnsCertNav}>{groupName}</button>
+                            className={styles.smallBtnsCertNav}>{t(groupName)}</button>
                     ))}
-                    <Link href="/certificates/all" className={styles.smallBtnsCertNav}>see all</Link>
+                    <Link href="/certificates/all" className={styles.smallBtnsCertNav}>{t('all')}</Link>
                 </div>
             </div>
 

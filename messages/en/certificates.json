@@ -1,5 +1,14 @@
 {
     "h1": "Certificates",
+    "nav": {
+        "all": "see all",
+        "languages": "languages",
+        "coding": "coding",
+        "localization": "localization",
+        "university": "university"
+    },
+
+
     "languages": {
         "jlpt-n2": {
             "title": "Japanese Language Proficiency Test (JLPT) N2",

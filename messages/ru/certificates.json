@@ -1,3 +1,60 @@
 {
-    "h1": "Сертификаты"
+    "h1": "Сертификаты",
+    "nav": {
+        "all": "Открыть все",
+        "languages": "языки",
+        "coding": "код",
+        "localization": "локализация",
+        "university": "универ"
+    },
+
+
+    "languages": {
+        "jlpt-n2": {
+            "title": "Экзамен по японскому языку JLPT N2",
+            "description": "Учавствовала в зимнем экзамене, который проводился 7 декабря 2025 года в Казани. N2 — это 4 уровень из 5, и считается средним уровнем знания языка. Соотносится с уровнями B1-B2 по европейскому стандарту."
+        },
+        "jlpt-n3": {
+            "title": "Экзамен по японскому языку JLPT N3",
+            "description": "Учавствовала в летнем экзамене, который проводился 7 июля 2024 года в Екатеринбурге. N3 — это 3 уровень из 5, и считается переходной гранью между начальным и средним уровнями владения языком. По европейской системе соотносят с A2-B1."
+        },
+        "efset": {
+            "title": "EF Standard English Test (EFSET)",
+            "description": "Из-за санкций сейчас нет возможнности сдать IELTS или TOEFL для определения своего уровня английского языка. Но мое обучение в университете происходило преимущественно на английском, и все мои попытки при сдаче EFSET (экзамен оценивает два навыка: чтение и аудирование) всегда вели к уровню C1 и выше. Поэтому я всегда говорю, что свободно владею английским."
+        }
+    },
+    "coding" : {
+        "responsive-web-design" : {
+            "title": "Responsive Web Design",
+            "description": "My first freeCodeCamp course (2024) covering HTML and CSS basics. After completing the lessons, I had to pass 5 projects meeting specific requirements. I wasn't a complete stranger to these concepts, but the course deepened my understanding and made me realize that I actually enjoy building web pages."
+        },
+        "javascript-algorithms-and-data-structures": {
+            "title": "JavaScript Algorithms and Data Structures",
+            "description": "My second freeCodeCamp course (late 2024). I had started learning JavaScript on my own earlier that year, but it was tough. This course walked me through core concepts and made it much easier to pick up TypeScript later. The projects required for the certificate took me a while. They're not beginner-friendly, but they throw you into real challenges early, forcing you to search, try, and grow."
+        },
+        "frontend-development-libraries": {
+            "title": "Front-End Development Libraries",
+            "description": "My final freeCodeCamp course (early 2025) covering various frontend libraries. Getting comfortable with each one took time, but it taught me to work with documentation and not fear the unknown. I clicked with React quickly and ended up using it for all the required projects. So yes, I'm React-biased now. But that made switching to Next.js later feel surprisingly natural."
+        }
+    },
+    "localization": {
+        "gamelocalization_course": {
+            "title": "Basics of Game Localization",
+            "description": "My first post-graduation course (2022), focused on deepening my understanding of modern CAT-tools. The course emphasizes game localization, which often involves XML with HTML-like properties—variables, text styling, line breaks. Translators need to understand these, so the instructor strongly recommended taking an HTML course. As you can guess, I did and accidentally found myself in a neighboring field. How the tables have turned!"
+        },
+        "dictation": {
+            "title": "Translation Dictations",
+            "description": "Before taking the GameLocalization course, I participated in several Translation Dictations they hosted in 2021-2022. The format: a week-long workshop where you receive texts to translate daily, each with a different theme. I joined three: the 2.0 (their second event, general gaming), Nordic, and RPG. It felt like university translation practice—but more focused, and we actually used CAT-tools. Was it challenging? Yes. But was it fun and useful! Also yes."
+        }
+    },
+    "uni": {
+        "volunteer_participation": {
+            "title": "Volunteering at 'Teaching and Studying English: Modern Approaches'",
+            "description": "A certificate for volunteering and a letter of gratitude for assisting in an international seminar. During my student years, I interned at the language school 'Expert English Studio'. Before the pandemic, the school actively hosted seminars on language learning, and I eventually got to participate in one. Along with other volunteers, I helped foreign guests and joined a workshop. I also had to present and speak in English in front of a large audience. It was overwhelming and awesome at the same time!"
+        },
+        "translation_competition": {
+            "title": "Translation Competition",
+            "description": "In 2018, I participated in a young translators' competition and received two diplomas: one for the best English translation of a Russian text, and another for the best Russian translation of a short English literary piece."
+        }
+    }
 }
