@@ -38,6 +38,9 @@ export const styles = {
     accentHeader: `hover:bg-set-accent hover:text-set-black hover:p-5 transition-all`,
     navCert: `hover:bg-set-accent hover:text-set-black hover:outline-4 hover:outline-set-black/80 transition-all bg-set-black/80 cursor-pointer`,
     smallBtnsCertNav: `hover:bg-set-accent hover:text-set-black transition-all px-2 flex-1 text-center capitalize text-nowrap`,
-    arrowStyle: `absolute opacity-50 hover:opacity-100 transition-opacity cursor-pointer`
+    arrowStyle: `absolute opacity-50 hover:opacity-100 transition-opacity cursor-pointer`,
+
+    //contacts
+    linkStyles: `flex gap-1.5 cursor-pointer hover:text-set-accent`
 
 } as const 

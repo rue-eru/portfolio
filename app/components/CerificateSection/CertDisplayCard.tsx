@@ -5,12 +5,14 @@ import { useCurrentLanguage } from "@/app/hooks/useCurrentLang";
 import Image from "next/image";
 import { Lightbox } from "./Lightbox";
 import { useState } from "react";
+import { useTranslations } from "next-intl";
 
 export default function CertDisplayCard () {
     const CertData = CertificatesData;
     const {isEn} = useCurrentLanguage();
     const [currentIndex, setCurrentIndex] = useState(0);
     const [isOpen, setIsOpen] = useState(false);
+    const t = useTranslations('certificates.nav')
 
     const allImages = Object.values(CertData).flatMap((certs: any) =>
       certs.flatMap((cert: any) =>
@@ -35,7 +37,7 @@ export default function CertDisplayCard () {
             {Object.entries(CertData).map(([groupName, certs]: [string, any]) => (
                 <div key={groupName} className="flex flex-col gap-4">
                     <div className="flex w-full h-fit justify-center items-center gap-2 mt-4">
-                        <h2 className={`flex-1 ${isEn ? "text-2xl capitalize" : ""}`}>{groupName}</h2>
+                        <h2 className={`flex-1 text-nowrap ${isEn ? "text-2xl capitalize" : ""}`}>{t(groupName)}</h2>
                         <div className="w-full h-0.5 bg-set-white"/>
 
 

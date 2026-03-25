@@ -1,0 +1,48 @@
+{
+    "others": [
+        {
+            "id": "certificates",
+            "title": "Certificates",
+            "link": "/certificates"
+        },
+        {
+            "id": "cv",
+            "title": "CV",
+            "link": "/certificates"
+        }
+    ],
+    "socials": [
+        {
+            "id": "email",
+            "title": "Email",
+            "icon": "/images/icons/email-accent.png",
+            "link": "mailto:shigoto.el@gmail.com"
+        },
+        {
+            "id": "github",
+            "title": "Github",
+            "icon": "/images/icons/github-accent.png",
+            "link": "https://github.com/rue-eru"
+        },
+        {
+            "id": "telegram",
+            "title": "Telegram",
+            "icon": "/images/icons/telegram-accent.png",
+            "link": "https://t.me/literallyfault"
+        }
+    ],
+    "banner": [
+        {
+            "id": "en",
+            "title": "Open for work & relocation"
+        },
+        {
+            "id": "ja",
+            "title": "求職中&転勤OK"
+        },
+        {
+            "id": "ru",
+            "title": "Открыта для предложений и релокации"
+        }
+    ]
+}
