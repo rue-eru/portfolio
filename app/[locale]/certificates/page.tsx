@@ -9,7 +9,7 @@ export default function CertificatesPage({ params }: { params: Promise<{ locale:
     setRequestLocale(locale); //for server components
 
     return(
-        <main className="w-full h-fit bg-set-black text-set-white">
+        <main className="w-full h-fit bg-set-black text-set-white font-accent">
             <CertClient />
         </main>
     )

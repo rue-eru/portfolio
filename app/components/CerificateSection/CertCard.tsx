@@ -68,7 +68,7 @@ export default function CertCard ({activeGroup}: CertCardProps) {
                                 {descriptionCover === cert.id && (
                                     <SlideIn className={`hidden lg:block w-full h-full ${styles.flexCenter} flex-col text-justify p-12 absolute top-0 z-40 bg-set-black`}>
                                         <h2 className={`text-5xl text-center font-semibold border-b-2 mb-4 p-5 ${styles.accentHeader}`}>{t(cert.title)}</h2>
-                                        <p className="mt-2">{t(cert.description)}</p>
+                                        <p className="mt-2 text-2xl">{t(cert.description)}</p>
                                     </SlideIn>
                                 )}
 

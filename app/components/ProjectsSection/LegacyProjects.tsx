@@ -43,10 +43,10 @@ export default function LegacyProjects () {
               
               return(
 
-              <Float key={courseName}>
+              <Float key={courseName} >
                 <button
-                  className={`bg-gray-600 cursor-pointer inline-flex md:justify-center justify-start items-center gap-2 p-2 rounded transition-all xs:w-94 w-70 md:w-full
-                  ${openCourse === courseName  ? 'bg-set-accent text-gray-600 transition-colors' : ''}
+                  className={`bg-gray-600 cursor-pointer inline-flex md:justify-center justify-start items-center gap-2 p-2 rounded transition-all xs:w-94 w-70 md:w-full hover:outline-set-accent hover:outline-3 hover:text-set-accent
+                  ${openCourse === courseName  ? 'bg-set-accent text-gray-600 transition-colors hover:text-set-black outline-none' : ''}
                 `}
                   onClick={() => setOpenCourse(prev => prev === courseName ? null : courseName)}
                 >

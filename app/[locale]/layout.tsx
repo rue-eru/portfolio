@@ -38,7 +38,7 @@ export default async function RootLayout({
   return (
     <html lang={locale}>
       <body
-        className={`${Dongle.variable} ${M_PLUS_Rounded_1c} antialiased`}
+        className={`${Dongle.variable} ${M_PLUS_Rounded_1c.variable} antialiased`}
       >
         <NextIntlClientProvider
           locale={locale} messages={messages}

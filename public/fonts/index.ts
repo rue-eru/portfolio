@@ -12,7 +12,7 @@ export const Dongle = localFont({
 })
 
 export const M_PLUS_Rounded_1c = localFont({
-  variable: "--font-m-plus",
+  variable: "--font-mPlusRoundedC1",
   src: [
     {
       path: './m-plus-rounded-1c-v20-cyrillic_japanese_latin-regular.woff2',

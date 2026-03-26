@@ -50,7 +50,7 @@ export default function ContactPage () {
                             loading="lazy"
                             className="object-contain"
                         />
-                        <p>{social.title}</p>
+                        <p className="font-dongle text-3xl mt-1">{social.title}</p>
                     </a>
                 ))}
             </div>
