@@ -3,7 +3,8 @@
         {
             "id": "certificates",
             "title": "Certificates",
-            "link": "/certificates"
+            "link": "/certificates",
+            "and": "&"
         },
         {
             "id": "cv",
@@ -15,6 +16,7 @@
         {
             "id": "email",
             "title": "Email",
+            "details": "shigoto.el@gmail.com",
             "icon": "/images/icons/email-accent.png",
             "link": "mailto:shigoto.el@gmail.com"
         },

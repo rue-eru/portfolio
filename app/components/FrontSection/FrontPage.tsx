@@ -29,7 +29,7 @@ export default function FrontPage () {
                         {charactersJA.map((char, i) => (
                             <span
                                 key={i}
-                                className="sm:text-7xl"
+                                className="xl:text-7xl lg:text-5xl sm:text-4xl text-lg"
                             >
                                 {char}
                             </span>
