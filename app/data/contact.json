@@ -2,13 +2,14 @@
     "others": [
         {
             "id": "certificates",
-            "title": "Certificates",
+            "title": "certificates",
             "link": "/certificates",
-            "and": "&"
+            "and": "&",
+            "andJa": "と"
         },
         {
             "id": "cv",
-            "title": "CV",
+            "title": "cv",
             "link": "/certificates"
         }
     ],
@@ -36,11 +37,11 @@
     "banner": [
         {
             "id": "en",
-            "title": "Open for work & relocation"
+            "title": "Open to work & relocation"
         },
         {
             "id": "ja",
-            "title": "求職中&転勤OK"
+            "title": "転勤OK・求職中"
         },
         {
             "id": "ru",

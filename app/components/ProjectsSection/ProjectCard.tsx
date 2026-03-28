@@ -36,7 +36,7 @@ export default function ProjectCard({ project, index, isHovered, onHover }: Proj
         
         {isHovered && (
           <SlideIn 
-            className="absolute top-0 p-4 flex flex-col w-full h-full bg-gray-900/70 text-set-white text-justify"
+            className="absolute top-0 p-4 flex flex-col w-full h-full bg-gray-900/70 text-set-white text-justify overflow-y-auto"
             direction="bottom"
           >
             <div className={`${isEn ? 'text-2xl' : 'text-sm'} leading-4.5`}>

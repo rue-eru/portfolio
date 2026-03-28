@@ -41,6 +41,7 @@ export const styles = {
     arrowStyle: `absolute opacity-50 hover:opacity-100 transition-opacity cursor-pointer`,
 
     //contacts
-    linkStyles: `flex gap-1.5 cursor-pointer hover:text-set-accent`
+    linkStyles: `flex gap-1.5 cursor-pointer hover:text-set-accent`,
+    pulseContrast: `animate-pulse bg-linear-to-r from-lime-200 to-lime-600 bg-clip-text text-transparent font-bold`,
 
 } as const 

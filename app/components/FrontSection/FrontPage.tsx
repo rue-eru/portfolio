@@ -58,7 +58,7 @@ export default function FrontPage () {
                                     {word.split('').map((char, charIndex) => (
                                         <span
                                             key={`${wordIndex}-${charIndex}`}
-                                            className="text-7xl"
+                                            className="sm:text-7xl text-lg"
                                         >
                                             {char}
                                         </span>

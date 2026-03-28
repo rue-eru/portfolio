@@ -14,7 +14,7 @@ export default function MainPage ({ params }: { params: Promise<{ locale: Locale
     setRequestLocale(locale); //for server components
 
     return(
-        <main className="w-full h-full font-accent">
+        <main className="w-full h-full font-accent overflow-x-hidden">
             <Nav />
             <FrontPage />
             <ProjectsPage />

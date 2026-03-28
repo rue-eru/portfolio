@@ -29,7 +29,7 @@ export default function StackPage () {
         >
 
             <Float>
-                <div className="flex sm:justify-start">
+                <div className="flex sm:justify-start justify-center">
                     <div className={`${styles.toolDiv}`}>
                     <h1 className={titleStyle}>{tTech('stack-title')}</h1>
                             <ul className={styles.ulLiFlex}>
@@ -53,7 +53,7 @@ export default function StackPage () {
             </Float>
 
             <Float>
-                <div className="flex sm:justify-end flex-wrap">
+                <div className="flex sm:justify-end flex-wrap justify-center">
                     <div className={`${styles.toolDiv}`}>
                         <h1 className={titleStyle}>{tTech('l10n-title')}</h1>
                         <ul className={styles.ulLiFlex}>

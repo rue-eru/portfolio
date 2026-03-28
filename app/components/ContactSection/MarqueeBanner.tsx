@@ -29,27 +29,29 @@ export default function MarqueeBanner() {
     })
 
     return(
+        <div className="w-full max-w-[100vw] overflow-x-hidden">
         <div 
-            className="w-full h-15 border-t border-b flex flex-row gap-5 items-center overflow-hidden relative"
+            className="w-full h-15 border-t border-b relative overflow-hidden"
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
         >
             <motion.div
                 ref={containerRef}
-                className="flex whitespace-nowrap"
+                className="flex whitespace-nowrap h-full items-center"
                 style={{x}}
             >
                 {dublicateBanner.map((lang, i) => (
                     <div 
                         key={`${lang.id}-${i}`}
-                        className="flex flex-row ml-5 gap-5 items-center"
+                        className="flex flex-row ml-3 md:ml-5 gap-3 md:gap-5 items-center"
                     >
-                        <p className={`${lang.id === 'en' ? "font-dongle text-3xl mt-1.5" : "font-m-plus"} `}>{lang.title}</p>
-                        <div className="h-2 w-2 bg-set-accent rounded-full" />
+                        <p className={`${lang.id === 'en' ? "font-dongle text-2xl md:text-3xl mt-1.5" : "font-m-plus text-xs md:text-base"} `}>{lang.title}</p>
+                        <div className="h-1.5 w-1.5 md:h-2 md:w-2 bg-set-accent rounded-full shrink-0" />
                     </div>
                 ))}
             </motion.div>
 
+        </div>
         </div>
     )
 }
