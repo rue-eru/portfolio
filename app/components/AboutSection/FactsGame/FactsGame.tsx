@@ -8,6 +8,7 @@ import SmallDisplay from "./SmallScreenDisplay";
 import AchievementDisplay from "./AchievementDisplay";
 import useSound from "use-sound";
 import { styles } from "@/app/utils/styles";
+import confetti from "canvas-confetti"
 
 export default function FactsGame () {
     const t = useTranslations();
@@ -58,10 +59,15 @@ export default function FactsGame () {
     const pullRandomFact = useCallback(() => {
         if (gameComplete) return
 
-        if (pulledFacts.length >= totalFacts) {
+        if (pulledFacts.length + 1 >= totalFacts) {
             setGameComplete(true)
             playWon();
             setShowPrize(true)
+            confetti({
+                particleCount: 150,
+                spread: 180,
+                origin: {y: 0.5}
+            })
             showAchievementWithTimer(t('about.facts-game.face-reveal.achievement'), 10000)            
             return
         }
@@ -83,7 +89,7 @@ export default function FactsGame () {
             showAchievementWithTimer(t(newFact.achievement), 5000);
         }
 
-    }, [gameComplete, pulledFacts, totalFacts, factKeys, facts, showAchievementWithTimer, t, keyJump]);
+    }, [gameComplete, pulledFacts, totalFacts, factKeys, facts, showAchievementWithTimer, t]);
 
     const resetGame = useCallback(() => {
         clearAchievementTimeout();
@@ -155,6 +161,7 @@ export default function FactsGame () {
                 setStartScreen={setStartScreen}
                 keyJump={keyJump}
             />
+
         </section>
     )
 }
