@@ -11,14 +11,12 @@ import { Float } from "../animations/Float";
 
 
 export default function ProjectsPage() {
-    const id = `projects`;
-    const tPr = useTranslations(id);
+    const tPr = useTranslations('projects');
     const [isDescriptionHover, setDescriptionHover] = useState<number | null>(null);
     const projects = projectsData.projects.featured;
 
     return(
         <div 
-            id={id}
             className={styles.sectionWidth}
         >
             <SlideIn direction="top">

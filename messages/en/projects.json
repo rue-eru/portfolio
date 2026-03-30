@@ -1,4 +1,8 @@
 {
+    "intro": {
+        "t1": "Lets start with",
+        "t2": "Projects"
+    },
     "main-tech": "Main Tech: ",
     "main-pr": "My most recent projects",
     "legacy-intro": "Curious about my learning journey? Check out my early projects!",

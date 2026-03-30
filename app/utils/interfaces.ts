@@ -129,3 +129,8 @@ export interface CertNavProps {
 export interface CertCardProps {
     activeGroup: string | null;
 }
+
+export interface SectionIntroProps {
+  t1: string;
+  t2: string;
+}

@@ -13,7 +13,7 @@ export default function MdPlusDisplay ({
 
     return(
       <div id="game-console" className="md:block hidden w-full h-full ">
-          <div className={`${styles.flexCenter} mt-40`}>
+          <div className={`${styles.flexCenter} -mt-20`}>
               
               <div id="upper-part" 
                   className="absolute w-150 h-100 bg-fuchsia-100 mx-auto 

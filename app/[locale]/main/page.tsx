@@ -1,12 +1,12 @@
 import type { Locale } from "next-intl";
 import FrontPage from "../../components/FrontSection/FrontPage";
 import Nav from "../../components/FrontSection/Nav";
-import ProjectsPage from "../../components/ProjectsSection/ProjectsPage";
 import { use } from "react";
 import { setRequestLocale } from "next-intl/server";
-import StackPage from "@/app/components/StackSection/StackPage";
-import AboutPage from "@/app/components/AboutSection/AboutPage";
 import ContactPage from "@/app/components/ContactSection/ContactPage";
+import ProjectsSection from "@/app/components/ProjectsSection/ProjectsSection";
+import StackSection from "@/app/components/StackSection/StackSection";
+import AboutSection from "@/app/components/AboutSection/AboutSection";
 
 export default function MainPage ({ params }: { params: Promise<{ locale: Locale }> }) {
     // Enable static rendering
@@ -17,9 +17,9 @@ export default function MainPage ({ params }: { params: Promise<{ locale: Locale
         <main className="w-full h-full font-accent overflow-x-hidden">
             <Nav />
             <FrontPage />
-            <ProjectsPage />
-            <StackPage />
-            <AboutPage />
+            <ProjectsSection />
+            <StackSection />
+            <AboutSection />
             <ContactPage />
         </main>
     )

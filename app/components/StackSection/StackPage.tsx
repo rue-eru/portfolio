@@ -24,7 +24,6 @@ export default function StackPage () {
     
     return (
         <div 
-            id="tech"
             className={`${styles.sectionWidth} flex flex-col md:p-4`}
         >
 

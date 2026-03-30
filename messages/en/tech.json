@@ -1,4 +1,8 @@
 {
+    "intro": {
+        "t1": "My",
+        "t2": "Stack"
+    },
     "stack-title": "development stack",
     "l10n-title": "localization & translation tools",
     "lang": {

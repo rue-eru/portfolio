@@ -126,7 +126,7 @@ export default function FactsGame () {
     }, []);
 
     return (
-        <section className={styles.sectionWidth}>
+        <section className={`${styles.sectionWidth} flex justify-center items-center`}>
             
             {showAchievement && (
                 <AchievementDisplay

@@ -9,7 +9,7 @@ export default function SmallDisplay ({
 }: FactsGameProps) {
       const t = useTranslations();
       const tGame = useTranslations("about.game-section")
-      const {isEn, isJa} = useCurrentLanguage();
+      const {isEn} = useCurrentLanguage();
       const btnStyles = isEn ? styles.gamePhoneBtnsEN : styles.gamePhoneBtns
 
     return(
