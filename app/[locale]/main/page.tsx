@@ -14,7 +14,10 @@ export default function MainPage ({ params }: { params: Promise<{ locale: Locale
     setRequestLocale(locale); //for server components
 
     return(
-        <main className="w-full h-full font-accent overflow-x-hidden">
+        <main className="w-full h-full font-accent overflow-x-hidden 
+            bg-[url('/images/bg/131376-grey-and-white-polygon-pattern-abstract-background-vector-image.jpg')]
+            bg-cover bg-center bg-no-repeat bg-fixed
+        ">
             <Nav />
             <FrontPage />
             <ProjectsSection />
@@ -24,3 +27,4 @@ export default function MainPage ({ params }: { params: Promise<{ locale: Locale
         </main>
     )
 }
+

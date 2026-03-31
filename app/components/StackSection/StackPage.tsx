@@ -16,7 +16,7 @@ export default function StackPage () {
     const l10nData = techData.l10n;
     const {isEn, isRu} = useCurrentLanguage();
     const textSize = `${isEn ? "text-2xl" : "text-sm"}`;
-    const liClassName = `${textSize} ${styles.liStyle}`;
+    const liClassName = `${textSize} ${styles.liStyle} ${styles.liText}`;
     const titleStyle = `${isEn ? "text-7xl leading-10 uppercase px-10 py-5" : "sm:text-6xl text-4xl px-5 sm:text-nowrap text-wrap mb-10"} ${styles.h1}`;
     const [hoveredStack, setHoveredStack] = useState<number | null>(null);
     const [hoveredCat, setHoveredCat] = useState<number | null>(null);

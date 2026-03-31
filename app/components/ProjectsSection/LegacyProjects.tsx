@@ -25,8 +25,8 @@ export default function LegacyProjects () {
         <div className="text-center mt-20 space-y-4">
 
           <div className={styles.flexCenter}>
-            <p className={`text-gray-400 xs:w-94 w-70 text-wrap md:w-full
-              ${isEn ? 'text-2xl' : 'text-sm'}`}
+            <p className={`${styles.blurBgText} xs:w-94 w-70 text-wrap md:w-fit 
+              ${isEn ? 'text-2xl' : 'text-xl'}`}
             >
               {t('legacy-intro')}
             </p>
@@ -66,7 +66,7 @@ export default function LegacyProjects () {
 
           {activeProjects && (
             <div className='transition-all'>
-              <p className={`${isEn ? 'text-2xl' : 'text-sm' }  xs:w-94 w-70 mx-auto md:w-full transition-all my-8`}>{t(`${openCourse}.description`)}</p>
+              <p className={`${isEn ? 'text-2xl' : 'text-lg'} ${styles.blurBgText} xs:w-94 w-70 mx-auto md:w-full transition-all my-8`}>{t(`${openCourse}.description`)}</p>
                 <div className={styles.flexCenter}>
                   <div  className={styles.projectFlex}>
                     {activeProjects.map((project, index) => (

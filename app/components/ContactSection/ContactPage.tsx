@@ -29,7 +29,6 @@ export default function ContactPage () {
                         ${isRu ? 'flex-row-reverse' : ''}
                         ${isJa ? 'gap-0' : 'gap-2'}
                     `}>
-                    {isJa && <span>ご</span>}
                     <span className={styles.pulseContrast}>{t('contrastContact')}</span>
                     <span>{t('me')}</span>
                 </div>

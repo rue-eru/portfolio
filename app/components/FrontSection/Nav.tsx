@@ -15,8 +15,8 @@ export default function Nav () {
 
     return (
 
-        <div className={`p-2 flex sm:items-center bg-transparent fixed left-0 right-0 top-0 text-set-white text-xs
-        gap-5`}>
+        <div className={`p-2 flex sm:items-center fixed left-0 right-0 top-0 text-set-white text-xs
+        gap-5 z-50 bg-set-black`}>
 
             <SlideIn 
                 className="sm:flex-1 "
@@ -27,8 +27,10 @@ export default function Nav () {
                 <button
                     onClick={() => setIsOpen(prev => !prev)}
                     >
-                <a>
-                    <p className="text-4xl pl-5 cursor-pointer">L</p>
+                <a
+                    href={`#frontpage`}
+                >
+                    <p className="text-7xl pl-5 -mt-4 -mb-6 cursor-pointer hover:text-set-accent transition-colors font-dongle">L</p>
                 </a>
                 </button>
             </SlideIn>
