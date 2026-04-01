@@ -10,10 +10,10 @@ export default function AchievementDisplay({currentAchievement}: AchievementDisp
     const {isEn} = useCurrentLanguage();
 
     return(
-        <div className="fixed top-4 right-4  
-            bg-linear-to-r from-sky-200 to-indigo-400 
+        <div className="fixed top-14 right-2  
+            bg-linear-to-r from-sky-200 to-indigo-300 
             text-set-black font-bold py-3 px-6 rounded-lg
-            shadow-2xl border-2 border-indigo-200
+            shadow-2xl border-2 border-indigo-300
             animate-slide-in
             flex items-center gap-3
             z-50

@@ -2,7 +2,7 @@ import type { ListCardProps } from "@/app/utils/interfaces";
 import { styles } from "@/app/utils/styles";
 import Image from "next/image";
 
-export default function ListCard({tool, index, imgClassName, hideTitle, liClassName, isHovered, onHover } : ListCardProps){
+export default function ListCard({tool, index, imgClassName, liClassName, isHovered, onHover } : ListCardProps){
     return(
         <li 
             onMouseEnter={() => onHover(index)}
@@ -23,7 +23,7 @@ export default function ListCard({tool, index, imgClassName, hideTitle, liClassN
                 height={100}
                 width={100}
             />
-            {!hideTitle && <p>{tool.title}</p>} 
+            <p>{tool.title}</p>
         </li>
     )
 }

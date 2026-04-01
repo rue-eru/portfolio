@@ -62,7 +62,6 @@ export interface ListCardProps {
   index: number;
   imgClassName?: string;
   liClassName?: string;
-  hideTitle?: boolean;
   isHovered: boolean;
   onHover: (index: number | null) => void;
 }

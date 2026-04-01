@@ -66,7 +66,7 @@ export default function MdPlusDisplay ({
                               width={200}
                               height={200}
                               loading="lazy"
-                              className="object-cover mx-auto rounded-full"
+                              className="object-cover mx-auto rounded outline-2 outline-purple-300"
                             />
                             <p className={`mt-2 mx-auto flex flex-col gap-0 ${isEn ? 'text-3xl' : ''}`}>
                               <span>{tGame('hi')}</span>
@@ -105,7 +105,7 @@ export default function MdPlusDisplay ({
                 </div>
   
   
-              <div id="bottom-part" className="mt-143
+              <div id="bottom-part" className="mt-142
                   absolute w-fit h-fit 
               ">
                   <div

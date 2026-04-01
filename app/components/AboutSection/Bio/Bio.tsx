@@ -104,13 +104,14 @@ export default function Bio (){
                                 >{year.id}</div>
 
                                 {isOpen && (
-                                    <div className="
+                                    <div className={`
                                         bg-transparent
                                         border border-lime-300
                                         shadow-sm shadow-lime-300
                                         rounded-xl
                                         p-4
-                                    ">
+                                        ${isEn ? '' : 'text-lg'}
+                                    `}>
                                         <h3 className="font-semibold border-b mb-4 pb-2">
                                             {year.year.includes('present') ? (
                                               <span>
@@ -199,6 +200,7 @@ export default function Bio (){
                                         shadow-sm shadow-lime-200 rounded-xl
                                         p-4 transition-all 
                                         ${popupPlacement}
+                                        ${isEn ? '' : 'text-xl'}
                                     `}>
 
                                     <h2 className="font-semibold border-b pb-2 mb-4">

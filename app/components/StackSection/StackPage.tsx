@@ -33,14 +33,12 @@ export default function StackPage () {
                     <h1 className={titleStyle}>{tTech('stack-title')}</h1>
                             <ul className={styles.ulLiFlex}>
                                 {stackData.map((tool, index) => {
-                                    const isNextIntl = tool.id === 'next-intl';
                                     return(
                                     <ListCard
                                         key={`${tool.id}-${index}`}
                                         tool={tool}
                                         index={index}
-                                        imgClassName={`${isNextIntl? 'w-20' : 'w-10'}`}
-                                        hideTitle={isNextIntl}
+                                        imgClassName='w-10'
                                         liClassName={liClassName}   
                                         isHovered={hoveredStack === index}
                                         onHover={setHoveredStack}

@@ -26,7 +26,7 @@ export default function FactsGame () {
     const [playCollect] = useSound('/sounds/collected.wav', {volume:0.2})
     const [playWon] = useSound('/sounds/winfantasia.wav', {volume:0.5})
     const totalFacts = factKeys.length;
-    const photo = `/images/icons/cat.jpg`
+    const photo = `/images/icons/catME_.jpg`
 
     useEffect(() => {
         const randomIndex = Math.floor(Math.random() * totalFacts)
