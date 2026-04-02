@@ -22,7 +22,7 @@ export default function LegacyProjects () {
     const {isEn} = useCurrentLanguage();
 
     return(
-        <div className="text-center mt-20 space-y-4">
+        <div className="text-center mt-20 space-y-4 mb-40">
 
           <div className={styles.flexCenter}>
             <p className={`${styles.blurBgText} xs:w-94 w-70 text-wrap md:w-fit 

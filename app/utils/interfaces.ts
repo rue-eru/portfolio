@@ -132,4 +132,5 @@ export interface CertCardProps {
 export interface SectionIntroProps {
   t1: string;
   t2: string;
+  id: string;
 }

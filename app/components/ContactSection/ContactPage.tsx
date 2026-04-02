@@ -17,7 +17,7 @@ export default function ContactPage () {
     return(
         <section 
             id="contacts"
-            className="min-h-dvh bg-set-black text-set-white flex flex-col gap-10 justify-center items-center"
+            className="min-h-dvh bg-set-black text-set-white flex flex-col gap-10 justify-center items-center snap-start"
         >
 
             <div className={`${styles.flexCenter} flex flex-col md:gap-2 sm:text-8xl text-6xl p-4

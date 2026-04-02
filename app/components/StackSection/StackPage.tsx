@@ -24,7 +24,7 @@ export default function StackPage () {
     
     return (
         <div 
-            className={`${styles.sectionWidth} flex flex-col md:p-4`}
+            className={`${styles.sectionWidth} flex flex-col justify-center items-center md:p-4 mb-5`}
         >
 
             <Float>

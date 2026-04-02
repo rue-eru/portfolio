@@ -68,7 +68,7 @@ export default function Bio (){
         <section className={`${styles.sectionWidth} ${isEn ? 'text-2xl leading-5' : 'text-sm'} text-set-white pt-50 px-4`}>
 
             {/*mobile layout */}
-            <div className="flex flex-col gap-10 md:hidden px-4 relative">
+            <div className="flex flex-col gap-10 md:hidden px-4 relative mb-40">
                 <div className="absolute left-5.5 top-2 bottom-2 w-0.5 bg-gray-300">
                 {/*animated progress line*/}
                     <div    

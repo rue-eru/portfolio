@@ -2,17 +2,17 @@ import SectionIntro from "../SectionIntro";
 import ProjectsPage from "./ProjectsPage";
 
 export default function ProjectsSection () {
+    const id = `projects`;
 
     return(
-        <section
-            id='projects'
-        >
+        <>
             <SectionIntro
-                t1="projects.intro.t1"
-                t2="projects.intro.t2"
+                t1={`${id}.intro.t1`}
+                t2={`${id}.intro.t2`}
+                id={id}
             />
             <ProjectsPage />
 
-        </section>
+        </>
     )
 }

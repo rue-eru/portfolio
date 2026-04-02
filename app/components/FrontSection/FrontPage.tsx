@@ -3,8 +3,8 @@
 import { useTranslations } from "next-intl"
 import StaggerSlide from "../animations/StaggerSlide";
 import { useCurrentLanguage } from "@/app/hooks/useCurrentLang";
-import Image from "next/image";
 import SlideIn from "../animations/SlideIn";
+import ScrollIcons from "./ScrollIcons";
 
 export default function FrontPage () {
     const t = useTranslations('layout');
@@ -15,7 +15,7 @@ export default function FrontPage () {
 
 
     return (
-        <div id="frontpage" className="front-page h-dvh w-full flex justify-center items-center">
+        <div id="frontpage" className="front-page h-dvh w-full snap-start snap-always flex justify-center items-center relative">
             <div className="w-[80%] flex flex-wrap justify-center items-center ">
                 {isJa ? (
 
@@ -78,14 +78,7 @@ export default function FrontPage () {
                 delay={5}
                 className="absolute bottom-20 right-10"          
             >
-                <Image 
-                    src={`/images/icons/down-arrow.png`}
-                    alt="slide down arrow"
-                    className="w-20 h-20 animate-pulse object-contain"
-                    width={100}
-                    height={100}
-                    loading="lazy"
-                />
+                <ScrollIcons />
             </SlideIn>
 
         </div>

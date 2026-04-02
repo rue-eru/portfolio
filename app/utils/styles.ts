@@ -4,7 +4,7 @@ export const styles = {
     h1: `text-set-black bg-set-accent w-fit text-center my-4 rounded`,
     projectFlex : `flex flex-wrap justify-center items-center gap-10 w-fit p-4`,
     flexCenter: `flex justify-center items-center`,
-    sectionWidth: `lg:w-[70%] w-[95%] mx-auto py-4 min-h-dvh w-full`,
+    sectionWidth: `lg:w-[70%] w-[95%] mx-auto py-4 min-h-dvh w-full snap-start`,
     ulLiFlex: `flex flex-wrap justify-center gap-1`,
     toolDiv: `flex flex-col items-center p-12 w-fit md:w-160`,
     liStyle: `flex justify-center items-center gap-1.5 bg-gray-400/50 rounded-md p-1.5 w-fit`,

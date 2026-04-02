@@ -14,17 +14,25 @@ export default function MainPage ({ params }: { params: Promise<{ locale: Locale
     setRequestLocale(locale); //for server components
 
     return(
-        <main className="w-full h-full font-accent overflow-x-hidden 
-            bg-[url('/images/bg/131376-grey-and-white-polygon-pattern-abstract-background-vector-image.jpg')]
-            bg-cover bg-center bg-no-repeat bg-fixed
-        ">
+        <div className="relative">
+
             <Nav />
-            <FrontPage />
-            <ProjectsSection />
-            <StackSection />
-            <AboutSection />
-            <ContactPage />
-        </main>
+
+            <main className="w-full h-dvh font-accent 
+                overflow-x-hidden overflow-y-scroll
+                [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden
+                bg-[url('/images/bg/131376-grey-and-white-polygon-pattern-abstract-background-vector-image.jpg')]
+                bg-cover bg-center bg-no-repeat bg-fixed
+                snap-y snap-mandatory 
+            ">
+                <FrontPage />
+                <ProjectsSection />
+                <StackSection />
+                <AboutSection />
+                <ContactPage />
+            </main>
+
+        </div>
     )
 }
 
