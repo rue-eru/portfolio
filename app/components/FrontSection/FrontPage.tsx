@@ -16,7 +16,7 @@ export default function FrontPage () {
 
     return (
         <div id="frontpage" className="front-page h-dvh w-full snap-start snap-always flex justify-center items-center relative">
-            <div className="w-[80%] flex flex-wrap justify-center items-center ">
+            <div className="w-[80%] flex flex-wrap justify-center items-center text-justify">
                 {isJa ? (
 
                     <StaggerSlide
@@ -58,7 +58,7 @@ export default function FrontPage () {
                                     {word.split('').map((char, charIndex) => (
                                         <span
                                             key={`${wordIndex}-${charIndex}`}
-                                            className="sm:text-7xl text-lg"
+                                            className="sm:text-7xl text-4xl"
                                         >
                                             {char}
                                         </span>

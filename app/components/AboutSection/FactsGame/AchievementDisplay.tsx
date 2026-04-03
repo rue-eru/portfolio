@@ -4,20 +4,23 @@ import { useCurrentLanguage } from "@/app/hooks/useCurrentLang";
 import type { AchievementDisplayProps } from "@/app/utils/interfaces";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
+import SlideIn from "../../animations/SlideIn";
 
 export default function AchievementDisplay({currentAchievement}: AchievementDisplayProps) {
     const t = useTranslations();
     const {isEn} = useCurrentLanguage();
 
     return(
-        <div className="fixed top-14 right-2  
+        <SlideIn className="fixed top-14 right-2  
             bg-linear-to-r from-sky-200 to-indigo-300 
             text-set-black font-bold py-3 px-6 rounded-lg
             shadow-2xl border-2 border-indigo-300
             animate-slide-in
             flex items-center gap-3
-            z-50
-        ">
+            z-50"
+            direction="top"
+            key={currentAchievement}
+        >
             <Image 
                 src={`/images/icons/medal.png`}
                 alt="achievement icon"
@@ -31,6 +34,6 @@ export default function AchievementDisplay({currentAchievement}: AchievementDisp
                 <div className={`${isEn ? 'text-2xl' : 'text-lg'}`}>{currentAchievement}</div>
             </div>
 
-        </div>
+        </SlideIn>
     )
 }

@@ -19,13 +19,13 @@ export default function ProjectsPage() {
         <div 
             className={styles.sectionWidth}
         >
-            <SlideIn direction="top">
+            <SlideIn>
                 <Float>
                     <h3 className={styles.h3}>{tPr('main-pr')}</h3>
                 </Float>
             </SlideIn>
 
-            <div className={styles.flexCenter}>
+            <SlideIn className={styles.flexCenter} delay={0.5}>
                 <div className={`${styles.projectFlex} mt-30`}>
                     {projects.map((project, index) => (
                         <ProjectCard 
@@ -37,10 +37,12 @@ export default function ProjectsPage() {
                         />
                     ))}
                 </div>
-            </div>
+            </SlideIn>
 
-
-            <LegacyProjects />
+            <SlideIn delay={1}>
+                <LegacyProjects />
+            </SlideIn>
+            
         </div>
     )
 }

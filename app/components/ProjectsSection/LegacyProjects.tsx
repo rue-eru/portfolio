@@ -8,6 +8,7 @@ import Image from 'next/image';
 import { styles } from '@/app/utils/styles';
 import { useCurrentLanguage } from '@/app/hooks/useCurrentLang';
 import { Float } from '../animations/Float';
+import SlideIn from '../animations/SlideIn';
 
 export default function LegacyProjects () {
     const legacyProjects = projectsData.projects.legacy;
@@ -65,7 +66,12 @@ export default function LegacyProjects () {
           </div>
 
           {activeProjects && (
-            <div className='transition-all'>
+            <SlideIn 
+              className='transition-all' 
+              amount={0.1} 
+              once={false}
+              key={openCourse}
+            >
               <p className={`${isEn ? 'text-2xl' : 'text-lg'} ${styles.blurBgText} xs:w-94 w-70 mx-auto md:w-full transition-all my-8`}>{t(`${openCourse}.description`)}</p>
                 <div className={styles.flexCenter}>
                   <div  className={styles.projectFlex}>
@@ -80,7 +86,7 @@ export default function LegacyProjects () {
                     ))}
                   </div>
                 </div>
-            </div>
+            </SlideIn>
 
           )}
         </div>

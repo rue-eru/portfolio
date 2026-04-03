@@ -6,11 +6,6 @@
             "link": "/certificates",
             "and": "&",
             "andJa": "と"
-        },
-        {
-            "id": "cv",
-            "title": "cv",
-            "link": "/certificates"
         }
     ],
     "socials": [

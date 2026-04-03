@@ -16,6 +16,7 @@ export interface SlideInProps {
     staggerDelay?: number;
     className?: string;
     once?: boolean;
+    amount?: number
 }
 
 export interface LetterByLetterProps {

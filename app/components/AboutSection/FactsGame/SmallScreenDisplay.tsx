@@ -3,6 +3,7 @@ import { styles } from "@/app/utils/styles";
 import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { useCurrentLanguage } from "@/app/hooks/useCurrentLang";
+import SlideIn from "../../animations/SlideIn";
 
 export default function SmallDisplay ({
     showPrize, resetGame, currentFact, pullRandomFact, pulledFacts, totalFacts, gameComplete, photo, startScreen, setStartScreen, keyJump
@@ -14,7 +15,7 @@ export default function SmallDisplay ({
 
     return(
         <div id="smart-phone" className={`block md:hidden ${styles.flexCenter}`}>
-            <div className={`bg-fuchsia-200 w-78 h-150
+            <SlideIn className={`bg-fuchsia-200 w-78 h-150
                 border-10 rounded-2xl border-purple-300
                 ${styles.flexCenter} relative
             `}>
@@ -112,7 +113,7 @@ export default function SmallDisplay ({
                         </div>
                     )}
                 </div>
-            </div>
+            </SlideIn>
         </div>
     )
 }

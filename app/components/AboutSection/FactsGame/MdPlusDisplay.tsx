@@ -3,6 +3,7 @@ import type { FactsGameProps } from "@/app/utils/interfaces";
 import { styles } from "@/app/utils/styles";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
+import SlideIn from "../../animations/SlideIn";
 
 export default function MdPlusDisplay ({
     showPrize, resetGame, currentFact, pullRandomFact, pulledFacts, totalFacts, gameComplete, photo, startScreen, setStartScreen, keyJump
@@ -12,7 +13,7 @@ export default function MdPlusDisplay ({
       const {isEn} = useCurrentLanguage();
 
     return(
-      <div id="game-console" className="md:block hidden w-full h-full ">
+      <SlideIn id="game-console" className="md:block hidden w-full h-full ">
           <div className={`${styles.flexCenter} -mt-20`}>
               
               <div id="upper-part" 
@@ -171,5 +172,5 @@ export default function MdPlusDisplay ({
                   <div className="bg-fuchsia-200 w-184 h-10 absolute rounded"></div>
               </div>
           </div>
-      </div>
+      </SlideIn>
 )}

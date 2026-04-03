@@ -7,6 +7,7 @@ import { styles } from "@/app/utils/styles";
 import { useCurrentLanguage } from "@/app/hooks/useCurrentLang";
 import MarqueeBanner from "./MarqueeBanner";
 import { useTranslations } from "next-intl";
+import SlideIn from "../animations/SlideIn";
 
 export default function ContactPage () {
     const Socials = ContactData.socials
@@ -20,7 +21,7 @@ export default function ContactPage () {
             className="min-h-dvh bg-set-black text-set-white flex flex-col gap-10 justify-center items-center snap-start"
         >
 
-            <div className={`${styles.flexCenter} flex flex-col md:gap-2 sm:text-8xl text-6xl p-4
+            <SlideIn className={`${styles.flexCenter} flex flex-col md:gap-2 sm:text-8xl text-6xl p-4
                 ${isJa ? 'text-nowrap md:text-5xl sm:text-[2.5rem] text-xl' : 'md:flex-row'}
                 ${isRu ? 'flex-wrap text-[2rem] sm:text-[4rem]' : ''}
             `}>
@@ -33,12 +34,15 @@ export default function ContactPage () {
                     <span>{t('me')}</span>
                 </div>
 
-            </div>
+            </SlideIn>
 
             <MarqueeBanner />
 
             <div className="flex flex-col gap-10 p-4 items-center justify-center">
-                <div className="flex gap-5 md:flex-row flex-col">
+                <SlideIn 
+                    className="flex gap-5 md:flex-row flex-col"
+                    delay={1}
+                >
                     {Socials.map((social, i) => (
                         <a 
                             key={`${social}-${i}`}
@@ -62,12 +66,14 @@ export default function ContactPage () {
                             <div className="-mt-4">{social.details}</div>
                         </a>
                     ))}
-                </div>
+                </SlideIn>
 
-                <div className={`flex pt-4
+                <SlideIn className={`flex pt-4
                         ${isJa ? 'flex-col-reverse sm:flex-row-reverse gap-0' : 'flex-col sm:flex-row gap-2'}
                         ${isEn ? 'text-2xl sm:text-3xl leading-4' : 'sm:text-xl text-base'}
-                    `}>
+                    `}
+                        delay={1.5}
+                    >
                     <p className="text-nowrap">{t("check")}</p>
                     <div className={`flex sm:flex-nowrap flex-wrap  justify-center
                         ${isJa ? 'gap-0' : 'gap-2'}
@@ -91,7 +97,7 @@ export default function ContactPage () {
                             </div>
                         ))}
                     </div>
-                </div>
+                </SlideIn>
 
             </div>
 

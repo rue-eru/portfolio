@@ -5,6 +5,7 @@ import AboutData from "@/app/data/about.json"
 import { useTranslations } from "next-intl";
 import { useEffect, useMemo, useState } from "react";
 import { useCurrentLanguage } from "@/app/hooks/useCurrentLang";
+import SlideIn from "../../animations/SlideIn";
 
 export default function Bio (){
     const BioData = AboutData.bio
@@ -68,7 +69,7 @@ export default function Bio (){
         <section className={`${styles.sectionWidth} ${isEn ? 'text-2xl leading-5' : 'text-sm'} text-set-white pt-50 px-4`}>
 
             {/*mobile layout */}
-            <div className="flex flex-col gap-10 md:hidden px-4 relative mb-40">
+            <SlideIn className="flex flex-col gap-10 md:hidden px-4 relative mb-40">
                 <div className="absolute left-5.5 top-2 bottom-2 w-0.5 bg-gray-300">
                 {/*animated progress line*/}
                     <div    
@@ -104,14 +105,18 @@ export default function Bio (){
                                 >{year.id}</div>
 
                                 {isOpen && (
-                                    <div className={`
-                                        bg-transparent
-                                        border border-lime-300
-                                        shadow-sm shadow-lime-300
-                                        rounded-xl
-                                        p-4
-                                        ${isEn ? '' : 'text-lg'}
-                                    `}>
+                                    <SlideIn 
+                                        className={`
+                                            bg-transparent
+                                            border border-lime-300
+                                            shadow-sm shadow-lime-300
+                                            rounded-xl
+                                            p-4
+                                            ${isEn ? '' : 'text-lg'}
+                                        `}
+                                        key={year.id}
+                                        amount={0.1}
+                                    >
                                         <h3 className="font-semibold border-b mb-4 pb-2">
                                             {year.year.includes('present') ? (
                                               <span>
@@ -137,17 +142,17 @@ export default function Bio (){
                                                 </li>
                                             )})}
                                         </ul>
-                                    </div>
+                                    </SlideIn>
                                 )}
                             </div>
                         </div>
                     )
                 })}
-            </div>
+            </SlideIn>
 
 
             {/* md+ layout*/}
-            <div className="hidden md:block relative w-full">
+            <SlideIn className="hidden md:block relative w-full">
                 <div className="absolute top-8.5 left-2 right-2  h-0.5 bg-gray-300">
                     {/*animated progress line*/}
                     <div 
@@ -194,7 +199,9 @@ export default function Bio (){
                             />                      
 
                             {isOpen && (
-                                <div 
+                                <SlideIn 
+                                    key={year.id}
+                                    amount={0.1}
                                     className={`absolute top-20 w-140
                                         border border-lime-300
                                         shadow-sm shadow-lime-200 rounded-xl
@@ -232,12 +239,12 @@ export default function Bio (){
                                             </li>
                                         )})}
                                     </ul>
-                                </div>
+                                </SlideIn>
                             )}
                         </div>
                     )})}
                 </div>
-            </div>
+            </SlideIn>
         </section>
     )
 }

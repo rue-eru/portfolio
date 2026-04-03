@@ -11,6 +11,8 @@ export const styles = {
     liText: `text-set-white text-shadow-lg font-semibold text-shadow-set-black`,
     liHover: `bg-set-accent/90 transition-colors`,
     blurBgText: `text-set-white text-shadow-lg font-semibold text-shadow-set-black backdrop-blur-xs`,
+    mobileScrollAnime1: `w-4 h-1 bg-set-white rounded-2xl rotate-30 -mr-0.5 animate-pulse`,
+    mobileScrollAnime2: `w-4 h-1 bg-set-white rounded-2xl rotate-330 -ml-0.5 animate-pulse`,
 
     //game-console styles
     consoleColor: `pink-400`,

@@ -11,7 +11,8 @@ export default function SlideIn (
         duration = 0.5,
         distance = 50,
         className = "",
-        once = true
+        once = true,
+        amount = 0.9 //plays when 90% is visible
     }: SlideInProps
 ) {
 
@@ -22,17 +23,21 @@ export default function SlideIn (
                 opacity: 0,
                 ...getInitialPosition(distance, direction)
             }}
-            animate={{
+            transition={{
+                duration: duration,
+                ease: "easeOut",
+                delay: delay
+            }}
+            viewport={{ 
+                once,
+                amount, 
+                margin: "0px 0px -50px 0px" //triggers sligtly before snap
+            }}
+            whileInView={{
                 opacity: 1,
                 x: 0,
                 y: 0
             }}
-            transition={{
-                duration,
-                delay,
-                ease: "easeOut"
-            }}
-            viewport={{ once }}
             className={className}
         >
             {children}

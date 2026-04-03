@@ -8,6 +8,7 @@ import Image from "next/image";
 import { useCurrentLanguage } from "@/app/hooks/useCurrentLang";
 import { useState } from "react";
 import { Float } from "../animations/Float";
+import SlideIn from "../animations/SlideIn";
 
 export default function StackPage () {
     const tTech = useTranslations('tech');
@@ -24,11 +25,11 @@ export default function StackPage () {
     
     return (
         <div 
-            className={`${styles.sectionWidth} flex flex-col justify-center items-center md:p-4 mb-5`}
+            className={`${styles.sectionWidth} flex flex-col md:p-4 mb-5`}
         >
 
             <Float>
-                <div className="flex sm:justify-start justify-center">
+                <SlideIn className="flex sm:justify-start justify-center">
                     <div className={`${styles.toolDiv}`}>
                     <h1 className={titleStyle}>{tTech('stack-title')}</h1>
                             <ul className={styles.ulLiFlex}>
@@ -46,11 +47,14 @@ export default function StackPage () {
                                 )})}
                             </ul>
                     </div>
-                </div>
+                </SlideIn>
             </Float>
 
             <Float>
-                <div className="flex sm:justify-end flex-wrap justify-center">
+                <SlideIn 
+                    className="flex sm:justify-end flex-wrap justify-center"
+                    delay={0.5}
+                >
                     <div className={`${styles.toolDiv}`}>
                         <h1 className={titleStyle}>{tTech('l10n-title')}</h1>
                         <ul className={styles.ulLiFlex}>
@@ -95,7 +99,7 @@ export default function StackPage () {
                             ))}
                         </div>
                     </div>
-                </div>
+                </SlideIn>
             </Float>
 
         </div>

@@ -29,7 +29,7 @@ export default function CertCard ({activeGroup}: CertCardProps) {
                 if (activeGroup && activeGroup !== groupName) return null
                 return(
                 <div key={groupName} id={groupName}>
-                    <SlideIn className={`h-dvh hidden lg:flex justify-center items-center `} direction="right">
+                    <SlideIn className={`h-dvh hidden lg:flex justify-center items-center `}>
                         <h2 className={`md:text-9xl text-4xl font-bold mb-4 capitalize ${styles.accentHeader}`}>{tNav(groupName)}</h2>
                     </SlideIn>
 
@@ -38,6 +38,7 @@ export default function CertCard ({activeGroup}: CertCardProps) {
                                 <SlideIn 
                                     className="lg:flex-1 relative" 
                                     direction="right"
+                                    amount={0.1}
                                 >
                                     <Image 
                                         src={cert.image[imageIndex[cert.id] ?? 0]}
@@ -66,7 +67,9 @@ export default function CertCard ({activeGroup}: CertCardProps) {
                                 onMouseLeave={()=> setDescription(null)}
                             >
                                 {descriptionCover === cert.id && (
-                                    <SlideIn className={`hidden lg:block w-full h-full ${styles.flexCenter} flex-col text-justify p-12 absolute top-0 z-40 bg-set-black`}>
+                                    <SlideIn className={`hidden lg:block w-full h-full ${styles.flexCenter} flex-col text-justify p-12 absolute top-0 z-40 bg-set-black`}
+                                        amount={0.1}
+                                    >
                                         <h2 className={`text-5xl text-center font-semibold border-b-2 mb-4 p-5 ${styles.accentHeader}`}>{t(cert.title)}</h2>
                                         <p className="mt-2 text-2xl">{t(cert.description)}</p>
                                     </SlideIn>
