@@ -5,19 +5,22 @@ import type { AchievementDisplayProps } from "@/app/utils/interfaces";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
 import SlideIn from "../../animations/SlideIn";
+import { styles } from "@/app/utils/styles";
 
 export default function AchievementDisplay({currentAchievement}: AchievementDisplayProps) {
     const t = useTranslations();
     const {isEn} = useCurrentLanguage();
 
     return(
-        <SlideIn className="fixed top-14 right-2  
+        <SlideIn className={`fixed top-14 right-2  
             bg-linear-to-r from-sky-200 to-indigo-300 
             text-set-black font-bold py-3 px-6 rounded-lg
             shadow-2xl border-2 border-indigo-300
             animate-slide-in
             flex items-center gap-3
-            z-50"
+            z-50
+            ${styles.containerShadow}
+        `}
             direction="top"
             key={currentAchievement}
         >

@@ -8,7 +8,6 @@ import Image from 'next/image';
 import { styles } from '@/app/utils/styles';
 import { useCurrentLanguage } from '@/app/hooks/useCurrentLang';
 import { Float } from '../animations/Float';
-import SlideIn from '../animations/SlideIn';
 
 export default function LegacyProjects () {
     const legacyProjects = projectsData.projects.legacy;
@@ -48,6 +47,7 @@ export default function LegacyProjects () {
                 <button
                   className={`bg-gray-600 cursor-pointer inline-flex md:justify-center justify-start items-center gap-2 p-2 rounded transition-all xs:w-94 w-70 md:w-full hover:outline-set-accent hover:outline-3 hover:text-set-accent
                   ${openCourse === courseName  ? 'bg-set-accent text-gray-600 transition-colors hover:text-set-black outline-none' : ''}
+                  ${styles.containerShadow}
                 `}
                   onClick={() => setOpenCourse(prev => prev === courseName ? null : courseName)}
                 >
@@ -66,12 +66,7 @@ export default function LegacyProjects () {
           </div>
 
           {activeProjects && (
-            <SlideIn 
-              className='transition-all' 
-              amount={0.1} 
-              once={false}
-              key={openCourse}
-            >
+            <div className='transition-all'>
               <p className={`${isEn ? 'text-2xl' : 'text-lg'} ${styles.blurBgText} xs:w-94 w-70 mx-auto md:w-full transition-all my-8`}>{t(`${openCourse}.description`)}</p>
                 <div className={styles.flexCenter}>
                   <div  className={styles.projectFlex}>
@@ -86,7 +81,7 @@ export default function LegacyProjects () {
                     ))}
                   </div>
                 </div>
-            </SlideIn>
+            </div>
 
           )}
         </div>

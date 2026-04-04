@@ -13,6 +13,7 @@ export const styles = {
     blurBgText: `text-set-white text-shadow-lg font-semibold text-shadow-set-black backdrop-blur-xs`,
     mobileScrollAnime1: `w-4 h-1 bg-set-white rounded-2xl rotate-30 -mr-0.5 animate-pulse`,
     mobileScrollAnime2: `w-4 h-1 bg-set-white rounded-2xl rotate-330 -ml-0.5 animate-pulse`,
+    containerShadow: `shadow-black/50 shadow-xl`,
 
     //game-console styles
     consoleColor: `pink-400`,

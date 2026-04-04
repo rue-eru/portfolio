@@ -18,6 +18,7 @@ export default function SmallDisplay ({
             <SlideIn className={`bg-fuchsia-200 w-78 h-150
                 border-10 rounded-2xl border-purple-300
                 ${styles.flexCenter} relative
+                ${styles.containerShadow}
             `}>
                 {/* frontcamera - fixed positioning */}
                 <div className="bg-purple-400/70 rounded-full w-3 h-3 border-4 border-purple-300 absolute top-2 left-1/2 transform -translate-x-1/2 z-20" />

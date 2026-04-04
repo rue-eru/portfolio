@@ -31,22 +31,22 @@ export default function StackPage () {
             <Float>
                 <SlideIn className="flex sm:justify-start justify-center">
                     <div className={`${styles.toolDiv}`}>
-                    <h1 className={titleStyle}>{tTech('stack-title')}</h1>
-                            <ul className={styles.ulLiFlex}>
-                                {stackData.map((tool, index) => {
-                                    return(
-                                    <ListCard
-                                        key={`${tool.id}-${index}`}
-                                        tool={tool}
-                                        index={index}
-                                        imgClassName='w-10'
-                                        liClassName={liClassName}   
-                                        isHovered={hoveredStack === index}
-                                        onHover={setHoveredStack}
-                                    />
-                                )})}
-                            </ul>
-                    </div>
+                    <h1 className={`${titleStyle} ${styles.containerShadow}`}>{tTech('stack-title')}</h1>
+                                <ul className={styles.ulLiFlex}>
+                                    {stackData.map((tool, index) => {
+                                        return(
+                                        <ListCard
+                                            key={`${tool.id}-${index}`}
+                                            tool={tool}
+                                            index={index}
+                                            imgClassName='w-10'
+                                            liClassName={liClassName}   
+                                            isHovered={hoveredStack === index}
+                                            onHover={setHoveredStack}
+                                        />
+                                    )})}
+                                </ul>
+                        </div>
                 </SlideIn>
             </Float>
 
@@ -56,7 +56,7 @@ export default function StackPage () {
                     delay={0.5}
                 >
                     <div className={`${styles.toolDiv}`}>
-                        <h1 className={titleStyle}>{tTech('l10n-title')}</h1>
+                        <h1 className={`${titleStyle} ${styles.containerShadow}`}>{tTech('l10n-title')}</h1>
                         <ul className={styles.ulLiFlex}>
                             {l10nData.tools.map((tool, index) => (
                                 <ListCard 
@@ -76,9 +76,10 @@ export default function StackPage () {
                                     key={`${lang.id}-${index}`}
                                     onMouseEnter={() => setHoveredLang(index)}
                                     onMouseLeave={() => setHoveredLang(null)}
-                                    className={`${liClassName} w-10 ${
-                                        hoveredLang === index ? styles.liHover : ''
-                                    }`}
+                                    className={`${liClassName} w-10 
+                                        ${hoveredLang === index ? styles.liHover : ''}
+                                        ${styles.containerShadow}
+                                    `}
                                 >
                                     <Image 
                                         src={lang.icon}

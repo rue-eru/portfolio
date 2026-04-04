@@ -13,13 +13,14 @@ export default function MdPlusDisplay ({
       const {isEn} = useCurrentLanguage();
 
     return(
-      <SlideIn id="game-console" className="md:block hidden w-full h-full ">
-          <div className={`${styles.flexCenter} -mt-20`}>
+      <SlideIn  className="md:block hidden w-full h-full ">
+          <div id="game-console" className={`${styles.flexCenter} -mt-20`}>
               
               <div id="upper-part" 
-                  className="absolute w-150 h-100 bg-fuchsia-100 mx-auto 
+                  className={`absolute w-150 h-100 bg-fuchsia-100 mx-auto 
                       rounded-tl rounded-tr
-              ">
+                      ${styles.containerShadow}
+              `}>
                   <div id="main-screen"
                     className={`bg-purple-200 w-130 h-90 mt-3 mx-auto border-2 border-cyan-950/20 rounded flex flex-col relative`}
                   >
@@ -169,7 +170,7 @@ export default function MdPlusDisplay ({
                       </div>
                   </div>
                       
-                  <div className="bg-fuchsia-200 w-184 h-10 absolute rounded"></div>
+                  <div className={`bg-fuchsia-200 w-184 h-10 absolute rounded ${styles.containerShadow}`}></div>
               </div>
           </div>
       </SlideIn>

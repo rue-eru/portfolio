@@ -135,3 +135,10 @@ export interface SectionIntroProps {
   t2: string;
   id: string;
 }
+
+export interface ExpandCollapseProps {
+  isOpen: boolean;
+  children: React.ReactNode;
+  key?: string,
+  className?: string
+}

@@ -12,6 +12,7 @@ export default function ListCard({tool, index, imgClassName, liClassName, isHove
                     ? styles.liHover
                     : ''
                 }
+                ${styles.containerShadow}
             `}
             key={`${tool.id}-${index}`}
         >
