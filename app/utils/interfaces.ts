@@ -139,6 +139,6 @@ export interface SectionIntroProps {
 export interface ExpandCollapseProps {
   isOpen: boolean;
   children: React.ReactNode;
-  key?: string,
+  componentKey?: string,
   className?: string
 }

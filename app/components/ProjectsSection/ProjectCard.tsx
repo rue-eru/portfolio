@@ -38,7 +38,12 @@ export default function ProjectCard({ project, index, isHovered, onHover }: Proj
         <AnimatePresence>
           {isHovered && (
             <motion.div
-              className="absolute top-0 p-4 flex flex-col w-full h-full bg-gray-900/70 text-set-white text-justify overflow-y-auto"
+              className="absolute top-0 p-4 flex flex-col w-full h-full bg-gray-900/70 text-set-white text-justify overflow-y-auto
+              [&::-webkit-scrollbar]:w-1
+               [&::-webkit-scrollbar-track]:bg-transparent
+               [&::-webkit-scrollbar-thumb]:bg-gray-600
+               [&::-webkit-scrollbar-thumb]:rounded
+              "
               initial={{ 
                 opacity: 0,
                 y: 20

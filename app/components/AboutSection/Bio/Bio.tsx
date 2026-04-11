@@ -6,6 +6,8 @@ import { useTranslations } from "next-intl";
 import { useEffect, useMemo, useState } from "react";
 import { useCurrentLanguage } from "@/app/hooks/useCurrentLang";
 import SlideIn from "../../animations/SlideIn";
+import ExpandCollapse from "../../animations/ExpandCollapse";
+
 
 export default function Bio (){
     const BioData = AboutData.bio
@@ -77,6 +79,7 @@ export default function Bio (){
                         style={{height: `${mobileProgress}%`}}
                     />
                 </div>
+
                 {BioData.map((year, i) => {
                     const isOpen = visible === i
                     const isViewed = viewedYears.has(year.id)
@@ -104,46 +107,46 @@ export default function Bio (){
                                     onClick={() => handleOpen(i, year.id)}
                                 >{year.id}</div>
 
-                                {isOpen && (
-                                    <SlideIn 
-                                        className={`
-                                            bg-transparent
-                                            border border-lime-300
-                                            shadow-sm shadow-lime-300
-                                            rounded-xl
-                                            p-4
-                                            ${isEn ? '' : 'text-lg'}
-                                        `}
-                                        key={year.id}
-                                        amount={0.1}
-                                    >
-                                        <h3 className="font-semibold border-b mb-4 pb-2">
-                                            {year.year.includes('present') ? (
-                                              <span>
-                                                {year.year.split('-')[0].trim()} - {t('about.bio-section.present')}
-                                              </span>
-                                            ) : (
-                                              <span>{year.year}</span>
-                                            )}
-                                            <span>: </span>
-                                            {t(year.title)}                                            
-                                        </h3>
-                                        <ul className="space-y-4">
-                                            {year.description.map((li, i) => {
-                                            const listStyles = 
-                                                li.type === 'main'
-                                                    ? 'list-inside [&::marker]:content-[">>"]'
-                                                    : li.type === 'sub'
-                                                    ? 'list-outside pl-2 [&::marker]:content-["▸"] ml-4'
-                                                    : '';
-                                                return(
-                                                <li key={`${li}-${i}`} className={listStyles}>
-                                                    {t(li.text)}
-                                                </li>
-                                            )})}
-                                        </ul>
-                                    </SlideIn>
-                                )}
+                                    {isOpen && (
+                                        <ExpandCollapse isOpen={isOpen} componentKey={year.id} >
+                                            <div 
+                                                className={`
+                                                    bg-transparent
+                                                    border border-lime-300
+                                                    shadow-sm shadow-lime-300
+                                                    rounded-xl
+                                                    p-4
+                                                    ${isEn ? '' : 'text-lg'}
+                                                `}
+                                            >
+                                                <h3 className="font-semibold border-b mb-4 pb-2">
+                                                    {year.year.includes('present') ? (
+                                                      <span>
+                                                        {year.year.split('-')[0].trim()} - {t('about.bio-section.present')}
+                                                      </span>
+                                                    ) : (
+                                                      <span>{year.year}</span>
+                                                    )}
+                                                    <span>: </span>
+                                                    {t(year.title)}                                            
+                                                </h3>
+                                                <ul className="space-y-4">
+                                                    {year.description.map((li, i) => {
+                                                    const listStyles = 
+                                                        li.type === 'main'
+                                                            ? 'list-inside [&::marker]:content-[">>"]'
+                                                            : li.type === 'sub'
+                                                            ? 'list-outside pl-2 [&::marker]:content-["▸"] ml-4'
+                                                            : '';
+                                                        return(
+                                                        <li key={`${li}-${i}`} className={listStyles}>
+                                                            {t(li.text)}
+                                                        </li>
+                                                    )})}
+                                                </ul>
+                                            </div>
+                                        </ExpandCollapse>
+                                    )}
                             </div>
                         </div>
                     )
@@ -162,6 +165,7 @@ export default function Bio (){
                 </div>
                 <div className="flex justify-between">
                     {BioData.map((year, i) => {
+
                         const isOpen = visible === i
                         const isViewed = viewedYears.has(year.id)
                         const popupPlacement = ['1998', '2016'].includes(year.id)
@@ -199,47 +203,59 @@ export default function Bio (){
                             />                      
 
                             {isOpen && (
-                                <SlideIn 
-                                    key={year.id}
-                                    amount={0.1}
-                                    className={`absolute top-20 w-140
-                                        border border-lime-300
-                                        shadow-sm shadow-lime-200 rounded-xl
-                                        p-4 transition-all 
+                                <div
+                                    className={`
                                         ${popupPlacement}
-                                        ${isEn ? '' : 'text-xl'}
-                                    `}>
+                                        absolute top-20 w-140 z-20
+                                        `}
+                                    key={year.id}
+                                >
+                                    <ExpandCollapse
+                                        key={year.id}
+                                        isOpen={isOpen}
 
-                                    <h2 className="font-semibold border-b pb-2 mb-4">
-                                        {year.year.includes('present') ? (
-                                          <span>
-                                            {year.year.split('-')[0].trim()} - {t('about.bio-section.present')}
-                                          </span>
-                                        ) : (
-                                          <span>{year.year}</span>
-                                        )}
-                                        <span>: </span>
-                                        {t(year.title)}
-                                    </h2>
+                                    >
+                                        <div
+                                            className={`
+                                                border border-lime-300
+                                                shadow-sm shadow-lime-200 rounded-xl
+                                                p-4 transition-all 
+                                                
+                                                ${isEn ? '' : 'text-xl'}
+                                            `}>
 
-                                    <ul>
-                                        {year.description.map((li, index) => {
-                                            const listStyles = 
-                                                li.type === 'main'
-                                                    ? 'list-inside [&::marker]:content-[">>"]'
-                                                    : li.type === 'sub'
-                                                    ? 'list-outside pl-2 [&::marker]:content-["▸"] ml-4'
-                                                    : '';
-                                            
-                                            return (
-                                            <li key={`${li.text}-${index}`}
-                                                className={`${listStyles} my-4`}
-                                            >
-                                                {t(li.text)}
-                                            </li>
-                                        )})}
-                                    </ul>
-                                </SlideIn>
+                                            <h2 className="font-semibold border-b pb-2 mb-4">
+                                                {year.year.includes('present') ? (
+                                                  <span>
+                                                    {year.year.split('-')[0].trim()} - {t('about.bio-section.present')}
+                                                  </span>
+                                                ) : (
+                                                  <span>{year.year}</span>
+                                                )}
+                                                <span>: </span>
+                                                {t(year.title)}
+                                            </h2>
+
+                                            <ul>
+                                                {year.description.map((li, index) => {
+                                                    const listStyles = 
+                                                        li.type === 'main'
+                                                            ? 'list-inside [&::marker]:content-[">>"]'
+                                                            : li.type === 'sub'
+                                                            ? 'list-outside pl-2 [&::marker]:content-["▸"] ml-4'
+                                                            : '';
+
+                                                    return (
+                                                    <li key={`${li.text}-${index}`}
+                                                        className={`${listStyles} my-4`}
+                                                    >
+                                                        {t(li.text)}
+                                                    </li>
+                                                )})}
+                                            </ul>
+                                        </div>
+                                    </ExpandCollapse>
+                                </div>
                             )}
                         </div>
                     )})}

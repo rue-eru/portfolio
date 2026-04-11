@@ -8,6 +8,7 @@ import Image from 'next/image';
 import { styles } from '@/app/utils/styles';
 import { useCurrentLanguage } from '@/app/hooks/useCurrentLang';
 import { Float } from '../animations/Float';
+import ExpandCollapse from '../animations/ExpandCollapse';
 
 export default function LegacyProjects () {
     const legacyProjects = projectsData.projects.legacy;
@@ -66,22 +67,29 @@ export default function LegacyProjects () {
           </div>
 
           {activeProjects && (
-            <div className='transition-all'>
-              <p className={`${isEn ? 'text-2xl' : 'text-lg'} ${styles.blurBgText} xs:w-94 w-70 mx-auto md:w-full transition-all my-8`}>{t(`${openCourse}.description`)}</p>
-                <div className={styles.flexCenter}>
-                  <div  className={styles.projectFlex}>
-                    {activeProjects.map((project, index) => (
-                      <ProjectCard
-                        key={project.id}
-                        project={project}
-                        index={index}
-                        isHovered={isDescriptionHover === index}
-                        onHover={setDescriptionHover}
-                      />
-                    ))}
+            <ExpandCollapse
+              componentKey={openCourse}
+              key={openCourse}
+              isOpen={!!activeProjects}
+            >
+              <div className='transition-all'>
+                <p className={`${isEn ? 'text-2xl' : 'text-lg'} ${styles.blurBgText} xs:w-94 w-70 mx-auto md:w-full transition-all my-8`}>{t(`${openCourse}.description`)}</p>
+                  <div className={styles.flexCenter}>
+                    <div  className={styles.projectFlex}>
+                      {activeProjects.map((project, index) => (
+                          <ProjectCard
+                            key={project.id}
+                            project={project}
+                            index={index}
+                            isHovered={isDescriptionHover === index}
+                            onHover={setDescriptionHover}
+                          />
+
+                      ))}
+                    </div>
                   </div>
-                </div>
-            </div>
+              </div>
+            </ExpandCollapse>
 
           )}
         </div>

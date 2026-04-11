@@ -1,19 +1,18 @@
 'use client'
 
-import { easeOut, motion } from "motion/react"
+import { easeOut, motion, AnimatePresence } from "motion/react"
 
 import type { ExpandCollapseProps } from "@/app/utils/interfaces"
-import { AnimatePresence } from "motion/react"
 
 export default function ExpandCollapse({
-    isOpen, children, key, className
+    isOpen, children, componentKey, className
 }: ExpandCollapseProps) {
 
     return(
         <AnimatePresence mode="wait">
             {isOpen && (
                 <motion.div
-                    key={key}
+                    key={componentKey}
                     initial={{
                         opacity: 0,
                         height: 0,
@@ -33,7 +32,7 @@ export default function ExpandCollapse({
                         duration: 0.3,
                         ease: easeOut
                     }}
-                    className={`overflow-hidden ${className}`}
+                    className={` ${className}`}
                 >
                     {children}
                 </motion.div>
