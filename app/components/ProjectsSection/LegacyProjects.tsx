@@ -2,7 +2,7 @@
 
 import projectsData from '@/app/data/projects.json';
 import { useTranslations } from 'next-intl';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import ProjectCard from './ProjectCard';
 import Image from 'next/image';
 import { styles } from '@/app/utils/styles';
@@ -21,6 +21,13 @@ export default function LegacyProjects () {
       : null;
     const entries = Object.entries(legacyProjects) as [CourseKey, typeof legacyProjects[CourseKey]][];
     const {isEn} = useCurrentLanguage();
+    const [prevProjects, setPrevProjects] = useState<typeof activeProjects>(null);
+
+    useEffect(() => {
+      if (activeProjects) {
+        setPrevProjects(activeProjects);
+      }
+    }, [activeProjects])
 
     return(
         <div className="text-center mt-20 space-y-4 mb-40">
@@ -66,32 +73,41 @@ export default function LegacyProjects () {
             )})}
           </div>
 
-          {activeProjects && (
-            <ExpandCollapse
-              componentKey={openCourse}
-              key={openCourse}
-              isOpen={!!activeProjects}
-            >
-              <div className='transition-all'>
-                <p className={`${isEn ? 'text-2xl' : 'text-lg'} ${styles.blurBgText} xs:w-94 w-70 mx-auto md:w-full transition-all my-8`}>{t(`${openCourse}.description`)}</p>
-                  <div className={styles.flexCenter}>
-                    <div  className={styles.projectFlex}>
-                      {activeProjects.map((project, index) => (
-                          <ProjectCard
-                            key={project.id}
-                            project={project}
-                            index={index}
-                            isHovered={isDescriptionHover === index}
-                            onHover={setDescriptionHover}
-                          />
-
-                      ))}
-                    </div>
+          <div className={`relative ${openCourse ? "min-h-125" : ''}`}> 
+            {activeProjects && (
+              <div 
+                key={openCourse}
+              >
+                <ExpandCollapse
+                  componentKey={openCourse || undefined}
+                  isOpen={!!activeProjects}
+                >
+                  <div className='transition-all'>
+                    <p className={`${isEn ? 'text-2xl' : 'text-lg'} ${styles.blurBgText} xs:w-94 w-70 mx-auto md:w-full transition-all my-8`}>{t(`${openCourse}.description`)}</p>
+                      <div className={styles.flexCenter}>
+                        <div  className={styles.projectFlex}>
+                          {activeProjects.map((project, index) => (
+                              <ProjectCard
+                                key={project.id}
+                                project={project}
+                                index={index}
+                                isHovered={isDescriptionHover === index}
+                                onHover={setDescriptionHover}
+                              />
+                          
+                          ))}
+                        </div>
+                      </div>
                   </div>
+                </ExpandCollapse>
               </div>
-            </ExpandCollapse>
 
-          )}
+            )}
+
+            {!activeProjects && prevProjects && (
+              <div className='invisible absolute top-0 left-0 right-0' />
+            )}
+          </div>
         </div>
     )
 }

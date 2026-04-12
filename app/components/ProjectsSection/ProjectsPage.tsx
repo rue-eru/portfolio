@@ -25,7 +25,7 @@ export default function ProjectsPage() {
                 </Float>
             </SlideIn>
 
-            <SlideIn className={styles.flexCenter} delay={0.5}>
+            <SlideIn className={styles.flexCenter} delay={0.5} amount={0.1}>
                 <div className={`${styles.projectFlex} mt-30`}>
                     {projects.map((project, index) => (
                         <ProjectCard 
