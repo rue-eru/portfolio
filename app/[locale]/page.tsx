@@ -1,7 +1,15 @@
+import type { Locale } from "next-intl";
 import LangSwitch from "../components/LangSwitch";
 import { styles } from "../utils/styles";
+import { setRequestLocale } from "next-intl/server";
+import { use } from "react";
 
-export default function Home() {
+export default function Home({ params }: { params: Promise<{ locale: Locale}> }) {
+  // Enable static rendering
+  const { locale } = use(params);
+  setRequestLocale(locale); //for server components
+
+
   return (
     <div className="flex min-h-dvh w-full items-center justify-center front-page font-dongle">
       <main className="h-full ">
