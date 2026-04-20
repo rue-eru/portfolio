@@ -28,15 +28,21 @@ export default function CertCard ({activeGroup}: CertCardProps) {
             {Object.entries(CertData).map(([groupName, certs]: [string, any]) => {
                 if (activeGroup && activeGroup !== groupName) return null
                 return(
-                <div key={groupName} id={groupName}>
-                    <SlideIn className={`h-dvh hidden lg:flex justify-center items-center `}>
-                        <h2 className={`md:text-9xl text-4xl font-bold mb-4 capitalize ${styles.accentHeader}`}>{tNav(groupName)}</h2>
-                    </SlideIn>
+                <div key={groupName} id={groupName} className="overflow-hidden"> 
+                    <div
+                        className={`h-dvh hidden lg:flex justify-center items-center `}
+                    >
+                        <SlideIn 
+                            amount={0.1}
+                        >
+                            <h2 className={`md:text-8xl text-4xl font-bold mb-4 capitalize ${styles.accentHeader}`}>{tNav(groupName)}</h2>
+                        </SlideIn>
+                    </div>
 
                     {certs.map((cert: any, i: number) => (
                         <div className="flex lg:flex-row flex-col lg:h-dvh" key={`${cert.id}-${i}`}>
                                 <SlideIn 
-                                    className="lg:flex-1 relative" 
+                                    className="lg:flex-1 lg:w-1/2 relative" 
                                     direction="right"
                                     amount={0.1}
                                 >
@@ -62,7 +68,7 @@ export default function CertCard ({activeGroup}: CertCardProps) {
                                 </SlideIn>
                             
                             <div 
-                                className="lg:flex-1 relative"
+                                className="lg:flex-1 lg:w-1/2 relative"
                                 onMouseEnter={() => setDescription(cert.id)}
                                 onMouseLeave={()=> setDescription(null)}
                             >
@@ -75,15 +81,21 @@ export default function CertCard ({activeGroup}: CertCardProps) {
                                     </SlideIn>
                                 )}
 
-                                <SlideIn className="hidden bg-set-accent w-full h-full text-set-black lg:text-[150px] md:text-[100px] text-6xl uppercase font-accent lg:flex justify-center items-center text-nowrap z-0"
+                                <SlideIn className="hidden bg-set-black w-full h-full text-set-accent lg:text-[150px] md:text-[100px] text-6xl uppercase font-accent lg:flex justify-center items-center text-nowrap z-0"
                                     direction="left"
                                 >
-                                    <SlideIn direction="bottom" delay={1}>
+                                    <SlideIn 
+                                        direction="bottom" 
+                                        amount={0.1}
+                                    >
                                         <p className="rotate-90 w-fit h-fit">{cert.preview}</p>
                                     </SlideIn>
                                 </SlideIn>
 
-                                <SlideIn className="lg:hidden p-4">
+                                <SlideIn 
+                                    className="lg:hidden p-4"
+                                    amount={0.1}
+                                >
                                     <details 
                                         className={`font-accent ${isEn ? "sm:text-3xl text-2xl" : "text-base"}`}
                                         onClick={() => setExpandedDetails(cert.id)}

@@ -1,7 +1,7 @@
 'use client'
 import { useTranslations } from "next-intl";
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import CertificatesData from "@/app/data/certificates.json"
 import { useCurrentLanguage } from "@/app/hooks/useCurrentLang";
 import { Link } from "@/i18n/navigation";
@@ -15,6 +15,18 @@ export default function CertNav ({activeGroup, setActiveGroup}: CertNavProps) {
     const CertData = CertificatesData;
     const {isEn} = useCurrentLanguage();
     const [onHover, setOnHover] = useState(false);
+
+    useEffect(() => {
+        const handleResize = () => {
+            if (window.innerWidth < 1024) {
+                setMenuOpen(false)
+            }
+        }
+
+        window.addEventListener('resize', handleResize)
+        return () => window.removeEventListener('resize', handleResize)
+        
+    }, [])
 
 
     return (
