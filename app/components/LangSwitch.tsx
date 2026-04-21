@@ -149,7 +149,7 @@ export default function LangSwitch () {
                                         <Image
                                             src={`/images/icons/${lang.code}.png`}
                                             alt="international-globe"
-                                            className="object-contain h-10 w-10 cursor-pointer hover:border-2 hover:border-set-white rounded-full hover:animate-pulse"
+                                            className="object-contain h-10 w-10 cursor-pointer hover:border-2 hover:border-set-accent rounded-full hover:animate-pulse"
                                             width={100}
                                             height={100}
                                         />
