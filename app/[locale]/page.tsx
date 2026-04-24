@@ -4,10 +4,8 @@ import { styles } from "../utils/styles";
 import { setRequestLocale } from "next-intl/server";
 import { use } from "react";
 
-export default async function Home({ params }: { params: Promise<{ locale: Locale}> }) {
+export default function Home({ params }: { params: Promise<{ locale: Locale}> }) {
 
-  // artificial delay for checking load states
-  await new Promise(resolve => setTimeout(resolve, 500000));
 
   // Enable static rendering
   const { locale } = use(params);
