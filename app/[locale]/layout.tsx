@@ -6,6 +6,7 @@ import { hasLocale, NextIntlClientProvider } from "next-intl";
 import { routing } from "@/i18n/routing";
 import { notFound } from "next/navigation";
 import { Suspense } from "react";
+import SmartLoading from "../components/LoadingStates/SmartLoading";
 
 export async function generateMetadata(): Promise<Metadata> {
   const t = await getTranslations('layout');
@@ -44,7 +45,7 @@ export default async function RootLayout({
         <NextIntlClientProvider
           locale={locale} messages={messages}
         >
-          <Suspense>
+          <Suspense fallback={<SmartLoading />}>
             {children}
           </Suspense>
         </NextIntlClientProvider> 

@@ -1,3 +1,5 @@
+'use client'
+
 import { usePathname } from "@/i18n/navigation"
 import FirstLoad from "./FirstLoad";
 
