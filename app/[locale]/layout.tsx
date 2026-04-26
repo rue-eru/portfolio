@@ -45,7 +45,7 @@ export default async function RootLayout({
         <NextIntlClientProvider
           locale={locale} messages={messages}
         >
-          <Suspense fallback={<SmartLoading />}>
+          <Suspense >
             {children}
           </Suspense>
         </NextIntlClientProvider> 

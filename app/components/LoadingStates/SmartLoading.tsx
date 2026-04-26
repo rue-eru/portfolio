@@ -1,7 +1,6 @@
 'use client'
 
 import { usePathname } from "@/i18n/navigation"
-import FirstLoad from "./FirstLoad";
 
 export default function SmartLoading () {
 
@@ -16,9 +15,6 @@ export default function SmartLoading () {
 
     const getState = () => {
 
-        if (pages.length === 0) {
-            return <FirstLoad />
-        }
         
         return
     }

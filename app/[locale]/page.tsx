@@ -9,7 +9,6 @@ export default function Home({ params }: { params: Promise<{ locale: Locale}> })
   // Enable static rendering
   const { locale } = use(params);
   setRequestLocale(locale); //for server components
-
-
+  
   return <HomePage />
 }
