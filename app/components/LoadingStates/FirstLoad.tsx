@@ -2,34 +2,59 @@
 
 import { useEffect, useState } from "react";
 
-export default function FirstLoad () {
-  const [visible, setVisible] = useState(true);
+export default function FirstLoad({ onFinish }: { onFinish: () => void }) {
+  const [percent, setPercent] = useState(0);
+  const radius = 58;
+  const circumference = 2 * Math.PI * radius;
 
   useEffect(() => {
-    // Matches the 2s animation duration
-    const timer = setTimeout(() => setVisible(false), 2000);
-    return () => clearTimeout(timer);
-  }, []);
+    const duration = 2000; 
+    const startTime = performance.now();
 
-  if (!visible) return null;
+    const frame = (now: number) => {
+      const elapsed = now - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+      
+      setPercent(Math.floor(progress * 100));
+
+      if (progress < 1) {
+        requestAnimationFrame(frame);
+      } else {
+
+        // A tiny 200ms pause at 100% so it doesn't feel like a glitchy cut
+        setTimeout(onFinish, 200);
+      }
+    };
+
+    requestAnimationFrame(frame);
+  }, [onFinish]);
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-set-black animate-out">
-      <div className="w-36 h-36 relative flex items-center justify-center">
-        {/* Simple spinning loader or text */}
-        <p className="text-set-accent text-5xl font-dongle animate-pulse">
-          Loading...
-        </p>
-        
-        {/* CSS for the fade out */}
-        <style jsx>{`
-          .animate-out {
-            animation: fadeOut 0.5s ease-in 1.5s forwards;
-          }
-          @keyframes fadeOut {
-            to { opacity: 0; visibility: hidden; }
-          }
-        `}</style>
+    <div className="fixed inset-0 z-100 bg-set-black flex items-center justify-center">
+      <div className="relative w-40 h-40 flex items-center justify-center">
+        <svg className="absolute w-full h-full -rotate-90">
+
+          {/* Background Track */}
+          <circle
+            cx="80" cy="80" r={radius}
+            stroke="#222" strokeWidth="6" fill="none"
+          />
+
+          {/* Animated Progress Circle */}
+          <circle
+            cx="80" cy="80" r={radius}
+            stroke="var(--accent-color, #fff)" 
+            strokeWidth="6" fill="none"
+            strokeLinecap="round"
+            style={{
+              strokeDasharray: circumference,
+              strokeDashoffset: circumference - (percent / 100) * circumference,
+              transition: 'stroke-dashoffset 0.1s linear'
+            }}
+          />
+
+        </svg>
+        <span className="text-5xl font-dongle text-set-accent text-center">{percent}%</span>
       </div>
     </div>
   );

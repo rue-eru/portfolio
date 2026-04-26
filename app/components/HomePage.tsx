@@ -1,22 +1,21 @@
 'use client'
-import { useEffect, useState } from "react";
+
+import { useState } from "react";
 import FirstLoad from "@/app/components/LoadingStates/FirstLoad";
 import LangSwitch from "./LangSwitch";
 import { styles } from "../utils/styles";
 
 export default function HomePage() {
-const [isClient, setIsClient] = useState(false);
-
-  useEffect(() => {
-    setIsClient(true);
-  }, []);
-
-  // Avoid SSR mismatch
-  if (!isClient) return <div className="bg-set-black h-dvh" />;
+const [showIntro, setShowIntro] = useState(true);
 
   return (
     <>
-        <FirstLoad />
+        {showIntro && 
+            <FirstLoad 
+                onFinish={() => setShowIntro(false)}
+            />
+        }
+
         <div className="flex min-h-dvh w-full items-center justify-center front-page font-dongle">
           <main className="h-full ">
             <div className="lg:-mt-20 sm:mt-10 mt-55">
