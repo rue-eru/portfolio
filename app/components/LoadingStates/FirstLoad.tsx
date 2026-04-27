@@ -30,7 +30,8 @@ export default function FirstLoad({ onFinish }: { onFinish: () => void }) {
   }, [onFinish]);
 
   return (
-    <div className="fixed inset-0 z-100 bg-set-black flex items-center justify-center">
+    <div className="fixed inset-0 z-100 bg-set-black flex items-center justify-center cursor-loading
+    ">
       <div className="relative w-40 h-40 flex items-center justify-center">
         <svg className="absolute w-full h-full -rotate-90">
 
@@ -52,7 +53,6 @@ export default function FirstLoad({ onFinish }: { onFinish: () => void }) {
               transition: 'stroke-dashoffset 0.1s linear'
             }}
           />
-
         </svg>
         <span className="text-5xl font-dongle text-set-accent text-center">{percent}%</span>
       </div>

@@ -6,6 +6,7 @@
   --accent-color: #C0FF00;
   --font-dongle: initial;
   --font-mPlusRoundedC1: initial;
+  --loading: url("/images/cursors/loading.gif"), wait;
 }
 
 @theme inline {
@@ -15,6 +16,7 @@
   --font-dongle: var(--font-dongle);
   --font-mplus: var(--font-mPlusRoundedC1);
   --breakpoint-xs: 420px;
+  --cursor-loading: var(--loading);
 }
 
 body {
