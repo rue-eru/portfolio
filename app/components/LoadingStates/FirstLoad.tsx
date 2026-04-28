@@ -30,8 +30,9 @@ export default function FirstLoad({ onFinish }: { onFinish: () => void }) {
   }, [onFinish]);
 
   return (
-    <div className="fixed inset-0 z-100 bg-set-black flex items-center justify-center cursor-loading
-    ">
+    <div className="fixed inset-0 z-100 bg-set-black flex items-center justify-center cursor-loading"
+
+    >
       <div className="relative w-40 h-40 flex items-center justify-center">
         <svg className="absolute w-full h-full -rotate-90">
 

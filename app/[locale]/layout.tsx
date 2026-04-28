@@ -7,6 +7,7 @@ import { routing } from "@/i18n/routing";
 import { notFound } from "next/navigation";
 import { Suspense } from "react";
 import PageLoading from "../components/LoadingStates/PageLoading";
+import CustomCursor from "../components/CustomCursor";
 
 export async function generateMetadata(): Promise<Metadata> {
   const t = await getTranslations('layout');
@@ -42,6 +43,7 @@ export default async function RootLayout({
       <body
         className={`${Dongle.variable} ${M_PLUS_Rounded_1c.variable} antialiased`}
       >
+        <CustomCursor />
         <NextIntlClientProvider
           locale={locale} messages={messages}
         >
