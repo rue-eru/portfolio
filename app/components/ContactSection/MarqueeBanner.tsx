@@ -38,6 +38,7 @@ export default function MarqueeBanner() {
                 className="w-full h-15 border-t border-b relative overflow-hidden"
                 onMouseEnter={() => setIsHovered(true)}
                 onMouseLeave={() => setIsHovered(false)}
+                data-cursor-big
             >
                 <motion.div
                     ref={containerRef}

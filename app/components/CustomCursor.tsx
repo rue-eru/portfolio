@@ -13,6 +13,7 @@ export default function CustomCursor() {
   const isVisible = useRef(true);
 
   useEffect(() => {
+
     const handleMouseMove = (e: MouseEvent) => {
       targetX.current = e.clientX;
       targetY.current = e.clientY;
@@ -44,11 +45,11 @@ export default function CustomCursor() {
         }
       }
       
-      // Big cursor - ADD TORCH EFFECT HERE
+      // Big cursor on hover 
       if (target.closest('[data-cursor-big]')) {
         targetSize.current = 150;
         if (cursorRef.current) {
-          cursorRef.current.style.mixBlendMode = 'screen'; // TORCH EFFECT difference/screen
+          cursorRef.current.style.mixBlendMode = 'difference'; // TORCH EFFECT difference/screen
         }
         return;
       }

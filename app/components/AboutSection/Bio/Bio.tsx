@@ -180,9 +180,11 @@ export default function Bio (){
                         <div 
                             key={`${year.id}-${i}`}
                             className="flex flex-col items-center relative"
+                            data-cursor-big
                         >
                             <h2 className={`mb-2 transition-colors duration-300
-                                ${isViewed ? 'text-lime-600' : 'text-gray-500'}`}>
+                                ${isViewed ? 'text-lime-600' : 'text-gray-500'}`}
+                                >
                                     {year.id}
                             </h2>
                             <div 
@@ -209,6 +211,7 @@ export default function Bio (){
                                         absolute top-20 w-140 z-20
                                         `}
                                     key={year.id}
+                                    data-cursor-big
                                 >
                                     <ExpandCollapse
                                         key={year.id}

@@ -35,7 +35,10 @@ export default function CertCard ({activeGroup}: CertCardProps) {
                         <SlideIn 
                             amount={0.1}
                         >
-                            <h2 className={`md:text-8xl text-4xl font-bold mb-4 capitalize ${styles.accentHeader}`}>{tNav(groupName)}</h2>
+                            <h2 
+                                className={`md:text-8xl text-4xl font-bold mb-4 capitalize ${styles.accentHeader}`}
+                                data-cursor-big
+                            >{tNav(groupName)}</h2>
                         </SlideIn>
                     </div>
 
@@ -98,10 +101,14 @@ export default function CertCard ({activeGroup}: CertCardProps) {
                                 >
                                     <details 
                                         className={`font-accent ${isEn ? "sm:text-3xl text-2xl" : "text-base"}`}
-                                        onClick={() => setExpandedDetails(cert.id)}
+                                        onClick={() => setExpandedDetails(cert.id)} 
                                     >
-                                        <summary className={`text-center font-semibold ${expandedDetails === cert.id ? "bg-set-accent text-set-black" : ""}`}>{t(cert.title)}</summary>
-                                        <p className="text-justify mt-4">{t(cert.description)}</p>
+                                        <summary 
+                                            data-cursor-big
+                                            className={`text-center font-semibold ${expandedDetails === cert.id ? "bg-set-accent text-set-black" : ""}`}
+                                        >{t(cert.title)}
+                                        </summary>
+                                        <p className="text-justify mt-4" data-cursor-big>{t(cert.description)}</p>
                                     </details>
                                 </SlideIn>
                             </div>

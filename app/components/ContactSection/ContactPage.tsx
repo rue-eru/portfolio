@@ -25,11 +25,16 @@ export default function ContactPage () {
                 ${isJa ? 'text-nowrap md:text-5xl sm:text-[2.5rem] text-xl' : 'md:flex-row'}
                 ${isRu ? 'flex-wrap text-[2rem] sm:text-[4rem]' : ''}
             `}>
-                <span className="text-nowrap">{t('interested')}</span>
+                <span 
+                    className="text-nowrap"
+                    data-cursor-big
+                >{t('interested')}</span>
                 <div className={`flex  
                         ${isRu ? 'flex-row-reverse' : ''}
                         ${isJa ? 'gap-0' : 'gap-2'}
-                    `}>
+                    `}
+                    data-cursor-big
+                >
                     <span className={styles.pulseContrast}>{t('contrastContact')}</span>
                     <span>{t('me')}</span>
                 </div>
@@ -74,7 +79,10 @@ export default function ContactPage () {
                     `}
                         delay={1.5}
                     >
-                    <p className="text-nowrap">{t("check")}</p>
+                    <p 
+                        className="text-nowrap" 
+                        data-cursor-big
+                    >{t("check")}</p>
                     <div className={`flex sm:flex-nowrap flex-wrap  justify-center
                         ${isJa ? 'gap-0' : 'gap-2'}
                     `}>

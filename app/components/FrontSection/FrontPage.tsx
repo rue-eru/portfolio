@@ -18,6 +18,7 @@ export default function FrontPage () {
         <div id="frontpage" className="front-page h-dvh w-full snap-start snap-always flex justify-center items-center relative">
             <div 
                 className="w-[80%] flex flex-wrap justify-center items-center text-justify"
+                data-cursor-big
                 >
                 {isJa ? (
 

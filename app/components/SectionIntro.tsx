@@ -25,8 +25,11 @@ export default function SectionIntro({t1, t2, id} : SectionIntroProps) {
                     : 'text-4xl sm:text-6xl'
                 }
                 once={false}
+                
             >
-                <p>{t(t1)}
+                <p
+                    data-cursor-big
+                >{t(t1)}
                     <span className={styles.pulseContrast}> {t(t2)}</span>
                 </p>
             </SlideIn>
