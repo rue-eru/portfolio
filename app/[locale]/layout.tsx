@@ -43,11 +43,11 @@ export default async function RootLayout({
       <body
         className={`${Dongle.variable} ${M_PLUS_Rounded_1c.variable} antialiased`}
       >
-        <CustomCursor />
         <NextIntlClientProvider
           locale={locale} messages={messages}
         >
           <Suspense fallback={ <PageLoading />}>
+                    <CustomCursor />
             {children}
           </Suspense>
         </NextIntlClientProvider> 

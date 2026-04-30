@@ -25,6 +25,7 @@ export default function CustomCursor() {
     
     const handleMouseOver = (e: MouseEvent) => {
       const target = e.target as HTMLElement;
+      const isWait = target.closest('[data-cursor-wait]');
       
       // Hide on links and buttons
       const isLink = target.closest('a, button, [role="button"], input, select, textarea, [data-cursor-hide]');
@@ -62,11 +63,24 @@ export default function CustomCursor() {
         }
         return;
       }
-      
+
+      // Loading State
+      if (isWait) {
+        targetSize.current = 24;
+        
+        if (cursorRef.current) {
+          cursorRef.current.dataset.wait = 'true';
+          cursorRef.current.style.mixBlendMode = 'normal';
+        }
+    
+        return;
+      }
+
       // Default size
       targetSize.current = 32;
       if (cursorRef.current) {
         cursorRef.current.style.mixBlendMode = 'normal'; // Reset blend mode
+        delete cursorRef.current.dataset.wait; // Delete loading state 
       }
     };
     
@@ -76,6 +90,7 @@ export default function CustomCursor() {
       if (cursorRef.current) {
         cursorRef.current.style.opacity = '1';
         cursorRef.current.style.mixBlendMode = 'normal'; // Reset blend mode
+        delete cursorRef.current.dataset.wait; // Delete loading state 
       }
     };
     
@@ -125,6 +140,9 @@ export default function CustomCursor() {
         transition: 'width 0.1s linear, height 0.1s linear',
         willChange: 'transform',
       }}
-    />
+    >
+        <div className='cursor-pulse pulse-1 absolute inset-0 rounded-full border border-lime-300 opacity-0' />
+        <div className='cursor-pulse pulse-2 absolute inset-0 rounded-full border border-lime-300 opacity-0' />
+    </div>
   );
 }
