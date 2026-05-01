@@ -1,4 +1,3 @@
-// components/ProjectCard.tsx
 'use client'
 
 import Image from "next/image";
@@ -16,6 +15,7 @@ export default function ProjectCard({ project, index, isHovered, onHover }: Proj
   const displayTitle = project.title.startsWith('projects.') 
     ? t(project.title) 
     : project.title;
+  
 
   return (
     <Float>
@@ -72,14 +72,22 @@ export default function ProjectCard({ project, index, isHovered, onHover }: Proj
                     href={`${project.id === 'lads-battles' && link.name === 'demo' ? `${link.url}${lang}` : link.url }`} // locale sensetive url
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="hover:opacity-80 transition-opacity"
+                    className="transition-all duration-300 group"
                   >
                     <Image 
                       src={`/images/icons/${link.name}.png`}
                       alt={link.name}
                       width={24}
                       height={24}
-                      className="object-contain"
+                      className="object-contain block group-hover:hidden"
+                      loading="lazy"
+                    />
+                    <Image 
+                      src={`/images/icons/${link.name}-accent.png`}
+                      alt={link.name}
+                      width={24}
+                      height={24}
+                      className="object-contain hidden group-hover:block"
                       loading="lazy"
                     />
                   </a>
