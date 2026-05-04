@@ -5,7 +5,8 @@
         "projects": "Projects",
         "tech": "Tech Stack",
         "about": "About Me",
-        "contacts": "Contacts"
+        "contacts": "Contacts",
+        "home": "Home"
     },
     "frontpage-title": "Building cultures with code and language"
 }

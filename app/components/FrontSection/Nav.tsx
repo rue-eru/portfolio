@@ -5,12 +5,22 @@ import StaggerSlide from "../animations/StaggerSlide";
 import SlideIn from "../animations/SlideIn";
 import { useCurrentLanguage } from "@/app/hooks/useCurrentLang";
 import { useState } from "react";
+import Link from "next/link";
 
 export default function Nav () {
     const t = useTranslations('layout.nav-bar')
     const sections = [ 'projects', 'tech', 'about', 'contacts'];
     const {isEn} = useCurrentLanguage();
     const [isOpen, setIsOpen] = useState(false);
+    const linkStyle = `
+        cursor-pointer font-semibold 
+        hover:text-set-accent transition-colors text-nowrap
+        flex items-center justify-center
+        ${isEn ? "text-2xl" : "text-lg"}
+        border-t sm:border-0
+        border-set-white/50 
+    `;
+    const linkP = `w-40 sm:w-auto h-auto p-1 pl-2 sm:px-2`;
 
 
     return (
@@ -43,26 +53,28 @@ export default function Nav () {
                 duration={2} 
                 distance={-20}
                 className={`sm:flex-1 sm:flex-row sm:justify-around flex-col justify-center items-start
-                    absolute sm:static left-2 top-11 w-auto h-auto bg-set-black rounded-bl rounded-br
+                    absolute sm:static left-2 top-11 w-auto h-auto bg-set-black rounded-bl rounded-br 
                     ${isOpen ? "flex transition-all" : "hidden sm:flex"}
                 `}
             >
-                {sections.map((name, index) => (
+                
+                {...sections.map((name, index) => (
                     <a 
                         key={name}
                         href={`#${name}`}
-                        className={`cursor-pointer font-semibold 
-                            hover:text-set-accent transition-colors text-nowrap
-                            flex items-center justify-center
-                            ${isEn ? "text-2xl" : "text-lg"}
-                            border-t sm:border-0
-                            border-set-white/50
+                        className={`${linkStyle}
                             ${index === 0 ? 'border-t-0' : ''}
                         `}
                     >
-                        <p className=" w-40 sm:w-auto h-auto p-1 pl-2 sm:px-2">{t(name)}</p>
+                        <p className={linkP}>{t(name)}</p>
                     </a>
                 ))}
+                <a 
+                    href="/"
+                    className={linkStyle}
+                >
+                    <p className={linkP}>{t('home')}</p>
+                </a>
             </StaggerSlide>
 
         </div>
