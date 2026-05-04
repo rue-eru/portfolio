@@ -41,6 +41,7 @@ export default function CertNav ({activeGroup, setActiveGroup}: CertNavProps) {
                                 className={`${styles.navCert} rounded-2xl px-2`} >{t(groupName)}</a>
                         ))}
                         <Link className={`${styles.navCert} rounded-2xl px-2`} href="/certificates/all">{t('all')}</Link>
+                        <Link className={`${styles.navCert} rounded-2xl px-2`} href="/main">{t('back')}</Link>
                     </div>
 
                     <button
@@ -79,6 +80,8 @@ export default function CertNav ({activeGroup, setActiveGroup}: CertNavProps) {
                             className={styles.smallBtnsCertNav}>{t(groupName)}</button>
                     ))}
                     <Link href="/certificates/all" className={styles.smallBtnsCertNav}>{t('all')}</Link>
+                    <Link href="/main" className={styles.smallBtnsCertNav}>{t('back')}</Link>
+                    
                 </div>
             </div>
 

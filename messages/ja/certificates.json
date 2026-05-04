@@ -2,10 +2,13 @@
     "h1": "証明書",
     "nav": {
         "all": "全て表示",
+        "back": "戻る",
         "languages": "言語",
         "coding": "コーディング",
         "localization": "ローカライゼーション",
-        "university": "大学頃"
+        "university": "大学頃",
+        "back-cert": "証明書に戻る",
+        "back-main": "メインに戻る"
     },
 
     "languages": {

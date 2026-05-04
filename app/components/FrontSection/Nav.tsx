@@ -28,7 +28,7 @@ export default function Nav () {
                     onClick={() => setIsOpen(prev => !prev)}
                     >
                 <a
-                    href={`#frontpage`}
+                    href="/"
                     className="hidden sm:block"
                 >
                     <p className="text-7xl pl-5 -mt-4 -mb-6 cursor-pointer hover:text-set-accent transition-colors font-dongle">L</p>

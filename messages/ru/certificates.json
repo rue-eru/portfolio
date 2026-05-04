@@ -2,10 +2,13 @@
     "h1": "Сертификаты",
     "nav": {
         "all": "Открыть все",
+        "back": "назад",
         "languages": "языки",
         "coding": "код",
         "localization": "локализация",
-        "university": "универ"
+        "university": "универ",
+        "back-cert": "к сертификатам",
+        "back-main": "на главную"
     },
 
     "languages": {

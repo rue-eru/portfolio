@@ -2,10 +2,13 @@
     "h1": "Certificates",
     "nav": {
         "all": "see all",
+        "back": "back",
         "languages": "languages",
         "coding": "coding",
         "localization": "localization",
-        "university": "university"
+        "university": "university",
+        "back-cert": "certificates",
+        "back-main": "main"
     },
 
 
