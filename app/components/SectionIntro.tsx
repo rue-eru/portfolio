@@ -15,7 +15,7 @@ export default function SectionIntro({t1, t2, id} : SectionIntroProps) {
         <div className="h-dvh w-full 
             bg-set-black text-set-white 
             flex justify-center items-center 
-            font-accent -mt-4
+            font-accent
             snap-start
             "
             id={id}
