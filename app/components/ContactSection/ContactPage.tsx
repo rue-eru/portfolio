@@ -111,6 +111,7 @@ export default function ContactPage () {
             </div>
             
             <CreditFooter />
+            
         </section>
     )
 }

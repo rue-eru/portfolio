@@ -8,6 +8,10 @@
         "contacts": "お問い合わせ",
         "home": "ホーム"
     },
-    "frontpage-title": "多言語対応と国際化に特化しています"
+    "frontpage-title": "多言語対応と国際化に特化しています",
+    "footer": {
+        "built": "Next.jsで構築",
+        "by": "デザイン・開発："
+    }
 
 }

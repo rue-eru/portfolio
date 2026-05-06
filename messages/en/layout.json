@@ -1,6 +1,7 @@
 {
     "metadata-title": "Frontend+i18n Portfolio",
     "metadata-description": "L's Frontend & Translation Portfolio",
+    "frontpage-title": "Building cultures with code and language",
     "nav-bar": {
         "projects": "Projects",
         "tech": "Tech Stack",
@@ -8,5 +9,8 @@
         "contacts": "Contacts",
         "home": "Home"
     },
-    "frontpage-title": "Building cultures with code and language"
+    "footer": {
+        "built": "Built with Next.js",
+        "by": "Designed & developed by me"
+    }
 }

@@ -5,7 +5,6 @@ import StaggerSlide from "../animations/StaggerSlide";
 import SlideIn from "../animations/SlideIn";
 import { useCurrentLanguage } from "@/app/hooks/useCurrentLang";
 import { useState } from "react";
-import Link from "next/link";
 
 export default function Nav () {
     const t = useTranslations('layout.nav-bar')
@@ -52,7 +51,7 @@ export default function Nav () {
                 delay={0.3}
                 duration={2} 
                 distance={-20}
-                className={`sm:flex-1 sm:flex-row sm:justify-around flex-col justify-center items-start
+                className={`sm:flex-1 sm:flex-row sm:justify-around flex-col justify-center items-start md:justify-end
                     absolute sm:static left-2 top-11 w-auto h-auto bg-set-black rounded-bl rounded-br 
                     ${isOpen ? "flex transition-all" : "hidden sm:flex"}
                 `}
@@ -71,7 +70,9 @@ export default function Nav () {
                 ))}
                 <a 
                     href="/"
-                    className={linkStyle}
+                        className={`${linkStyle}
+                            md:hidden
+                        `}
                 >
                     <p className={linkP}>{t('home')}</p>
                 </a>

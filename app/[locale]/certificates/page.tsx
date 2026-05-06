@@ -1,4 +1,5 @@
 import CertClient from "@/app/components/CerificateSection/CertClient";
+import CreditFooter from "@/app/components/CreditFooter";
 import {  type Locale } from "next-intl";
 import { setRequestLocale } from "next-intl/server";
 import { use } from "react";
@@ -11,6 +12,7 @@ export default function CertificatesPage({ params }: { params: Promise<{ locale:
     return(
         <main className="w-full h-fit bg-set-black text-set-white font-accent overflow-x-hidden">
             <CertClient />
+            <CreditFooter />
         </main>
     )
 }
