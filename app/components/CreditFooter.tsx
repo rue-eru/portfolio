@@ -2,7 +2,6 @@
 
 import { useTranslations } from "next-intl";
 import { useCurrentLanguage } from "../hooks/useCurrentLang"
-
 export default function CreditFooter () {
     const { isEn } = useCurrentLanguage();
     const t = useTranslations('layout.footer')
@@ -17,6 +16,7 @@ export default function CreditFooter () {
     ;
 
     return (
+
         <footer
             className={`text-font-accent text-set-white/60 text-center
                 flex flex-col 
@@ -34,5 +34,6 @@ export default function CreditFooter () {
                     {isEn ? '' : link}
                 </p>
         </footer>
+        
     )
 }
