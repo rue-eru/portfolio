@@ -21,6 +21,16 @@ My personal portfolio website built with Next.js, showcasing my projects and ski
 
 🔗 **Live Site:** [shigoto-el-portfolio.vercel.app](https://shigoto-el-portfolio.vercel.app)
 
+<details>
+<summary>Project Images</summary>
+
+| Pages | Images |
+|:-------:|:----------:|
+| **Front Page** | ![Front Page ](./public/images/readme/front.png) |
+| **Main Page** | ![Front Page JA](./public/images/readme/main.gif)|
+| **Certificate Page** | ![Certificate Page EN](./public/images/readme/cert.png) | 
+| **All Certificate Page** | ![All Certificate Page RU](./public/images/readme/all-cert.png) | 
+</details>
 
 
 ## Key Features
