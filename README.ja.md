@@ -13,7 +13,21 @@
 
 フロントエンド開発者＆翻訳者としてのポートフォリオサイト。
 
-🔗 **ライブデモ:** [shigoto-el-portfolio.vercel.app](https://shigoto-el-portfolio.vercel.app)
+> **技術的な設計背景や詳細な実装意図については英語版READMEにて詳しく記載しております。** ➞ [README.md](README.md) | [GitHub プロフィール](https://github.com/rue-eru)</br>
+> 🇯🇵 このプロジェクトは日本語完全対応です。採用ご検討の際はぜひデモをご覧ください。</br>
+> 🖥️ [デモはこちら](https://shigoto-el-portfolio.vercel.app)
+
+<details>
+<summary>スクリーンショットと動画</summary>
+
+| ページ | スクリーンショット |
+|:-------:|:----------------:|
+| **フロントページ (EN)** | ![Front Page](./public/images/readme/front.png) |
+| **メインページ (JA)** | ![Main Page](./public/images/readme/main.gif) |
+| **証明書ページ (EN)** | ![Certificates](./public/images/readme/cert.png) | 
+| **全証明書ページ (RU)** | ![All Certificates](./public/images/readme/all-cert.png) |
+
+</details>
 
 ## 技術スタック
 
