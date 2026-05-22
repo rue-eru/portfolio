@@ -26,10 +26,10 @@ My personal portfolio website built with Next.js, showcasing my projects and ski
 
 | Pages | Images |
 |:-------:|:----------:|
-| **Front Page** | ![Front Page ](./public/images/readme/front.png) |
-| **Main Page** | ![Front Page JA](./public/images/readme/main.gif)|
-| **Certificate Page** | ![Certificate Page EN](./public/images/readme/cert.png) | 
-| **All Certificate Page** | ![All Certificate Page RU](./public/images/readme/all-cert.png) | 
+| **Front Page (EN)** | ![Front Page ](./public/images/readme/front.png) |
+| **Main Page (JA)** | ![Front Page JA](./public/images/readme/main.gif)|
+| **Certificate Page (EN)** | ![Certificate Page EN](./public/images/readme/cert.png) | 
+| **All Certificate Page (RU)** | ![All Certificate Page RU](./public/images/readme/all-cert.png) | 
 </details>
 
 
