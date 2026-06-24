@@ -22,6 +22,7 @@ export default function CreditFooter () {
                 flex flex-col 
                 ${isEn ? 'text-2xl' : 'text-base'}
             `}
+            data-cursor-big
         >
                 <p className={isEn ? '-mb-3' : ''}>
                     © {new Date().getFullYear()}
