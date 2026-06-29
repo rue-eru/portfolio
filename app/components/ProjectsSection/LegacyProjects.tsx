@@ -4,11 +4,10 @@ import projectsData from '@/app/data/projects.json';
 import { useTranslations } from 'next-intl';
 import { useEffect, useState } from 'react';
 import ProjectCard from './ProjectCard';
-import Image from 'next/image';
 import { styles } from '@/app/utils/styles';
 import { useCurrentLanguage } from '@/app/hooks/useCurrentLang';
-import { Float } from '../animations/Float';
 import ExpandCollapse from '../animations/ExpandCollapse';
+import ShowMoreBtn from './ShowMoreBtn';
 
 export default function LegacyProjects () {
     const legacyProjects = projectsData.projects.legacy;
@@ -42,35 +41,16 @@ export default function LegacyProjects () {
 
           <div className="md:flex justify-center gap-4 flex-wrap md:flex-nowrap text-set-white w-full grid grid-cols-1">
             
-            {entries.map(([courseName]) => {
-              const titles = {
-                'html-css': 'Responsive Web Design',
-                'js': 'JavaScript Algorithms and Data Structures',
-                'libraries': 'Front-End Libraries'
-              };
-              
-              return(
+            {entries.map(([courseName]) => (
 
-              <Float key={courseName} >
-                <button
-                  className={`bg-gray-600 cursor-pointer inline-flex md:justify-center justify-start items-center gap-2 p-2 rounded transition-all xs:w-94 w-70 md:w-full hover:outline-set-accent hover:outline-3 hover:text-set-accent
-                  ${openCourse === courseName  ? 'bg-set-accent text-gray-600 transition-colors hover:text-set-black outline-none' : ''}
-                  ${styles.containerShadow}
-                `}
-                  onClick={() => setOpenCourse(prev => prev === courseName ? null : courseName)}
-                >
-                  <Image 
-                    src={`/images/icons/${courseName}.png`}
-                    alt={courseName}
-                    width={40}
-                    height={40}
-                    className='object-contain'
-                    loading='lazy'
-                  />
-                  <span className={`${isEn ? 'text-xl' : 'text-sm'}`}>{titles[courseName]}</span>
-                </button>
-              </Float>
-            )})}
+              <ShowMoreBtn
+                key={courseName}
+                btnName={courseName}
+                isOpen={openCourse}
+                setIsOpen={setOpenCourse}
+              />
+
+            ))}
           </div>
 
           <div className={`relative ${openCourse ? "min-h-125" : ''}`}> 
