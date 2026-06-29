@@ -1,30 +1,31 @@
 import type { ReactNode } from "react";
 
 export type Direction = 'top' | 'bottom' | 'left' | 'right';
+export type CourseKey = 'html-css' | 'js' | 'libraries';
 
 export interface PositionProps {
-    x?: number;
-    y?: number;
+  x?: number;
+  y?: number;
 } 
 
 export interface SlideInProps {
-    children: ReactNode | ReactNode[];
-    direction?: Direction;
-    delay?: number;
-    duration?: number;
-    distance?: number;
-    staggerDelay?: number;
-    className?: string;
-    once?: boolean;
-    amount?: number
+  children: ReactNode | ReactNode[];
+  direction?: Direction;
+  delay?: number;
+  duration?: number;
+  distance?: number;
+  staggerDelay?: number;
+  className?: string;
+  once?: boolean;
+  amount?: number
 }
 
 export interface LetterByLetterProps {
-    text: string;
-    className?: string;
-    direction?: Direction;
-    staggerDelay?: number;
-    distance?: number
+  text: string;
+  className?: string;
+  direction?: Direction;
+  staggerDelay?: number;
+  distance?: number
 }
 
 export interface Project {
@@ -119,15 +120,13 @@ export interface ImageArrowsProps {
   setCurrentIndex?: React.Dispatch<React.SetStateAction<number>>;
 }
 
-
-
 export interface CertNavProps {
-    activeGroup: string | null;
-    setActiveGroup: (group: string | null) => void;
+  activeGroup: string | null;
+  setActiveGroup: (group: string | null) => void;
 }
 
 export interface CertCardProps {
-    activeGroup: string | null;
+  activeGroup: string | null;
 }
 
 export interface SectionIntroProps {
@@ -141,4 +140,13 @@ export interface ExpandCollapseProps {
   children: React.ReactNode;
   componentKey?: string,
   className?: string
+}
+
+export interface ShowMoreBtnProps {
+  btnName: CourseKey;
+  isOpen: CourseKey | null;
+  setIsOpen: (btn: CourseKey | null) => void;
+  title?: string;
+  iconPath?: string;
+  titles?: Record<CourseKey, string>;
 }

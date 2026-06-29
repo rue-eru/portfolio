@@ -8,6 +8,7 @@ import { styles } from "@/app/utils/styles";
 import ProjectCard from "./ProjectCard";
 import LegacyProjects from "./LegacyProjects";
 import { Float } from "../animations/Float";
+import Contributions from "./Contributions";
 
 
 export default function ProjectsPage() {
@@ -42,6 +43,10 @@ export default function ProjectsPage() {
             </SlideIn>
 
             <SlideIn delay={1}>
+                <Contributions />
+            </SlideIn>
+
+            <SlideIn delay={1.5}>
                 <LegacyProjects />
             </SlideIn>
             
