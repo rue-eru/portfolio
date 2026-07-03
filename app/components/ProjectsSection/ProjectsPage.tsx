@@ -23,7 +23,7 @@ export default function ProjectsPage() {
             <SlideIn>
                 <Float>
                     <h3 
-                        className={`${styles.h3} ${styles.containerShadow}`}
+                        className={`${styles.h3} ${styles.containerShadow} px-2`}
                     >{tPr('main-pr')}</h3>
                 </Float>
             </SlideIn>

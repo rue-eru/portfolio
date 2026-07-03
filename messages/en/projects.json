@@ -14,6 +14,29 @@
         "title": "Weather App with animations",
         "description": "A fully responsive multilingual weather application that visualizes animated scenes. The animated background adjusts to local time. Forecasts are available in °C/°F. Additional features: 'Ultraviolet', 'Humidity', 'Feels Like', and 'Wind Direction and Speed'."
     },
+    "contributions": {
+        "title": "Open Source Contributions",
+        "link_title": {
+            "project": "Check {project_repo} Github page",
+            "my_pr": "Check my PR to {project_repo}"
+        },
+
+        "couchers": {
+            "description": "Localized hardcoded `aria-label` strings for accessibility & i18n support in a 500+ star open-source community platform."
+        },
+        "devimpact": {
+          "description": "Added a validation script to ensure all locale JSON files have consistent translation keys, improving i18n reliability."
+        },
+        "neuland": {
+          "description": "Replaced hardcoded accessibility labels with i18n keys in a React Native campus app, improving screen reader support."
+        },
+        "remitwise": {
+          "description": "Externalized hardcoded English strings on Settings, Family, and Insurance pages into the i18n system (EN/ES)."
+        },
+        "weftmap": {
+          "description": "Fixed a white flash issue during language switch in dark mode by moving theme control to server-side cookies."
+        }
+    },
     "html-css": {
         "description": "Simple projects made for FreeCodeCamp's Responsive Web Design Course in 2024",
         "survey-form": {

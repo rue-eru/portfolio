@@ -15,6 +15,12 @@ export const styles = {
     mobileScrollAnime2: `w-4 h-1 bg-set-white rounded-2xl rotate-330 -ml-0.5 animate-pulse`,
     containerShadow: `shadow-black/50 shadow-xl`,
 
+    //projects
+    projectsSectionBtn: `bg-gray-600 cursor-pointer p-2 rounded transition-all xs:w-94 w-70 md:w-full hover:outline-set-accent hover:outline-3 hover:text-set-accent
+    inline-flex md:justify-center justify-start items-center gap-2
+    `,
+    projectOpenBtn: `bg-set-accent text-gray-600 transition-colors hover:text-set-black outline-none`,
+
     //game-console styles
     consoleColor: `pink-400`,
     screenText: `text-sky-100 text-shadow-md text-shadow-indigo-950`,

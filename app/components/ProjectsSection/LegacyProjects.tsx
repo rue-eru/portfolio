@@ -4,10 +4,11 @@ import projectsData from '@/app/data/projects.json';
 import { useTranslations } from 'next-intl';
 import { useEffect, useState } from 'react';
 import ProjectCard from './ProjectCard';
+import Image from 'next/image';
 import { styles } from '@/app/utils/styles';
 import { useCurrentLanguage } from '@/app/hooks/useCurrentLang';
+import { Float } from '../animations/Float';
 import ExpandCollapse from '../animations/ExpandCollapse';
-import ShowMoreBtn from './ShowMoreBtn';
 
 export default function LegacyProjects () {
     const legacyProjects = projectsData.projects.legacy;
@@ -29,7 +30,7 @@ export default function LegacyProjects () {
     }, [activeProjects])
 
     return(
-        <div className="text-center mt-20 space-y-4 mb-40">
+        <div className="text-center mt-10 space-y-4 mb-40">
 
           <div className={styles.flexCenter}>
             <p className={`${styles.blurBgText} xs:w-94 w-70 text-wrap md:w-fit 
@@ -41,16 +42,36 @@ export default function LegacyProjects () {
 
           <div className="md:flex justify-center gap-4 flex-wrap md:flex-nowrap text-set-white w-full grid grid-cols-1">
             
-            {entries.map(([courseName]) => (
+            {entries.map(([courseName]) => {
+              const titles = {
+                'html-css': 'Responsive Web Design',
+                'js': 'JavaScript Algorithms and Data Structures',
+                'libraries': 'Front-End Libraries'
+              };
+              
+              return(
 
-              <ShowMoreBtn
-                key={courseName}
-                btnName={courseName}
-                isOpen={openCourse}
-                setIsOpen={setOpenCourse}
-              />
-
-            ))}
+              <Float key={courseName} >
+                <button
+                  className={` 
+                    ${styles.projectsSectionBtn}
+                    ${openCourse === courseName  ? styles.projectOpenBtn : ''}
+                    ${styles.containerShadow}
+                `}
+                  onClick={() => setOpenCourse(prev => prev === courseName ? null : courseName)}
+                >
+                  <Image 
+                    src={`/images/icons/${courseName}.png`}
+                    alt={courseName}
+                    width={40}
+                    height={40}
+                    className='object-contain'
+                    loading='lazy'
+                  />
+                  <span className={`${isEn ? 'text-xl' : 'text-sm'}`}>{titles[courseName]}</span>
+                </button>
+              </Float>
+            )})}
           </div>
 
           <div className={`relative ${openCourse ? "min-h-125" : ''}`}> 
