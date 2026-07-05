@@ -27,6 +27,58 @@
             "featured": true
           }
         ],
+        "contributions": [
+          {
+            "id": "couchers",
+            "title": "couchers",
+            "description": "projects.contributions.couchers.description",
+            "links": {
+              "github": "https://github.com/Couchers-org/couchers",
+              "pr": "https://github.com/Couchers-org/couchers/issues/8953"
+            },
+            "owner": "Couchers-org"
+          },
+          {
+            "id": "2",
+            "title": "DevImpact",
+            "description": "projects.contributions.devimpact.description",
+            "links": {
+              "github": "https://github.com/O2sa/DevImpact",
+              "pr": "https://github.com/O2sa/DevImpact/issues/166"
+            },
+            "owner": "O2sa"
+          },
+          {
+            "id": "3",
+            "title": "neuland.app-native",
+            "description": "projects.contributions.neuland.description",
+            "links": {
+              "github": "https://github.com/neuland-ingolstadt/neuland.app-native",
+              "pr": "https://github.com/neuland-ingolstadt/neuland.app-native/issues/367"
+            },
+            "owner": "neuland-ingolstadt"
+          },
+          {
+            "id": "4",
+            "title": "Remitwise-Frontend",
+            "description": "projects.contributions.remitwise.description",
+            "links": {
+              "github": "https://github.com/Remitwise-Org/Remitwise-Frontend",
+              "pr": "https://github.com/Remitwise-Org/Remitwise-Frontend/issues/536"
+            },
+            "owner": "Remitwise-Org"
+          },
+          {
+            "id": "5",
+            "title": "weftmap",
+            "description": "projects.contributions.weftmap.description",
+            "links": {
+              "github": "https://github.com/DataDave-Dev/weftmap",
+              "pr": "https://github.com/DataDave-Dev/weftmap/issues/101"
+            },
+            "owner": "DataDave-Dev"
+          }
+        ],
         "legacy": {
             "html-css": [
                 {
