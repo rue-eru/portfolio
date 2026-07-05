@@ -21,7 +21,7 @@ export default function Contributions () {
     const t = useTranslations();
 
     return(
-        <div className={`text-set-white mt-10 -mb-10 ${styles.flexCenter}  flex-col `} >
+        <div className={`text-set-white mt-10 -mb-10 ${styles.flexCenter} flex-col max-w-252 mx-auto`} >
             
             <Float
                 key={`${id}`}
@@ -50,49 +50,96 @@ export default function Contributions () {
                 {isOpen && (
                     <Float>
                         <div
-                          className="
+                          className={`
                                 bg-gray-600 p-2 rounded-xs
-                            "  
+                                ${styles.containerShadow}
+                            `}
                         >
                             {contributionProjects.map((project) => (
-                                <div 
-                                    key={project.id}
-                                    className={`flex gap-4 justify-between items-center py-2 
-                                        border-b border-gray-500
-                                        last-of-type:border-b-0
-                                        ${isEn ? "text-2xl/4"
-                                            : "text-sm/5"
-                                        }
-                                    `}
-                                >
-                                    <div className="w-[20%]  hover:text-set-accent">
-                                        <a 
-                                            href={project.links.github}
-                                            title={t('projects.contributions.link_title.project', {project_repo: project.title})}
-                                        >
-                                            {project.title}
-                                        </a>
+                                <>
+                                    {/*sm+ screens: tablets, pc etc*/}
+                                    <div 
+                                        key={`${project.id}-sm>`}
+                                        className={`hidden sm:flex gap-4 justify-between items-center py-2 
+                                            border-b border-gray-500
+                                            last-of-type:border-b-0
+                                            ${isEn ? "text-2xl/4"
+                                                : "text-sm/5"
+                                            }
+                                        `}
+                                    >
+                                        <div className="w-[20%]  hover:text-set-accent">
+                                            <a 
+                                                href={project.links.github}
+                                                title={t('projects.contributions.link_title.project', {project_repo: project.title})}
+                                            >
+                                                {project.title}
+                                            </a>
+                                        </div>
+
+                                        <div className="w-full text-wrap px-0.5">
+                                            {t(project.description)}
+                                        </div>
+
+                                        <GitHubStats
+                                            owner={project.owner}
+                                            repo={project.title}
+                                            github={project.links.github}
+                                            id={project.id}
+                                            prLink={project.links.pr}
+                                            isStarHovered={isStarHovered}
+                                            setIsStarHovered={setIsStarHovered}
+                                            isForkHovered={isForkHovered}
+                                            setIsForkHovered={setIsForkHovered}
+                                            isPrHovered={isPrHovered}
+                                            setIsPrHovered={setIsPrHovered}
+                                        />
+
                                     </div>
 
-                                    <div className="w-full text-wrap px-0.5">
-                                        {t(project.description)}
-                                    </div>
+                                    {/*sm< screens: phones*/}
+                                    <div 
+                                        key={`${project.id}-sm<`}
+                                        className={`sm:hidden flex-col gap-4 justify-between items-center py-2 
+                                            border-b border-gray-500
+                                            last-of-type:border-b-0
+                                            ${isEn ? "text-2xl/4"
+                                                : "text-sm/5"
+                                            }
+                                        `}
+                                    >
 
-                                    <GitHubStats
-                                        owner={project.owner}
-                                        repo={project.title}
-                                        github={project.links.github}
-                                        id={project.id}
-                                        prLink={project.links.pr}
-                                        isStarHovered={isStarHovered}
-                                        setIsStarHovered={setIsStarHovered}
-                                        isForkHovered={isForkHovered}
-                                        setIsForkHovered={setIsForkHovered}
-                                        isPrHovered={isPrHovered}
-                                        setIsPrHovered={setIsPrHovered}
-                                    />
-                                    
-                                </div>
+                                        <div className="w-full flex justify-between p-0.5">
+                                            <a 
+                                                className="hover:text-set-accent flex-1 flex items-center"
+                                                href={project.links.github}
+                                                title={t('projects.contributions.link_title.project', {project_repo: project.title})}
+                                            >
+                                                {project.title}
+                                            </a>
+
+                                            <GitHubStats
+                                                owner={project.owner}
+                                                repo={project.title}
+                                                github={project.links.github}
+                                                id={project.id}
+                                                prLink={project.links.pr}
+                                                isStarHovered={isStarHovered}
+                                                setIsStarHovered={setIsStarHovered}
+                                                isForkHovered={isForkHovered}
+                                                setIsForkHovered={setIsForkHovered}
+                                                isPrHovered={isPrHovered}
+                                                setIsPrHovered={setIsPrHovered}
+                                            />
+                                        </div>
+
+                                        <div className="w-full text-wrap px-0.5 pt-2">
+                                            {t(project.description)}
+                                        </div>
+
+
+                                    </div>
+                                </>
                             ) ) }
                         </div>
                     </Float>

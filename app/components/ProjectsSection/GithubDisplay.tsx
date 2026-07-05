@@ -21,7 +21,7 @@ export default function GithubDisplay({
     return(
         <a 
             className={`
-                flex items-center gap-0.5 flex-1 cursor-pointer w-fit
+                flex items-center gap-0.5 flex-1 cursor-pointer sm:w-fit
                 ${isHovered === id && 'hover:text-set-accent'}
                 ${isEn ? "text-lg" : "text-xs"}
             `}
@@ -42,7 +42,7 @@ export default function GithubDisplay({
                 className='object-contain'
                 loading='lazy'
             />
-            <span className="pt-0.5">{count.toLocaleString()}</span>
+            <span className="pt-0.5 w-fit">{count.toLocaleString()}</span>
         </a>
     )
 }

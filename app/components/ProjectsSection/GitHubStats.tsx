@@ -42,11 +42,13 @@ export default function GitHubStats ({
         fetchRepoData();
     }, [owner, repo])
 
-    if (error) return <span className=" w-[20%] flex justify-center">?</span>
-    if (!data) return <span className="animate-pulse w-[20%] flex justify-center">...</span>
+    if (error) return <span className="sm:w-[20%] flex justify-center">?</span>
+    if (!data) return <span className="animate-pulse sm:w-[20%] flex justify-center">...</span>
     
     return (
-        <div className="flex gap-1 items-center h-full justify-between w-[20%]">
+        <div className="flex gap-1 sm:items-center sm:justify-between 
+            h-full sm:w-[20%] w-[30%]
+        ">
 
             <GithubDisplay
                 iconType="star"
@@ -71,7 +73,7 @@ export default function GitHubStats ({
         
             {prLink && (
                 <a
-                    className="flex items-center justify-center gap-2 cursor-pointer w-fit"
+                    className="flex items-center justify-center gap-2 cursor-pointer"
                     onMouseEnter={() => setIsPrHovered?.(id)}
                     onMouseLeave={() => setIsPrHovered?.(null)}
                     href={prLink}
