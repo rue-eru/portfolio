@@ -8,6 +8,7 @@ import Image from "next/image";
 import { useTranslations } from "next-intl";
 import projectsData from '@/app/data/projects.json';
 import GitHubStats from "./GitHubStats";
+import SlideIn from "../animations/SlideIn";
 
 export default function Contributions () {
 
@@ -48,76 +49,45 @@ export default function Contributions () {
             
             <div className="w-full p-4">
                 {isOpen && (
-                    <Float>
-                        <div
-                          className={`
-                                bg-gray-600 p-2 rounded-xs
-                                ${styles.containerShadow}
-                            `}
-                        >
-                            {contributionProjects.map((project, index) => {
-                                const isLast = index === contributionProjects.length - 1;
-                                const lastBorder = `border-b border-gray-500`;
-                            
-                                return (
-                                    <div key={project.id}>
-                                        {/*sm+ screens: tablets, pc etc*/}
-                                        <div 
+                    <SlideIn 
+                        direction="top"
+                        amount={0.1}
+                    >
+                        <Float>
+                            <div
+                              className={`
+                                    bg-gray-600 p-2 rounded-xs mt-10
+                                    ${styles.containerShadow}
+                                `}
+                            >
+                                {contributionProjects.map((project, index) => {
+                                    const isLast = index === contributionProjects.length - 1;
+                                    const lastBorder = `border-b border-gray-500`;
+                                
+                                    return (
+                                        <div key={project.id}>
+                                            {/*sm+ screens: tablets, pc etc*/}
+                                            <div 
 
-                                            className={`hidden sm:flex gap-4 justify-between items-center py-2 
-                                                ${isLast ? '' : lastBorder}
-                                                ${isEn ? "text-2xl/4"
-                                                    : "text-sm/5"
-                                                }
-                                            `}
-                                        >
-                                            <div className="w-[20%]  hover:text-set-accent">
-                                                <a 
-                                                    href={project.links.github}
-                                                    title={t('projects.contributions.link_title.project', {project_repo: project.title})}
-                                                >
-                                                    {project.title}
-                                                </a>
-                                            </div>
+                                                className={`hidden sm:flex gap-4 justify-between items-center py-2 
+                                                    ${isLast ? '' : lastBorder}
+                                                    ${isEn ? "text-2xl/4"
+                                                        : "text-sm/5"
+                                                    }
+                                                `}
+                                            >
+                                                <div className="w-[20%]  hover:text-set-accent">
+                                                    <a 
+                                                        href={project.links.github}
+                                                        title={t('projects.contributions.link_title.project', {project_repo: project.title})}
+                                                    >
+                                                        {project.title}
+                                                    </a>
+                                                </div>
 
-                                            <div className="w-full text-wrap px-0.5">
-                                                {t(project.description)}
-                                            </div>
-
-                                            <GitHubStats
-                                                owner={project.owner}
-                                                repo={project.title}
-                                                github={project.links.github}
-                                                id={project.id}
-                                                prLink={project.links.pr}
-                                                isStarHovered={isStarHovered}
-                                                setIsStarHovered={setIsStarHovered}
-                                                isForkHovered={isForkHovered}
-                                                setIsForkHovered={setIsForkHovered}
-                                                isPrHovered={isPrHovered}
-                                                setIsPrHovered={setIsPrHovered}
-                                            />
-
-                                        </div>
-
-                                        {/*sm< screens: phones*/}
-                                        <div 
-                                            className={`sm:hidden flex-col gap-4 justify-between items-center py-2 
-                                                ${isLast ? '' : lastBorder}
-                                                ${isEn ? "text-2xl/4"
-                                                    : "text-sm/5"
-                                                }
-                                            `}
-                                        >
-
-                                            <div className="w-full flex justify-between p-0.5">
-                                                <a 
-                                                    className="hover:text-set-accent flex-1 flex items-center"
-                                                    href={project.links.github}
-                                                    title={t('projects.contributions.link_title.project', {project_repo: project.title})}
-                                                >
-                                                    {project.title}
-                                                </a>
+                                                <div className="w-full text-wrap px-0.5">
+                                                    {t(project.description)}
+                                                </div>
 
                                                 <GitHubStats
                                                     owner={project.owner}
@@ -132,19 +102,55 @@ export default function Contributions () {
                                                     isPrHovered={isPrHovered}
                                                     setIsPrHovered={setIsPrHovered}
                                                 />
+
                                             </div>
 
-                                            <div className="w-full text-wrap px-0.5 pt-2">
-                                                {t(project.description)}
+                                            {/*sm< screens: phones*/}
+                                            <div 
+                                                className={`sm:hidden flex-col gap-4 justify-between items-center py-2 
+                                                    ${isLast ? '' : lastBorder}
+                                                    ${isEn ? "text-2xl/4"
+                                                        : "text-sm/5"
+                                                    }
+                                                `}
+                                            >
+
+                                                <div className="w-full flex justify-between p-0.5">
+                                                    <a 
+                                                        className="hover:text-set-accent flex-1 flex items-center"
+                                                        href={project.links.github}
+                                                        title={t('projects.contributions.link_title.project', {project_repo: project.title})}
+                                                    >
+                                                        {project.title}
+                                                    </a>
+
+                                                    <GitHubStats
+                                                        owner={project.owner}
+                                                        repo={project.title}
+                                                        github={project.links.github}
+                                                        id={project.id}
+                                                        prLink={project.links.pr}
+                                                        isStarHovered={isStarHovered}
+                                                        setIsStarHovered={setIsStarHovered}
+                                                        isForkHovered={isForkHovered}
+                                                        setIsForkHovered={setIsForkHovered}
+                                                        isPrHovered={isPrHovered}
+                                                        setIsPrHovered={setIsPrHovered}
+                                                    />
+                                                </div>
+
+                                                <div className="w-full text-wrap px-0.5 pt-2">
+                                                    {t(project.description)}
+                                                </div>
+
+
                                             </div>
-
-
                                         </div>
-                                    </div>
-                                ) 
-                            })}
-                        </div>
-                    </Float>
+                                    ) 
+                                })}
+                            </div>
+                        </Float>
+                    </SlideIn>
                 )}
             </div>
 
