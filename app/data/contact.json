@@ -27,6 +27,12 @@
             "title": "Telegram",
             "icon": "/images/icons/telegram-accent.png",
             "link": "https://t.me/literallyfault"
+        },
+        {
+            "id": "linkedin",
+            "title": "LinkedIn",
+            "icon": "/images/icons/linkedin-accent.png",
+            "link": "https://www.linkedin.com/in/shigoto-el/"
         }
     ],
     "banner": [
