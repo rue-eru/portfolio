@@ -46,8 +46,8 @@ export default function GitHubStats ({
     if (!data) return <span className="animate-pulse sm:w-[20%] flex justify-center">...</span>
     
     return (
-        <div className="flex gap-1 sm:items-center sm:justify-between 
-            h-full sm:w-[20%] w-[30%]
+        <div className="flex gap-1 justify-end-safe
+            h-full lg:min-w-[15%] sm:min-w-[20%] max:w-[45%]
         ">
 
             <GithubDisplay

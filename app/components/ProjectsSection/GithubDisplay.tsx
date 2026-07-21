@@ -15,13 +15,25 @@ export default function GithubDisplay({
     repo
 }: GithubDisplayProps){
 
-    const {isEn} = useCurrentLanguage();
+    const {isEn, isJa} = useCurrentLanguage();
     const t = useTranslations();
+
+    const formatNum = (num: number) => {
+        if (isJa) {
+            if (num >= 10000) {
+              const value = num / 10000;
+              return value % 1 === 0 ? value + '万' : value.toFixed(1) + '万';
+            }
+        }
+        if (num >= 1000) return (num / 1000).toFixed(1) + 'k';
+        return num.toString();
+    }
+
 
     return(
         <a 
             className={`
-                flex items-center gap-0.5 flex-1 cursor-pointer sm:w-fit
+                flex items-center justify-end gap-0.5 flex-1 cursor-pointer
                 ${isHovered === id && 'hover:text-set-accent'}
                 ${isEn ? "text-lg" : "text-xs"}
             `}
@@ -42,7 +54,7 @@ export default function GithubDisplay({
                 className='object-contain'
                 loading='lazy'
             />
-            <span className="pt-0.5 w-fit">{count.toLocaleString()}</span>
+            <span className="pt-0.5 min-w-7 text-xs text-nowrap">{formatNum(count)}</span>
         </a>
     )
 }

@@ -25,16 +25,19 @@
             "description": "Localized hardcoded `aria-label` strings for accessibility & i18n support in a 500+ star open-source community platform."
         },
         "devimpact": {
-          "description": "Added a validation script to ensure all locale JSON files have consistent translation keys, improving i18n reliability."
+            "description": "Added a validation script to ensure all locale JSON files have consistent translation keys, improving i18n reliability."
         },
         "neuland": {
-          "description": "Replaced hardcoded accessibility labels with i18n keys in a React Native campus app, improving screen reader support."
+            "description": "Replaced hardcoded accessibility labels with i18n keys in a React Native campus app, improving screen reader support."
         },
         "remitwise": {
-          "description": "Externalized hardcoded English strings on Settings, Family, and Insurance pages into the i18n system (EN/ES)."
+            "description": "Externalized hardcoded English strings on Settings, Family, and Insurance pages into the i18n system (EN/ES)."
         },
         "weftmap": {
-          "description": "Fixed a white flash issue during language switch in dark mode by moving theme control to server-side cookies."
+            "description": "Fixed a white flash issue during language switch in dark mode by moving theme control to server-side cookies."
+        },
+        "career-ops": {
+            "description": "Translated the FAQ section (EN-RU) for a 60k-star open-source AI CLI job-search tool preserving original Markdown structure and unifying terms with previous translations in README.md."
         }
     },
     "html-css": {
