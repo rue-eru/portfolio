@@ -1,8 +1,17 @@
 import CertClient from "@/app/components/CerificateSection/CertClient";
 import CreditFooter from "@/app/components/CreditFooter";
+import type { Metadata } from "next";
 import {  type Locale } from "next-intl";
-import { setRequestLocale } from "next-intl/server";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import { use } from "react";
+
+export async function generateMetadata(): Promise<Metadata> {
+    const t = await getTranslations('layout.metadata.certpage');
+    return {
+        title: t('title'),
+        description: t('description'),
+    };
+};
 
 export default function CertificatesPage({ params }: { params: Promise<{ locale: Locale }> }) {
     // Enable static rendering

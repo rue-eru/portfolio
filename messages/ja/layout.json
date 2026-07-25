@@ -1,6 +1,22 @@
 {
-    "metadata-title": "L",
-    "metadata-description": "L's Frontend & Translation Portfolio",
+    "metadata": {
+        "frontpage": {
+          "title": "フロントエンド＋i18n ポートフォリオ",
+          "description": "Lのフロントエンド＆翻訳ポートフォリオ"
+        },
+        "mainpage": {
+          "title": "Lのポートフォリオ | ホーム",
+          "description": "ReactとNext.jsでのi18nとローカライゼーションを専門とするフロントエンド開発者"
+        },
+        "certpage": {
+          "title": "資格証明書 | Lのポートフォリオ",
+          "description": "ウェブ開発とローカライゼーションに関する関連資格を表示"
+        },
+        "allcertpage": {
+          "title": "全資格証明書 | Lのポートフォリオ",
+          "description": "プロフェッショナルな資格と認定の完全なリスト"
+        }
+    },  
     "nav-bar": {
         "projects": "プロジェクト",
         "tech": "使用技術",

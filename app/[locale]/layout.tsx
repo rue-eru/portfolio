@@ -10,10 +10,10 @@ import PageLoading from "../components/LoadingStates/PageLoading";
 import CustomCursor from "../components/CustomCursor";
 
 export async function generateMetadata(): Promise<Metadata> {
-  const t = await getTranslations('layout');
+  const t = await getTranslations('layout.metadata.frontpage');
   return {
-    title: t('metadata-title'),
-    description: t('metadata-description'),
+    title: t('title'),
+    description: t('description'),
   };
 };
 

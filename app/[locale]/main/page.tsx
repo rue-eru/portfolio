@@ -4,6 +4,16 @@ import ContactPage from "@/app/components/ContactSection/ContactPage";
 import ProjectsSection from "@/app/components/ProjectsSection/ProjectsSection";
 import StackSection from "@/app/components/StackSection/StackSection";
 import AboutSection from "@/app/components/AboutSection/AboutSection";
+import type { Metadata } from "next";
+import { getTranslations } from "next-intl/server";
+
+export async function generateMetadata(): Promise<Metadata> {
+    const t = await getTranslations('layout.metadata.mainpage');
+    return {
+        title: t('title'),
+        description: t('description'),
+    };
+};
 
 export default function MainPage () {
 

@@ -1,6 +1,22 @@
 {
-    "metadata-title": "L",
-    "metadata-description": "L's Frontend & Translation Portfolio",
+    "metadata": {
+        "frontpage": {
+          "title": "Frontend+i18n Портфолио",
+          "description": "Портфолио L по фронтенду и переводам"
+        },
+        "mainpage": {
+          "title": "Портфолио L | Главная",
+          "description": "Фронтенд-разработчица, специализирующаяся на i18n и локализации в React и Next.js"
+        },
+        "certpage": {
+          "title": "Сертификаты | Портфолио L",
+          "description": "Мои сертификаты в веб-разработке и локализации"
+        },
+        "allcertpage": {
+          "title": "Все сертификаты | Портфолио L",
+          "description": "Полный список моих профессиональных сертификатов"
+        }
+    },  
     "frontpage-title": "Мои сайты размывают границы между языками и культурами",
     "nav-bar": {
         "projects": "Проекты",

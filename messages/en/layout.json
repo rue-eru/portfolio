@@ -1,6 +1,22 @@
 {
-    "metadata-title": "Frontend+i18n Portfolio",
-    "metadata-description": "L's Frontend & Translation Portfolio",
+    "metadata": {
+        "frontpage": {
+            "title": "Frontend+i18n Portfolio",
+            "description": "L's Frontend & Translation Portfolio"
+        },
+        "mainpage": {
+            "title": "L's Portfolio | Home",
+            "description": "Frontend Developer specializing in i18n and localization in React and Next.js."
+        },
+        "certpage": {
+            "title": "Certificates | L's Portfolio",
+            "description": "View my relevant certificates in web development and localization"
+        },
+        "allcertpage": {
+            "title": "All Certificates | L's Portfolio",
+            "description": "Complete list of my professional certifications and credentials."
+        }
+    },
     "frontpage-title": "Building cultures with code and language",
     "nav-bar": {
         "projects": "Projects",
